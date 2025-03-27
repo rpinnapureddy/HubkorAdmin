@@ -1,0 +1,11 @@
+C:\Web\HubkorAdmin\obj\Release\HubkorAdminTest1v1107.csprojResolveAssemblyReference.cache
+C:\Web\HubkorAdmin\bin\runnerDotNet.dll
+C:\Web\HubkorAdmin\bin\runnerDotNet.pdb
+C:\Web\HubkorAdmin\bin\mscorlib.dll
+C:\Web\HubkorAdmin\bin\normidna.nlp
+C:\Web\HubkorAdmin\bin\normnfc.nlp
+C:\Web\HubkorAdmin\bin\normnfd.nlp
+C:\Web\HubkorAdmin\bin\normnfkc.nlp
+C:\Web\HubkorAdmin\bin\normnfkd.nlp
+C:\Web\HubkorAdmin\obj\Release\runnerDotNet.dll
+C:\Web\HubkorAdmin\obj\Release\runnerDotNet.pdb

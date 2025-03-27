@@ -1,0 +1,217 @@
+﻿@using runnerDotNet;
+@{
+ XTempl Model = this.Model;
+ if(ViewBag != null && ViewBag.xt != null)
+ {
+  Model = ViewBag.xt;
+  if(Model != null)
+  {
+   Model.currentViewContext = ViewContext;
+  }
+ }
+ string webRootPath = "";
+}
+
+<!doctype html>@(new HtmlString(MVCFunctions.GetBuferContentAndClearBufer()))
+<HTML @(Model.displayVar("html_attrs"))>
+	<head>
+				<META http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<META name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@(Model.displayVar("pagetitle"))</title>
+	<META http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<BASE href="@(Model.displayVar("projectPath"))" />
+		<LINK REL="stylesheet" href="styles/default.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	@foreach (string _rtlCSS in Model.GetSection("rtlCSS", this)){
+	<LINK REL="stylesheet" href="styles/defaultRTL.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	}
+	@foreach (string _styleCSSFiles in Model.GetSection("styleCSSFiles", this)){
+	<LINK REL="stylesheet" href="@(Model.displayVar("stylepath"))" type="text/css" />
+	}
+			
+	</head>
+
+	<BODY class="@(Model.displayVar("stylename")) function-register">
+	@foreach (string _body in Model.GetSection("body", this)){
+		{Html.RenderSharedView("header");}
+		<style>@MvcHtmlString.Create(@"")@(Model.displayVar("containerCss"))@MvcHtmlString.Create(@"
+				.r-pretty-login-page > .r-controls {
+					background: white;
+				}
+				.r-pretty-login-page > .r-sideimage {
+					background: #f2f2f2;
+				}")</style>
+
+		<div class="r-pretty-login-page"
+			 data-image-fullsize 						 data-left-image 		>
+			<div class="r-controls">
+				<div class="r-mainform">
+													@foreach (string _top_block in Model.GetSection("top_block", this)){
+<DIV class="r-form" data-location="top" id="form_top_@(Model.displayVar("pageid"))" data-makeup="pretty-login" @(Model.displayVar("form_top")) data-pageid="@(Model.displayVar("pageid"))">		
+	 
+				<div class="row">
+			 
+				<DIV data-cellId="top_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_top_c1")) class=" r-ori-vert			col-md-12
+	
+">
+		 
+		<H2 data-itemtype="register_header" data-itemid="register_header" @(Model.displayVar("item_register_header")) data-pageid="@(Model.displayVar("pageid"))">@(Model.displayVar("pagetitlelabel register"))</h2>
+		</div>					</div>
+			</div>		
+}
+									@foreach (string _above_grid_block in Model.GetSection("above-grid_block", this)){
+<DIV class="r-form" data-location="above-grid" id="form_above-grid_@(Model.displayVar("pageid"))" data-makeup="pretty-login" @(Model.displayVar("form_above-grid")) data-pageid="@(Model.displayVar("pageid"))">		
+	 
+				<div class="row">
+			 
+				<DIV data-cellId="above-grid_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_above-grid_c1")) class=" r-ori-vert			col-md-12
+	
+">
+		@foreach (string _firstAboveGridCell in Model.GetSection("firstAboveGridCell", this)){
+		 
+		<DIV data-itemtype="register_message" data-itemid="register_message" @(Model.displayVar("item_register_message")) data-pageid="@(Model.displayVar("pageid"))" class="alert @(Model.displayVar("message_class"))" role="alert">
+<h5>@(Model.displayVar("message"))</h5>
+</div>
+			}	
+	</div>					</div>
+			</div>		
+}
+									@foreach (string _grid_block in Model.GetSection("grid_block", this)){
+<TABLE class="r-fluid r-form" data-location="grid" id="form_grid_@(Model.displayVar("pageid"))" data-makeup="pretty-login" @(Model.displayVar("form_grid")) data-pageid="@(Model.displayVar("pageid"))">
+						<tbody>
+			
+								<TR @(Model.displayVar("row_grid_0"))>
+									<TD class=" r-ori-vert			" data-cellId="grid_c3" data-pageid="@(Model.displayVar("pageid"))">
+ 
+
+@foreach (string _user_name_fieldblock in Model.GetSection("user_name_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_user_name"))  r-vertical-field" data-signal-error-for="user_name@(Model.displayVar("id"))" @(Model.displayVar("required_attr_user_name")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" @(Model.displayVar("item_integrated_edit_field")) data-pageid="@(Model.displayVar("pageid"))" data-field="user_name" data-fieldname="user_name">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_user_name"))">
+		@foreach (string _user_name_label in Model.GetSection("user_name_label", this)){@(Model.displayVar("label dbo_users user_name"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("user_name_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="user_name" {$tooltipAttr dbo_users user_name }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_users user_name"))		</div>
+	</div>
+</div>
+
+
+}
+ 
+
+@foreach (string _password_fieldblock in Model.GetSection("password_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_password"))  r-vertical-field" data-signal-error-for="password@(Model.displayVar("id"))" @(Model.displayVar("required_attr_password")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" @(Model.displayVar("item_integrated_edit_field1")) data-pageid="@(Model.displayVar("pageid"))" data-field="password" data-fieldname="password">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_password"))">
+		@foreach (string _password_label in Model.GetSection("password_label", this)){@(Model.displayVar("label dbo_users password"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("password_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="password" {$tooltipAttr dbo_users password }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_users password"))		</div>
+	</div>
+</div>
+
+
+}
+ 
+
+@foreach (string _confirm_block in Model.GetSection("confirm_block", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_confirm_aoel3cx"))  r-vertical-field" data-signal-error-for="confirm@(Model.displayVar("id"))" @(Model.displayVar("required_attr_confirm_aoel3cx")) data-itemtype="integrated_confirm_password" data-itemid="integrated_confirm_password" @(Model.displayVar("item_integrated_confirm_password")) data-pageid="@(Model.displayVar("pageid"))" data-field="confirm_aoel3cx" data-fieldname="confirm_aoel3cx">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_confirm_aoel3cx_confirm"))">
+		@foreach (string _confirm_label in Model.GetSection("confirm_label", this)){<text>Confirm password</text>}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("confirm_editcontrol1"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="confirm" {$tooltipAttr dbo_users confirm_aoel3cx }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_users confirm_aoel3cx"))		</div>
+	</div>
+</div>
+
+
+}
+ 
+
+@foreach (string _email_fieldblock in Model.GetSection("email_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_email"))  r-vertical-field" data-signal-error-for="email@(Model.displayVar("id"))" @(Model.displayVar("required_attr_email")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" @(Model.displayVar("item_integrated_edit_field2")) data-pageid="@(Model.displayVar("pageid"))" data-field="email" data-fieldname="email">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_email"))">
+		@foreach (string _email_label in Model.GetSection("email_label", this)){@(Model.displayVar("label dbo_users email"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("email_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="email" {$tooltipAttr dbo_users email }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_users email"))		</div>
+	</div>
+</div>
+
+
+}
+</td>
+							</tr>
+					
+					</tbody>
+				</table>
+}
+									@foreach (string _footer_block in Model.GetSection("footer_block", this)){
+<TABLE class="r-fluid r-form" data-location="footer" id="form_footer_@(Model.displayVar("pageid"))" data-makeup="pretty-login" @(Model.displayVar("form_footer")) data-pageid="@(Model.displayVar("pageid"))">
+						<tbody>
+			
+								<TR @(Model.displayVar("row_footer_0"))>
+									<TD class="			" data-cellId="footer_c1" data-pageid="@(Model.displayVar("pageid"))">
+ 
+<SPAN data-itemtype="register_save" data-itemid="register_save" @(Model.displayVar("item_register_save")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-primary   
+	" @(Model.displayVar("submit_attrs"))>
+							Register			</a>
+</span>
+ 
+<SPAN data-itemtype="back_to_login" data-itemid="back_to_login" @(Model.displayVar("item_back_to_login")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-link   
+	" href="login" @(Model.displayVar("backlink_attrs"))>
+							Back to login page			</a>
+</span>
+</td>
+									<TD class="r-align-right r-ori-vert			" data-cellId="footer_c2" data-pageid="@(Model.displayVar("pageid"))">
+ 
+<SPAN data-itemtype="register_reset" data-itemid="register_reset" @(Model.displayVar("item_register_reset")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-default   
+	" @(Model.displayVar("resetbutton_attrs"))>
+							Reset			</a>
+</span>
+</td>
+							</tr>
+					
+					</tbody>
+				</table>
+}
+											</div>
+			</div>
+			<div class="r-sideimage">
+							<div class="r-image"  >
+					<IMG data-itemtype="page_image" data-itemid="page_image_ash8f23hr" @(Model.displayVar("item_page_image_ash8f23hr")) data-pageid="@(Model.displayVar("pageid"))" src="images/HubKor-Logo-1.jpg" />
+				</div>
+						</div>
+		</div>
+		{Html.RenderSharedView("footer");}
+	}
+	</body>
+</html>

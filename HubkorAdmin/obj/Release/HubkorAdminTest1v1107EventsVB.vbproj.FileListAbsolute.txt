@@ -1,0 +1,5 @@
+C:\Web\HubkorAdmin\bin\VBEvents.dll
+C:\Web\HubkorAdmin\bin\VBEvents.pdb
+C:\Web\HubkorAdmin\obj\Release\HubkorAdminTest1v1107EventsVB.vbprojResolveAssemblyReference.cache
+C:\Web\HubkorAdmin\obj\Release\VBEvents.dll
+C:\Web\HubkorAdmin\obj\Release\VBEvents.pdb

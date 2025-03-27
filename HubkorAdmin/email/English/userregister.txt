@@ -1,0 +1,23 @@
+Notification on registering
+
+You have registered as a user at %url%
+
+Click this link to confirm your account and finish the registration:
+%activateurl%
+If you are unable to click on the link, copy and paste it into your browser window.
+
+User Name: %user_name_value%
+User Group: %user_group_value%
+Email: %email_value%
+Email Notification: %email_notification_value%
+Description: %description_value%
+Two Factor: %two_factor_value%
+Totp Secret: %totp_secret_value%
+Clientid: %clientid_value%
+Userpic: %userpic_value%
+Title: %title_value%
+Phone: %phone_value%
+Time Zone: %time_zone_value%
+Salutation: %salutation_value%
+First Name: %first_name_value%
+Last Name: %last_name_value%

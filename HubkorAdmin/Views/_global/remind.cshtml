@@ -1,0 +1,140 @@
+﻿@using runnerDotNet;
+@{
+ XTempl Model = this.Model;
+ if(ViewBag != null && ViewBag.xt != null)
+ {
+  Model = ViewBag.xt;
+  if(Model != null)
+  {
+   Model.currentViewContext = ViewContext;
+  }
+ }
+ string webRootPath = "";
+}
+
+<!doctype html>@(new HtmlString(MVCFunctions.GetBuferContentAndClearBufer()))
+<HTML @(Model.displayVar("html_attrs"))>
+	<head>
+				<META http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<META name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@(Model.displayVar("pagetitle"))</title>
+	<META http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<BASE href="@(Model.displayVar("projectPath"))" />
+		<LINK REL="stylesheet" href="styles/default.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	@foreach (string _rtlCSS in Model.GetSection("rtlCSS", this)){
+	<LINK REL="stylesheet" href="styles/defaultRTL.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	}
+	@foreach (string _styleCSSFiles in Model.GetSection("styleCSSFiles", this)){
+	<LINK REL="stylesheet" href="@(Model.displayVar("stylepath"))" type="text/css" />
+	}
+			
+	</head>
+
+	<BODY class="@(Model.displayVar("stylename")) function-remind">
+	@foreach (string _body in Model.GetSection("body", this)){
+		{Html.RenderSharedView("header");}
+		<style>@MvcHtmlString.Create(@"")@(Model.displayVar("containerCss"))@MvcHtmlString.Create(@"")</style>
+			<div class="r-panel-page">
+								@foreach (string _supertop_block in Model.GetSection("supertop_block", this)){
+<DIV class="r-form" data-location="supertop" id="form_supertop_@(Model.displayVar("pageid"))" data-makeup="panel" @(Model.displayVar("form_supertop")) data-pageid="@(Model.displayVar("pageid"))">		
+	 
+				<div class="row">
+			 
+				<DIV data-cellId="supertop_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_supertop_c1")) class="r-align-center r-ori-vert			col-md-12
+	
+">
+			</div>					</div>
+			</div>		
+}
+					<div class="bs-pagepanel panel panel-primary">
+					<div class="panel-heading">
+									@foreach (string _top_block in Model.GetSection("top_block", this)){
+<DIV class="panel-title r-panel-top row" data-location="top" id="form_top_@(Model.displayVar("pageid"))" data-makeup="panel" @(Model.displayVar("form_top")) data-pageid="@(Model.displayVar("pageid"))">		
+	 
+		 
+			<DIV data-cellId="top_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_top_c1")) class=" r-ori-vert			col-md-12
+	
+">
+		 
+		<H3 class="panel-title" data-itemtype="remind_header" data-itemid="remind_header" @(Model.displayVar("item_remind_header")) data-pageid="@(Model.displayVar("pageid"))">@(Model.displayVar("pagetitlelabel remind"))</h3>
+		</div>			</div>		
+}
+						</div>
+					<div class="panel-body">
+										@foreach (string _above_grid_block in Model.GetSection("above-grid_block", this)){
+<DIV class="r-form" data-location="above-grid" id="form_above-grid_@(Model.displayVar("pageid"))" data-makeup="panel" @(Model.displayVar("form_above-grid")) data-pageid="@(Model.displayVar("pageid"))">		
+	 
+				<div class="row">
+			 
+				<DIV data-cellId="above-grid_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_above-grid_c1")) class=" r-ori-vert			col-md-12
+	
+">
+		@foreach (string _firstAboveGridCell in Model.GetSection("firstAboveGridCell", this)){
+		 
+		foreach (string _message_block in Model.GetSection("message_block", this)){
+<DIV data-itemtype="message" data-itemid="message" @(Model.displayVar("item_message")) data-pageid="@(Model.displayVar("pageid"))" class="alert @(Model.displayVar("message_class"))" role="alert">
+@(Model.displayVar("message"))
+</div>
+}			}	
+	</div>					</div>
+			</div>		
+}
+											@foreach (string _grid_block in Model.GetSection("grid_block", this)){
+<TABLE class="r-edit-form r-panel-form" cellpadding="0" cellspacing="0" data-location="grid" id="form_grid_@(Model.displayVar("pageid"))" data-makeup="panel" @(Model.displayVar("form_grid")) data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("grid_hiddenattr")) data-form-width>
+<tbody>
+ 
+	<tr>
+	 
+				<TD class="r-align-right r-ori-vert							col-md-4						" data-single data-cellId="grid_c2" data-pageid="@(Model.displayVar("pageid"))">
+			<div edit-form-cell class="clearfix">
+								<LABEL data-itemtype="username_email_label" data-itemid="username_email_label" @(Model.displayVar("item_username_email_label")) data-pageid="@(Model.displayVar("pageid"))" data-small class="r-edit-label control-label" for="username_email">
+	@foreach (string _username_email_label in Model.GetSection("username_email_label", this)){<text>Enter username or email:</text>}
+</label>					</div>
+		</td>
+	 
+				<TD class=" r-ori-vert							col-md-6						" data-single data-cellId="grid_c3" data-pageid="@(Model.displayVar("pageid"))">
+			<div edit-form-cell class="clearfix">
+								<DIV class="r-edit-field" data-itemtype="username_email" data-itemid="username_email" @(Model.displayVar("item_username_email")) data-pageid="@(Model.displayVar("pageid"))">
+	<INPUT type="text" class="form-control" name="username_email" id="username_email" type="text" @(Model.displayVar("username_email_attrs")) />
+</div>					</div>
+		</td>
+				<td class="col-md-2"></td>
+		</tr>
+</tbody>
+</table>
+}
+											@foreach (string _footer_block in Model.GetSection("footer_block", this)){
+<DIV class="r-form" data-location="footer" id="form_footer_@(Model.displayVar("pageid"))" data-makeup="panel" @(Model.displayVar("form_footer")) data-pageid="@(Model.displayVar("pageid"))">		
+	 
+				<div class="row">
+			 
+				<DIV data-cellId="footer_c1" data-pageid="@(Model.displayVar("pageid"))" data-page="_global_remind" @(Model.displayVar("cell_footer_c1")) class=" r-ori-vert			col-md-6
+	
+">
+			</div>			 
+				<DIV data-cellId="footer_c2" data-pageid="@(Model.displayVar("pageid"))" data-page="_global_remind" @(Model.displayVar("cell_footer_c2")) class="			col-md-6
+	
+">
+		 
+		<SPAN data-itemtype="remind_button" data-itemid="remind_button" @(Model.displayVar("item_remind_button")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-primary   
+	" href="#" @(Model.displayVar("submit_attrs"))>
+							Submit			</a>
+</span>
+	 
+		<SPAN data-itemtype="back_to_login" data-itemid="back_to_login" @(Model.displayVar("item_back_to_login")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-link   
+	" href="login" @(Model.displayVar("backlink_attrs"))>
+							Back to login page			</a>
+</span>
+		</div>					</div>
+			</div>		
+}
+						</div>
+				</div>
+						
+			</div>
+		{Html.RenderSharedView("footer");}
+	}
+	</body>
+</html>

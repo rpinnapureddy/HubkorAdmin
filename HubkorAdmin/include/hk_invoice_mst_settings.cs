@@ -1,0 +1,758 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Web;
+using System.Web.Mvc;
+using System.Reflection;
+using runnerDotNet;
+namespace runnerDotNet
+{
+	public static partial class Settings_hk_invoice_mst
+	{
+		static public void Apply()
+		{
+			SettingsMap arrGPP = SettingsMap.GetArray(), arrGridTabs = SettingsMap.GetArray(), arrRPP = SettingsMap.GetArray(), dIndex = null, detailsParam = SettingsMap.GetArray(), edata = SettingsMap.GetArray(), eventsData = SettingsMap.GetArray(), fdata = SettingsMap.GetArray(), fieldLabelsArray = new XVar(), fieldToolTipsArray = new XVar(), hours = null, intervalData = SettingsMap.GetArray(), masterParams = SettingsMap.GetArray(), pageTitlesArray = new XVar(), placeHoldersArray = new XVar(), query = null, queryData_Array = new XVar(), strOriginalDetailsTable = null, table = null, tableKeysArray = new XVar(), tdataArray = new XVar(), tstrOrderBy = null, vdata = SettingsMap.GetArray();
+			tdataArray["hk_invoice_mst"] = SettingsMap.GetArray();
+			tdataArray["hk_invoice_mst"][".searchableFields"] = SettingsMap.GetArray();
+			tdataArray["hk_invoice_mst"][".ShortName"] = "hk_invoice_mst";
+			tdataArray["hk_invoice_mst"][".OwnerID"] = "clientid";
+			tdataArray["hk_invoice_mst"][".OriginalTable"] = "dbo.hk_invoice_mst";
+			tdataArray["hk_invoice_mst"][".pagesByType"] = MVCFunctions.my_json_decode(new XVar("{\"edit\":[\"edit\"],\"export\":[\"export\"],\"list\":[\"list\"],\"masterlist\":[\"masterlist\"],\"masterprint\":[\"masterprint\"],\"print\":[\"print\"],\"search\":[\"search\"],\"view\":[\"view\"]}"));
+			tdataArray["hk_invoice_mst"][".originalPagesByType"] = tdataArray["hk_invoice_mst"][".pagesByType"];
+			tdataArray["hk_invoice_mst"][".pages"] = CommonFunctions.types2pages(MVCFunctions.my_json_decode(new XVar("{\"edit\":[\"edit\"],\"export\":[\"export\"],\"list\":[\"list\"],\"masterlist\":[\"masterlist\"],\"masterprint\":[\"masterprint\"],\"print\":[\"print\"],\"search\":[\"search\"],\"view\":[\"view\"]}")));
+			tdataArray["hk_invoice_mst"][".originalPages"] = tdataArray["hk_invoice_mst"][".pages"];
+			tdataArray["hk_invoice_mst"][".defaultPages"] = MVCFunctions.my_json_decode(new XVar("{\"edit\":\"edit\",\"export\":\"export\",\"list\":\"list\",\"masterlist\":\"masterlist\",\"masterprint\":\"masterprint\",\"print\":\"print\",\"search\":\"search\",\"view\":\"view\"}"));
+			tdataArray["hk_invoice_mst"][".originalDefaultPages"] = tdataArray["hk_invoice_mst"][".defaultPages"];
+			fieldLabelsArray["hk_invoice_mst"] = SettingsMap.GetArray();
+			fieldToolTipsArray["hk_invoice_mst"] = SettingsMap.GetArray();
+			pageTitlesArray["hk_invoice_mst"] = SettingsMap.GetArray();
+			placeHoldersArray["hk_invoice_mst"] = SettingsMap.GetArray();
+			if(CommonFunctions.mlang_getcurrentlang() == "English")
+			{
+				fieldLabelsArray["hk_invoice_mst"]["English"] = SettingsMap.GetArray();
+				fieldToolTipsArray["hk_invoice_mst"]["English"] = SettingsMap.GetArray();
+				placeHoldersArray["hk_invoice_mst"]["English"] = SettingsMap.GetArray();
+				pageTitlesArray["hk_invoice_mst"]["English"] = SettingsMap.GetArray();
+				fieldLabelsArray["hk_invoice_mst"]["English"]["inv_num"] = "Inv Num";
+				fieldToolTipsArray["hk_invoice_mst"]["English"]["inv_num"] = "";
+				placeHoldersArray["hk_invoice_mst"]["English"]["inv_num"] = "";
+				fieldLabelsArray["hk_invoice_mst"]["English"]["rowpointer"] = "Rowpointer";
+				fieldToolTipsArray["hk_invoice_mst"]["English"]["rowpointer"] = "";
+				placeHoldersArray["hk_invoice_mst"]["English"]["rowpointer"] = "";
+				fieldLabelsArray["hk_invoice_mst"]["English"]["clientid"] = "Clientid";
+				fieldToolTipsArray["hk_invoice_mst"]["English"]["clientid"] = "";
+				placeHoldersArray["hk_invoice_mst"]["English"]["clientid"] = "";
+				fieldLabelsArray["hk_invoice_mst"]["English"]["total"] = "Total";
+				fieldToolTipsArray["hk_invoice_mst"]["English"]["total"] = "";
+				placeHoldersArray["hk_invoice_mst"]["English"]["total"] = "";
+				fieldLabelsArray["hk_invoice_mst"]["English"]["inv_date"] = "Inv Date";
+				fieldToolTipsArray["hk_invoice_mst"]["English"]["inv_date"] = "";
+				placeHoldersArray["hk_invoice_mst"]["English"]["inv_date"] = "";
+				fieldLabelsArray["hk_invoice_mst"]["English"]["due_date"] = "Due Date";
+				fieldToolTipsArray["hk_invoice_mst"]["English"]["due_date"] = "";
+				placeHoldersArray["hk_invoice_mst"]["English"]["due_date"] = "";
+				fieldLabelsArray["hk_invoice_mst"]["English"]["posted"] = "Invoiced";
+				fieldToolTipsArray["hk_invoice_mst"]["English"]["posted"] = "";
+				placeHoldersArray["hk_invoice_mst"]["English"]["posted"] = "";
+				fieldLabelsArray["hk_invoice_mst"]["English"]["status"] = "Status";
+				fieldToolTipsArray["hk_invoice_mst"]["English"]["status"] = "";
+				placeHoldersArray["hk_invoice_mst"]["English"]["status"] = "";
+				pageTitlesArray["hk_invoice_mst"]["English"]["view"] = "Invoice: {%inv_num}";
+				if(XVar.Pack(MVCFunctions.count(fieldToolTipsArray["hk_invoice_mst"]["English"])))
+				{
+					tdataArray["hk_invoice_mst"][".isUseToolTips"] = true;
+				}
+			}
+			tdataArray["hk_invoice_mst"][".NCSearch"] = true;
+			tdataArray["hk_invoice_mst"][".shortTableName"] = "hk_invoice_mst";
+			tdataArray["hk_invoice_mst"][".nSecOptions"] = 1;
+			tdataArray["hk_invoice_mst"][".mainTableOwnerID"] = "clientid";
+			tdataArray["hk_invoice_mst"][".entityType"] = 0;
+			tdataArray["hk_invoice_mst"][".connId"] = "Hubkoratec218206166241compute1";
+			tdataArray["hk_invoice_mst"][".strOriginalTableName"] = "dbo.hk_invoice_mst";
+			tdataArray["hk_invoice_mst"][".showAddInPopup"] = false;
+			tdataArray["hk_invoice_mst"][".showEditInPopup"] = false;
+			tdataArray["hk_invoice_mst"][".showViewInPopup"] = false;
+			tdataArray["hk_invoice_mst"][".listAjax"] = false;
+			tdataArray["hk_invoice_mst"][".audit"] = false;
+			tdataArray["hk_invoice_mst"][".locking"] = false;
+			GlobalVars.pages = tdataArray["hk_invoice_mst"][".defaultPages"];
+			if(XVar.Pack(GlobalVars.pages[Constants.PAGE_EDIT]))
+			{
+				tdataArray["hk_invoice_mst"][".edit"] = true;
+				tdataArray["hk_invoice_mst"][".afterEditAction"] = 1;
+				tdataArray["hk_invoice_mst"][".closePopupAfterEdit"] = 1;
+				tdataArray["hk_invoice_mst"][".afterEditActionDetTable"] = "";
+			}
+			if(XVar.Pack(GlobalVars.pages[Constants.PAGE_ADD]))
+			{
+				tdataArray["hk_invoice_mst"][".add"] = true;
+				tdataArray["hk_invoice_mst"][".afterAddAction"] = 1;
+				tdataArray["hk_invoice_mst"][".closePopupAfterAdd"] = 1;
+				tdataArray["hk_invoice_mst"][".afterAddActionDetTable"] = "";
+			}
+			if(XVar.Pack(GlobalVars.pages[Constants.PAGE_LIST]))
+			{
+				tdataArray["hk_invoice_mst"][".list"] = true;
+			}
+			tdataArray["hk_invoice_mst"][".strSortControlSettingsJSON"] = "";
+			if(XVar.Pack(GlobalVars.pages[Constants.PAGE_VIEW]))
+			{
+				tdataArray["hk_invoice_mst"][".view"] = true;
+			}
+			if(XVar.Pack(GlobalVars.pages[Constants.PAGE_IMPORT]))
+			{
+				tdataArray["hk_invoice_mst"][".import"] = true;
+			}
+			if(XVar.Pack(GlobalVars.pages[Constants.PAGE_EXPORT]))
+			{
+				tdataArray["hk_invoice_mst"][".exportTo"] = true;
+			}
+			if(XVar.Pack(GlobalVars.pages[Constants.PAGE_PRINT]))
+			{
+				tdataArray["hk_invoice_mst"][".printFriendly"] = true;
+			}
+			tdataArray["hk_invoice_mst"][".showSimpleSearchOptions"] = true;
+			tdataArray["hk_invoice_mst"][".allowShowHideFields"] = true;
+			tdataArray["hk_invoice_mst"][".allowFieldsReordering"] = true;
+			tdataArray["hk_invoice_mst"][".isUseAjaxSuggest"] = true;
+
+
+			tdataArray["hk_invoice_mst"][".ajaxCodeSnippetAdded"] = false;
+			tdataArray["hk_invoice_mst"][".buttonsAdded"] = false;
+			tdataArray["hk_invoice_mst"][".addPageEvents"] = false;
+			tdataArray["hk_invoice_mst"][".isUseTimeForSearch"] = false;
+			tdataArray["hk_invoice_mst"][".badgeColor"] = "9acd32";
+			tdataArray["hk_invoice_mst"][".allSearchFields"] = SettingsMap.GetArray();
+			tdataArray["hk_invoice_mst"][".filterFields"] = SettingsMap.GetArray();
+			tdataArray["hk_invoice_mst"][".requiredSearchFields"] = SettingsMap.GetArray();
+			tdataArray["hk_invoice_mst"][".googleLikeFields"] = SettingsMap.GetArray();
+			tdataArray["hk_invoice_mst"][".googleLikeFields"].Add("inv_num");
+			tdataArray["hk_invoice_mst"][".googleLikeFields"].Add("rowpointer");
+			tdataArray["hk_invoice_mst"][".googleLikeFields"].Add("clientid");
+			tdataArray["hk_invoice_mst"][".googleLikeFields"].Add("total");
+			tdataArray["hk_invoice_mst"][".googleLikeFields"].Add("inv_date");
+			tdataArray["hk_invoice_mst"][".googleLikeFields"].Add("due_date");
+			tdataArray["hk_invoice_mst"][".googleLikeFields"].Add("posted");
+			tdataArray["hk_invoice_mst"][".googleLikeFields"].Add("status");
+			tdataArray["hk_invoice_mst"][".tableType"] = "list";
+			tdataArray["hk_invoice_mst"][".printerPageOrientation"] = 0;
+			tdataArray["hk_invoice_mst"][".nPrinterPageScale"] = 100;
+			tdataArray["hk_invoice_mst"][".nPrinterSplitRecords"] = 40;
+			tdataArray["hk_invoice_mst"][".geocodingEnabled"] = false;
+			tdataArray["hk_invoice_mst"][".pageSize"] = 20;
+			tdataArray["hk_invoice_mst"][".warnLeavingPages"] = true;
+			tstrOrderBy = "";
+			tdataArray["hk_invoice_mst"][".strOrderBy"] = tstrOrderBy;
+			tdataArray["hk_invoice_mst"][".orderindexes"] = SettingsMap.GetArray();
+			tdataArray["hk_invoice_mst"][".sqlHead"] = "SELECT inv_num,  	rowpointer,  	clientid,  	total,  	inv_date,  	due_date,  	posted,  	status";
+			tdataArray["hk_invoice_mst"][".sqlFrom"] = "FROM dbo.hk_invoice_mst";
+			tdataArray["hk_invoice_mst"][".sqlWhereExpr"] = "";
+			tdataArray["hk_invoice_mst"][".sqlTail"] = "";
+			arrGridTabs = SettingsMap.GetArray();
+			arrGridTabs.Add(new XVar("tabId", "", "name", "All", "nameType", "Text", "where", "", "showRowCount", 0, "hideEmpty", 0));
+			arrGridTabs.Add(new XVar("tabId", "1", "name", "Void", "nameType", "Text", "where", "status='Void'", "showRowCount", 0, "hideEmpty", 1));
+			arrGridTabs.Add(new XVar("tabId", "2", "name", "Open", "nameType", "Text", "where", "status='Open'", "showRowCount", 0, "hideEmpty", 1));
+			arrGridTabs.Add(new XVar("tabId", "3", "name", "Paid", "nameType", "Text", "where", "status='Paid'", "showRowCount", 0, "hideEmpty", 1));
+			arrGridTabs.Add(new XVar("tabId", "A", "name", "Drafts", "nameType", "Text", "where", "status='Draft'", "showRowCount", 0, "hideEmpty", 1));
+			tdataArray["hk_invoice_mst"][".arrGridTabs"] = arrGridTabs;
+			arrRPP = SettingsMap.GetArray();
+			arrRPP.Add(10);
+			arrRPP.Add(20);
+			arrRPP.Add(30);
+			arrRPP.Add(50);
+			arrRPP.Add(100);
+			arrRPP.Add(500);
+			arrRPP.Add(-1);
+			tdataArray["hk_invoice_mst"][".arrRecsPerPage"] = arrRPP;
+			arrGPP = SettingsMap.GetArray();
+			arrGPP.Add(1);
+			arrGPP.Add(3);
+			arrGPP.Add(5);
+			arrGPP.Add(10);
+			arrGPP.Add(50);
+			arrGPP.Add(100);
+			arrGPP.Add(-1);
+			tdataArray["hk_invoice_mst"][".arrGroupsPerPage"] = arrGPP;
+			tdataArray["hk_invoice_mst"][".highlightSearchResults"] = true;
+			tableKeysArray["hk_invoice_mst"] = SettingsMap.GetArray();
+			tableKeysArray["hk_invoice_mst"].Add("inv_num");
+			tdataArray["hk_invoice_mst"][".Keys"] = tableKeysArray["hk_invoice_mst"];
+			tdataArray["hk_invoice_mst"][".hideMobileList"] = SettingsMap.GetArray();
+			fdata = SettingsMap.GetArray();
+			fdata["Index"] = 1;
+			fdata["strName"] = "inv_num";
+			fdata["GoodName"] = "inv_num";
+			fdata["ownerTable"] = "dbo.hk_invoice_mst";
+			fdata["Label"] = CommonFunctions.GetFieldLabel("dbo_hk_invoice_mst","inv_num");
+			fdata["FieldType"] = 20;
+			fdata["AutoInc"] = true;
+			fdata["strField"] = "inv_num";
+			fdata["sourceSingle"] = "inv_num";
+			fdata["isSQLExpression"] = true;
+			fdata["FullName"] = "inv_num";
+			fdata["UploadFolder"] = "files";
+			fdata["ViewFormats"] = SettingsMap.GetArray();
+			vdata = new XVar("ViewFormat", "");
+			vdata["NeedEncode"] = true;
+			vdata["truncateText"] = true;
+			vdata["NumberOfChars"] = 80;
+			fdata["ViewFormats"]["view"] = vdata;
+			fdata["EditFormats"] = SettingsMap.GetArray();
+			edata = new XVar("EditFormat", "Readonly");
+			edata["weekdayMessage"] = new XVar("message", "", "messageType", "Text");
+			edata["weekdays"] = "[]";
+			edata["IsRequired"] = true;
+			edata["acceptFileTypesHtml"] = "";
+			edata["maxNumberOfFiles"] = 1;
+			edata["controlWidth"] = 200;
+			edata["validateAs"] = SettingsMap.GetArray();
+			edata["validateAs"]["basicValidate"] = SettingsMap.GetArray();
+			edata["validateAs"]["customMessages"] = SettingsMap.GetArray();
+			fdata["EditFormats"]["edit"] = edata;
+			fdata["isSeparate"] = false;
+			fdata["defaultSearchOption"] = "Contains";
+			fdata["searchOptionsList"] = new XVar(0, "Contains", 1, "Equals", 2, "Starts with", 3, "More than", 4, "Less than", 5, "Between", 6, "Empty", 7, Constants.NOT_EMPTY);
+			fdata["filterTotals"] = 0;
+			fdata["filterMultiSelect"] = 0;
+			fdata["filterFormat"] = "Values list";
+			fdata["showCollapsed"] = false;
+			fdata["sortValueType"] = 0;
+			fdata["numberOfVisibleItems"] = 10;
+			fdata["filterBy"] = 0;
+			tdataArray["hk_invoice_mst"]["inv_num"] = fdata;
+			tdataArray["hk_invoice_mst"][".searchableFields"].Add("inv_num");
+			fdata = SettingsMap.GetArray();
+			fdata["Index"] = 2;
+			fdata["strName"] = "rowpointer";
+			fdata["GoodName"] = "rowpointer";
+			fdata["ownerTable"] = "dbo.hk_invoice_mst";
+			fdata["Label"] = CommonFunctions.GetFieldLabel("dbo_hk_invoice_mst","rowpointer");
+			fdata["FieldType"] = 72;
+			fdata["strField"] = "rowpointer";
+			fdata["sourceSingle"] = "rowpointer";
+			fdata["isSQLExpression"] = true;
+			fdata["FullName"] = "rowpointer";
+			fdata["UploadFolder"] = "files";
+			fdata["ViewFormats"] = SettingsMap.GetArray();
+			vdata = new XVar("ViewFormat", "");
+			vdata["NeedEncode"] = true;
+			vdata["truncateText"] = true;
+			vdata["NumberOfChars"] = 80;
+			fdata["ViewFormats"]["view"] = vdata;
+			fdata["EditFormats"] = SettingsMap.GetArray();
+			edata = new XVar("EditFormat", "Text field");
+			edata["weekdayMessage"] = new XVar("message", "", "messageType", "Text");
+			edata["weekdays"] = "[]";
+			edata["acceptFileTypesHtml"] = "";
+			edata["maxNumberOfFiles"] = 1;
+			edata["HTML5InuptType"] = "text";
+			edata["EditParams"] = "";
+			edata["controlWidth"] = 200;
+			edata["validateAs"] = SettingsMap.GetArray();
+			edata["validateAs"]["basicValidate"] = SettingsMap.GetArray();
+			edata["validateAs"]["customMessages"] = SettingsMap.GetArray();
+			fdata["EditFormats"]["edit"] = edata;
+			fdata["isSeparate"] = false;
+			fdata["defaultSearchOption"] = "Contains";
+			fdata["searchOptionsList"] = new XVar(0, "Contains", 1, "Equals", 2, "Starts with", 3, "More than", 4, "Less than", 5, "Between", 6, "Empty", 7, Constants.NOT_EMPTY);
+			fdata["filterTotals"] = 0;
+			fdata["filterMultiSelect"] = 0;
+			fdata["filterFormat"] = "Values list";
+			fdata["showCollapsed"] = false;
+			fdata["sortValueType"] = 0;
+			fdata["numberOfVisibleItems"] = 10;
+			fdata["filterBy"] = 0;
+			tdataArray["hk_invoice_mst"]["rowpointer"] = fdata;
+			tdataArray["hk_invoice_mst"][".searchableFields"].Add("rowpointer");
+			fdata = SettingsMap.GetArray();
+			fdata["Index"] = 3;
+			fdata["strName"] = "clientid";
+			fdata["GoodName"] = "clientid";
+			fdata["ownerTable"] = "dbo.hk_invoice_mst";
+			fdata["Label"] = CommonFunctions.GetFieldLabel("dbo_hk_invoice_mst","clientid");
+			fdata["FieldType"] = 202;
+			fdata["strField"] = "clientid";
+			fdata["sourceSingle"] = "clientid";
+			fdata["isSQLExpression"] = true;
+			fdata["FullName"] = "clientid";
+			fdata["UploadFolder"] = "files";
+			fdata["ViewFormats"] = SettingsMap.GetArray();
+			vdata = new XVar("ViewFormat", "");
+			vdata["NeedEncode"] = true;
+			vdata["truncateText"] = true;
+			vdata["NumberOfChars"] = 80;
+			fdata["ViewFormats"]["view"] = vdata;
+			fdata["EditFormats"] = SettingsMap.GetArray();
+			edata = new XVar("EditFormat", "Lookup wizard");
+			edata["weekdayMessage"] = new XVar("message", "", "messageType", "Text");
+			edata["weekdays"] = "[]";
+			edata["LookupType"] = 2;
+			edata["LookupTable"] = "dbo.clients";
+			edata["autoCompleteFieldsOnEdit"] = 0;
+			edata["autoCompleteFields"] = SettingsMap.GetArray();
+			edata["LCType"] = 0;
+			edata["LinkField"] = "shortcode";
+			edata["LinkFieldType"] = 0;
+			edata["DisplayField"] = "shortcode";
+			edata["LookupOrderBy"] = "";
+			edata["SelectSize"] = 1;
+			edata["acceptFileTypesHtml"] = "";
+			edata["maxNumberOfFiles"] = 1;
+			edata["controlWidth"] = 200;
+			edata["validateAs"] = SettingsMap.GetArray();
+			edata["validateAs"]["basicValidate"] = SettingsMap.GetArray();
+			edata["validateAs"]["customMessages"] = SettingsMap.GetArray();
+			fdata["EditFormats"]["edit"] = edata;
+			fdata["isSeparate"] = false;
+			fdata["defaultSearchOption"] = "Equals";
+			fdata["searchOptionsList"] = new XVar(0, "Contains", 1, "Equals", 2, "Starts with", 3, "More than", 4, "Less than", 5, "Between", 6, "Empty", 7, Constants.NOT_EMPTY);
+			fdata["filterTotals"] = 0;
+			fdata["filterMultiSelect"] = 0;
+			fdata["filterFormat"] = "Values list";
+			fdata["showCollapsed"] = false;
+			fdata["sortValueType"] = 0;
+			fdata["numberOfVisibleItems"] = 10;
+			fdata["filterBy"] = 0;
+			tdataArray["hk_invoice_mst"]["clientid"] = fdata;
+			tdataArray["hk_invoice_mst"][".searchableFields"].Add("clientid");
+			fdata = SettingsMap.GetArray();
+			fdata["Index"] = 4;
+			fdata["strName"] = "total";
+			fdata["GoodName"] = "total";
+			fdata["ownerTable"] = "dbo.hk_invoice_mst";
+			fdata["Label"] = CommonFunctions.GetFieldLabel("dbo_hk_invoice_mst","total");
+			fdata["FieldType"] = 14;
+			fdata["strField"] = "total";
+			fdata["sourceSingle"] = "total";
+			fdata["isSQLExpression"] = true;
+			fdata["FullName"] = "total";
+			fdata["UploadFolder"] = "files";
+			fdata["ViewFormats"] = SettingsMap.GetArray();
+			vdata = new XVar("ViewFormat", "Number");
+			vdata["DecimalDigits"] = 2;
+			vdata["NeedEncode"] = true;
+			vdata["truncateText"] = true;
+			vdata["NumberOfChars"] = 80;
+			fdata["ViewFormats"]["view"] = vdata;
+			fdata["EditFormats"] = SettingsMap.GetArray();
+			edata = new XVar("EditFormat", "Readonly");
+			edata["weekdayMessage"] = new XVar("message", "", "messageType", "Text");
+			edata["weekdays"] = "[]";
+			edata["acceptFileTypesHtml"] = "";
+			edata["maxNumberOfFiles"] = 1;
+			edata["controlWidth"] = 200;
+			edata["validateAs"] = SettingsMap.GetArray();
+			edata["validateAs"]["basicValidate"] = SettingsMap.GetArray();
+			edata["validateAs"]["customMessages"] = SettingsMap.GetArray();
+			fdata["EditFormats"]["edit"] = edata;
+			fdata["isSeparate"] = false;
+			fdata["defaultSearchOption"] = "Contains";
+			fdata["searchOptionsList"] = new XVar(0, "Contains", 1, "Equals", 2, "Starts with", 3, "More than", 4, "Less than", 5, "Between", 6, "Empty", 7, Constants.NOT_EMPTY);
+			fdata["filterTotals"] = 0;
+			fdata["filterMultiSelect"] = 0;
+			fdata["filterFormat"] = "Values list";
+			fdata["showCollapsed"] = false;
+			fdata["sortValueType"] = 0;
+			fdata["numberOfVisibleItems"] = 10;
+			fdata["filterBy"] = 0;
+			tdataArray["hk_invoice_mst"]["total"] = fdata;
+			tdataArray["hk_invoice_mst"][".searchableFields"].Add("total");
+			fdata = SettingsMap.GetArray();
+			fdata["Index"] = 5;
+			fdata["strName"] = "inv_date";
+			fdata["GoodName"] = "inv_date";
+			fdata["ownerTable"] = "dbo.hk_invoice_mst";
+			fdata["Label"] = CommonFunctions.GetFieldLabel("dbo_hk_invoice_mst","inv_date");
+			fdata["FieldType"] = 7;
+			fdata["strField"] = "inv_date";
+			fdata["sourceSingle"] = "inv_date";
+			fdata["isSQLExpression"] = true;
+			fdata["FullName"] = "inv_date";
+			fdata["UploadFolder"] = "files";
+			fdata["ViewFormats"] = SettingsMap.GetArray();
+			vdata = new XVar("ViewFormat", "Short Date");
+			vdata["NeedEncode"] = true;
+			vdata["truncateText"] = true;
+			vdata["NumberOfChars"] = 80;
+			fdata["ViewFormats"]["view"] = vdata;
+			fdata["EditFormats"] = SettingsMap.GetArray();
+			edata = new XVar("EditFormat", "Date");
+			edata["weekdayMessage"] = new XVar("message", "Invalid week day", "messageType", "Text");
+			edata["weekdays"] = "[]";
+			edata["acceptFileTypesHtml"] = "";
+			edata["maxNumberOfFiles"] = 1;
+			edata["DateEditType"] = 2;
+			edata["InitialYearFactor"] = 100;
+			edata["LastYearFactor"] = 10;
+			edata["controlWidth"] = 200;
+			edata["validateAs"] = SettingsMap.GetArray();
+			edata["validateAs"]["basicValidate"] = SettingsMap.GetArray();
+			edata["validateAs"]["customMessages"] = SettingsMap.GetArray();
+			fdata["EditFormats"]["edit"] = edata;
+			fdata["isSeparate"] = false;
+			fdata["defaultSearchOption"] = "Equals";
+			fdata["searchOptionsList"] = new XVar(0, "Equals", 1, "More than", 2, "Less than", 3, "Between", 4, Constants.EMPTY_SEARCH, 5, Constants.NOT_EMPTY);
+			fdata["filterTotals"] = 0;
+			fdata["filterMultiSelect"] = 0;
+			fdata["filterFormat"] = "Values list";
+			fdata["showCollapsed"] = false;
+			fdata["sortValueType"] = 0;
+			fdata["numberOfVisibleItems"] = 10;
+			fdata["filterBy"] = 0;
+			tdataArray["hk_invoice_mst"]["inv_date"] = fdata;
+			tdataArray["hk_invoice_mst"][".searchableFields"].Add("inv_date");
+			fdata = SettingsMap.GetArray();
+			fdata["Index"] = 6;
+			fdata["strName"] = "due_date";
+			fdata["GoodName"] = "due_date";
+			fdata["ownerTable"] = "dbo.hk_invoice_mst";
+			fdata["Label"] = CommonFunctions.GetFieldLabel("dbo_hk_invoice_mst","due_date");
+			fdata["FieldType"] = 7;
+			fdata["strField"] = "due_date";
+			fdata["sourceSingle"] = "due_date";
+			fdata["isSQLExpression"] = true;
+			fdata["FullName"] = "due_date";
+			fdata["UploadFolder"] = "files";
+			fdata["ViewFormats"] = SettingsMap.GetArray();
+			vdata = new XVar("ViewFormat", "Short Date");
+			vdata["NeedEncode"] = true;
+			vdata["truncateText"] = true;
+			vdata["NumberOfChars"] = 80;
+			fdata["ViewFormats"]["view"] = vdata;
+			fdata["EditFormats"] = SettingsMap.GetArray();
+			edata = new XVar("EditFormat", "Date");
+			edata["weekdayMessage"] = new XVar("message", "Invalid week day", "messageType", "Text");
+			edata["weekdays"] = "[]";
+			edata["acceptFileTypesHtml"] = "";
+			edata["maxNumberOfFiles"] = 1;
+			edata["DateEditType"] = 2;
+			edata["InitialYearFactor"] = 100;
+			edata["LastYearFactor"] = 10;
+			edata["controlWidth"] = 200;
+			edata["validateAs"] = SettingsMap.GetArray();
+			edata["validateAs"]["basicValidate"] = SettingsMap.GetArray();
+			edata["validateAs"]["customMessages"] = SettingsMap.GetArray();
+			fdata["EditFormats"]["edit"] = edata;
+			fdata["isSeparate"] = false;
+			fdata["defaultSearchOption"] = "Equals";
+			fdata["searchOptionsList"] = new XVar(0, "Equals", 1, "More than", 2, "Less than", 3, "Between", 4, Constants.EMPTY_SEARCH, 5, Constants.NOT_EMPTY);
+			fdata["filterTotals"] = 0;
+			fdata["filterMultiSelect"] = 0;
+			fdata["filterFormat"] = "Values list";
+			fdata["showCollapsed"] = false;
+			fdata["sortValueType"] = 0;
+			fdata["numberOfVisibleItems"] = 10;
+			fdata["filterBy"] = 0;
+			tdataArray["hk_invoice_mst"]["due_date"] = fdata;
+			tdataArray["hk_invoice_mst"][".searchableFields"].Add("due_date");
+			fdata = SettingsMap.GetArray();
+			fdata["Index"] = 7;
+			fdata["strName"] = "posted";
+			fdata["GoodName"] = "posted";
+			fdata["ownerTable"] = "dbo.hk_invoice_mst";
+			fdata["Label"] = CommonFunctions.GetFieldLabel("dbo_hk_invoice_mst","posted");
+			fdata["FieldType"] = 16;
+			fdata["strField"] = "posted";
+			fdata["sourceSingle"] = "posted";
+			fdata["isSQLExpression"] = true;
+			fdata["FullName"] = "posted";
+			fdata["UploadFolder"] = "files";
+			fdata["ViewFormats"] = SettingsMap.GetArray();
+			vdata = new XVar("ViewFormat", "Checkbox");
+			vdata["truncateText"] = true;
+			vdata["NumberOfChars"] = 80;
+			fdata["ViewFormats"]["view"] = vdata;
+			fdata["EditFormats"] = SettingsMap.GetArray();
+			edata = new XVar("EditFormat", "Checkbox");
+			edata["weekdayMessage"] = new XVar("message", "", "messageType", "Text");
+			edata["weekdays"] = "[]";
+			edata["acceptFileTypesHtml"] = "";
+			edata["maxNumberOfFiles"] = 1;
+			edata["controlWidth"] = 200;
+			edata["validateAs"] = SettingsMap.GetArray();
+			edata["validateAs"]["basicValidate"] = SettingsMap.GetArray();
+			edata["validateAs"]["customMessages"] = SettingsMap.GetArray();
+			fdata["EditFormats"]["edit"] = edata;
+			fdata["isSeparate"] = false;
+			fdata["defaultSearchOption"] = "Equals";
+			fdata["searchOptionsList"] = new XVar(0, "Contains", 1, "Equals", 2, "Starts with", 3, "More than", 4, "Less than", 5, "Between", 6, "Empty", 7, Constants.NOT_EMPTY);
+			fdata["filterTotals"] = 0;
+			fdata["filterMultiSelect"] = 0;
+			fdata["filterFormat"] = "Values list";
+			fdata["showCollapsed"] = false;
+			fdata["sortValueType"] = 0;
+			fdata["numberOfVisibleItems"] = 10;
+			fdata["filterBy"] = 0;
+			tdataArray["hk_invoice_mst"]["posted"] = fdata;
+			tdataArray["hk_invoice_mst"][".searchableFields"].Add("posted");
+			fdata = SettingsMap.GetArray();
+			fdata["Index"] = 8;
+			fdata["strName"] = "status";
+			fdata["GoodName"] = "status";
+			fdata["ownerTable"] = "dbo.hk_invoice_mst";
+			fdata["Label"] = CommonFunctions.GetFieldLabel("dbo_hk_invoice_mst","status");
+			fdata["FieldType"] = 202;
+			fdata["strField"] = "status";
+			fdata["sourceSingle"] = "status";
+			fdata["isSQLExpression"] = true;
+			fdata["FullName"] = "status";
+			fdata["UploadFolder"] = "files";
+			fdata["ViewFormats"] = SettingsMap.GetArray();
+			vdata = new XVar("ViewFormat", "");
+			vdata["NeedEncode"] = true;
+			vdata["truncateText"] = true;
+			vdata["NumberOfChars"] = 80;
+			fdata["ViewFormats"]["view"] = vdata;
+			fdata["EditFormats"] = SettingsMap.GetArray();
+			edata = new XVar("EditFormat", "Lookup wizard");
+			edata["weekdayMessage"] = new XVar("message", "", "messageType", "Text");
+			edata["weekdays"] = "[]";
+			edata["LookupType"] = 0;
+			edata["autoCompleteFieldsOnEdit"] = 0;
+			edata["autoCompleteFields"] = SettingsMap.GetArray();
+			edata["LCType"] = 0;
+			edata["LookupValues"] = SettingsMap.GetArray();
+			edata["LookupValues"].Add("Draft");
+			edata["LookupValues"].Add("Open");
+			edata["LookupValues"].Add("Void");
+			edata["LookupValues"].Add("Paid");
+			edata["SelectSize"] = 1;
+			edata["IsRequired"] = true;
+			edata["acceptFileTypesHtml"] = "";
+			edata["maxNumberOfFiles"] = 1;
+			edata["controlWidth"] = 200;
+			edata["validateAs"] = SettingsMap.GetArray();
+			edata["validateAs"]["basicValidate"] = SettingsMap.GetArray();
+			edata["validateAs"]["customMessages"] = SettingsMap.GetArray();
+			edata["validateAs"]["basicValidate"].Add("IsRequired");
+			fdata["EditFormats"]["edit"] = edata;
+			fdata["isSeparate"] = false;
+			fdata["defaultSearchOption"] = "Equals";
+			fdata["searchOptionsList"] = new XVar(0, "Contains", 1, "Equals", 2, "Starts with", 3, "More than", 4, "Less than", 5, "Between", 6, "Empty", 7, Constants.NOT_EMPTY);
+			fdata["filterTotals"] = 0;
+			fdata["filterMultiSelect"] = 0;
+			fdata["filterFormat"] = "Values list";
+			fdata["showCollapsed"] = false;
+			fdata["sortValueType"] = 0;
+			fdata["numberOfVisibleItems"] = 10;
+			fdata["filterBy"] = 0;
+			tdataArray["hk_invoice_mst"]["status"] = fdata;
+			tdataArray["hk_invoice_mst"][".searchableFields"].Add("status");
+			GlobalVars.tables_data["dbo.hk_invoice_mst"] = tdataArray["hk_invoice_mst"];
+			GlobalVars.field_labels["dbo_hk_invoice_mst"] = fieldLabelsArray["hk_invoice_mst"];
+			GlobalVars.fieldToolTips["dbo_hk_invoice_mst"] = fieldToolTipsArray["hk_invoice_mst"];
+			GlobalVars.placeHolders["dbo_hk_invoice_mst"] = placeHoldersArray["hk_invoice_mst"];
+			GlobalVars.page_titles["dbo_hk_invoice_mst"] = pageTitlesArray["hk_invoice_mst"];
+			CommonFunctions.changeTextControlsToDate(new XVar("dbo.hk_invoice_mst"));
+			GlobalVars.detailsTablesData["dbo.hk_invoice_mst"] = SettingsMap.GetArray();
+
+
+			dIndex = 0;
+			detailsParam = SettingsMap.GetArray();
+			detailsParam["dDataSourceTable"] = "dbo.hk_invitem_mst";
+			detailsParam["dOriginalTable"] = "dbo.hk_invitem_mst";
+			detailsParam["dType"] = Constants.PAGE_LIST;
+			detailsParam["dShortTable"] = "hk_invitem_mst";
+			detailsParam["dCaptionTable"] = CommonFunctions.GetTableCaption(new XVar("dbo_hk_invitem_mst"));
+			detailsParam["masterKeys"] = SettingsMap.GetArray();
+			detailsParam["detailKeys"] = SettingsMap.GetArray();
+			GlobalVars.detailsTablesData["dbo.hk_invoice_mst"][dIndex] = detailsParam;
+			GlobalVars.detailsTablesData["dbo.hk_invoice_mst"][dIndex]["masterKeys"] = SettingsMap.GetArray();
+			GlobalVars.detailsTablesData["dbo.hk_invoice_mst"][dIndex]["masterKeys"].Add("inv_num");
+			GlobalVars.detailsTablesData["dbo.hk_invoice_mst"][dIndex]["masterKeys"].Add("clientid");
+			GlobalVars.detailsTablesData["dbo.hk_invoice_mst"][dIndex]["detailKeys"] = SettingsMap.GetArray();
+			GlobalVars.detailsTablesData["dbo.hk_invoice_mst"][dIndex]["detailKeys"].Add("inv_num");
+			GlobalVars.detailsTablesData["dbo.hk_invoice_mst"][dIndex]["detailKeys"].Add("clientid");
+			GlobalVars.masterTablesData["dbo.hk_invoice_mst"] = SettingsMap.GetArray();
+
+
+			strOriginalDetailsTable = "dbo.clients";
+			masterParams = SettingsMap.GetArray();
+			masterParams["mDataSourceTable"] = "dbo.clients";
+			masterParams["mOriginalTable"] = strOriginalDetailsTable;
+			masterParams["mShortTable"] = "clients";
+			masterParams["masterKeys"] = SettingsMap.GetArray();
+			masterParams["detailKeys"] = SettingsMap.GetArray();
+			masterParams["type"] = Constants.PAGE_LIST;
+			GlobalVars.masterTablesData["dbo.hk_invoice_mst"][0] = masterParams;
+			GlobalVars.masterTablesData["dbo.hk_invoice_mst"][0]["masterKeys"] = SettingsMap.GetArray();
+			GlobalVars.masterTablesData["dbo.hk_invoice_mst"][0]["masterKeys"].Add("shortcode");
+			GlobalVars.masterTablesData["dbo.hk_invoice_mst"][0]["detailKeys"] = SettingsMap.GetArray();
+			GlobalVars.masterTablesData["dbo.hk_invoice_mst"][0]["detailKeys"].Add("clientid");
+
+SQLEntity obj = null;
+var protoArray = SettingsMap.GetArray();
+protoArray["0"] = SettingsMap.GetArray();
+protoArray["0"]["m_strHead"] = "SELECT";
+protoArray["0"]["m_strFieldList"] = "inv_num,  	rowpointer,  	clientid,  	total,  	inv_date,  	due_date,  	posted,  	status";
+protoArray["0"]["m_strFrom"] = "FROM dbo.hk_invoice_mst";
+protoArray["0"]["m_strWhere"] = "";
+protoArray["0"]["m_strOrderBy"] = "";
+	
+		
+protoArray["0"]["cipherer"] = null;
+protoArray["2"] = SettingsMap.GetArray();
+protoArray["2"]["m_sql"] = "";
+protoArray["2"]["m_uniontype"] = "SQLL_UNKNOWN";
+obj = new SQLNonParsed(new XVar("m_sql", ""));
+
+protoArray["2"]["m_column"] = obj;
+protoArray["2"]["m_contained"] = SettingsMap.GetArray();
+protoArray["2"]["m_strCase"] = "";
+protoArray["2"]["m_havingmode"] = false;
+protoArray["2"]["m_inBrackets"] = false;
+protoArray["2"]["m_useAlias"] = false;
+obj = new SQLLogicalExpr(protoArray["2"]);
+
+protoArray["0"]["m_where"] = obj;
+protoArray["4"] = SettingsMap.GetArray();
+protoArray["4"]["m_sql"] = "";
+protoArray["4"]["m_uniontype"] = "SQLL_UNKNOWN";
+obj = new SQLNonParsed(new XVar("m_sql", ""));
+
+protoArray["4"]["m_column"] = obj;
+protoArray["4"]["m_contained"] = SettingsMap.GetArray();
+protoArray["4"]["m_strCase"] = "";
+protoArray["4"]["m_havingmode"] = false;
+protoArray["4"]["m_inBrackets"] = false;
+protoArray["4"]["m_useAlias"] = false;
+obj = new SQLLogicalExpr(protoArray["4"]);
+
+protoArray["0"]["m_having"] = obj;
+protoArray["0"]["m_fieldlist"] = SettingsMap.GetArray();
+protoArray["6"] = SettingsMap.GetArray();
+obj = new SQLField(new XVar("m_strName", "inv_num", "m_strTable", "dbo.hk_invoice_mst", "m_srcTableName", "dbo.hk_invoice_mst"));
+
+protoArray["6"]["m_sql"] = "inv_num";
+protoArray["6"]["m_srcTableName"] = "dbo.hk_invoice_mst";
+protoArray["6"]["m_expr"] = obj;
+protoArray["6"]["m_alias"] = "";
+obj = new SQLFieldListItem(protoArray["6"]);
+
+protoArray["0"]["m_fieldlist"].Add(obj);
+protoArray["8"] = SettingsMap.GetArray();
+obj = new SQLField(new XVar("m_strName", "rowpointer", "m_strTable", "dbo.hk_invoice_mst", "m_srcTableName", "dbo.hk_invoice_mst"));
+
+protoArray["8"]["m_sql"] = "rowpointer";
+protoArray["8"]["m_srcTableName"] = "dbo.hk_invoice_mst";
+protoArray["8"]["m_expr"] = obj;
+protoArray["8"]["m_alias"] = "";
+obj = new SQLFieldListItem(protoArray["8"]);
+
+protoArray["0"]["m_fieldlist"].Add(obj);
+protoArray["10"] = SettingsMap.GetArray();
+obj = new SQLField(new XVar("m_strName", "clientid", "m_strTable", "dbo.hk_invoice_mst", "m_srcTableName", "dbo.hk_invoice_mst"));
+
+protoArray["10"]["m_sql"] = "clientid";
+protoArray["10"]["m_srcTableName"] = "dbo.hk_invoice_mst";
+protoArray["10"]["m_expr"] = obj;
+protoArray["10"]["m_alias"] = "";
+obj = new SQLFieldListItem(protoArray["10"]);
+
+protoArray["0"]["m_fieldlist"].Add(obj);
+protoArray["12"] = SettingsMap.GetArray();
+obj = new SQLField(new XVar("m_strName", "total", "m_strTable", "dbo.hk_invoice_mst", "m_srcTableName", "dbo.hk_invoice_mst"));
+
+protoArray["12"]["m_sql"] = "total";
+protoArray["12"]["m_srcTableName"] = "dbo.hk_invoice_mst";
+protoArray["12"]["m_expr"] = obj;
+protoArray["12"]["m_alias"] = "";
+obj = new SQLFieldListItem(protoArray["12"]);
+
+protoArray["0"]["m_fieldlist"].Add(obj);
+protoArray["14"] = SettingsMap.GetArray();
+obj = new SQLField(new XVar("m_strName", "inv_date", "m_strTable", "dbo.hk_invoice_mst", "m_srcTableName", "dbo.hk_invoice_mst"));
+
+protoArray["14"]["m_sql"] = "inv_date";
+protoArray["14"]["m_srcTableName"] = "dbo.hk_invoice_mst";
+protoArray["14"]["m_expr"] = obj;
+protoArray["14"]["m_alias"] = "";
+obj = new SQLFieldListItem(protoArray["14"]);
+
+protoArray["0"]["m_fieldlist"].Add(obj);
+protoArray["16"] = SettingsMap.GetArray();
+obj = new SQLField(new XVar("m_strName", "due_date", "m_strTable", "dbo.hk_invoice_mst", "m_srcTableName", "dbo.hk_invoice_mst"));
+
+protoArray["16"]["m_sql"] = "due_date";
+protoArray["16"]["m_srcTableName"] = "dbo.hk_invoice_mst";
+protoArray["16"]["m_expr"] = obj;
+protoArray["16"]["m_alias"] = "";
+obj = new SQLFieldListItem(protoArray["16"]);
+
+protoArray["0"]["m_fieldlist"].Add(obj);
+protoArray["18"] = SettingsMap.GetArray();
+obj = new SQLField(new XVar("m_strName", "posted", "m_strTable", "dbo.hk_invoice_mst", "m_srcTableName", "dbo.hk_invoice_mst"));
+
+protoArray["18"]["m_sql"] = "posted";
+protoArray["18"]["m_srcTableName"] = "dbo.hk_invoice_mst";
+protoArray["18"]["m_expr"] = obj;
+protoArray["18"]["m_alias"] = "";
+obj = new SQLFieldListItem(protoArray["18"]);
+
+protoArray["0"]["m_fieldlist"].Add(obj);
+protoArray["20"] = SettingsMap.GetArray();
+obj = new SQLField(new XVar("m_strName", "status", "m_strTable", "dbo.hk_invoice_mst", "m_srcTableName", "dbo.hk_invoice_mst"));
+
+protoArray["20"]["m_sql"] = "status";
+protoArray["20"]["m_srcTableName"] = "dbo.hk_invoice_mst";
+protoArray["20"]["m_expr"] = obj;
+protoArray["20"]["m_alias"] = "";
+obj = new SQLFieldListItem(protoArray["20"]);
+
+protoArray["0"]["m_fieldlist"].Add(obj);
+protoArray["0"]["m_fromlist"] = SettingsMap.GetArray();
+protoArray["22"] = SettingsMap.GetArray();
+protoArray["22"]["m_link"] = "SQLL_MAIN";
+protoArray["23"] = SettingsMap.GetArray();
+protoArray["23"]["m_strName"] = "dbo.hk_invoice_mst";
+protoArray["23"]["m_srcTableName"] = "dbo.hk_invoice_mst";
+protoArray["23"]["m_columns"] = SettingsMap.GetArray();
+protoArray["23"]["m_columns"].Add("inv_num");
+protoArray["23"]["m_columns"].Add("rowpointer");
+protoArray["23"]["m_columns"].Add("clientid");
+protoArray["23"]["m_columns"].Add("total");
+protoArray["23"]["m_columns"].Add("inv_date");
+protoArray["23"]["m_columns"].Add("due_date");
+protoArray["23"]["m_columns"].Add("posted");
+protoArray["23"]["m_columns"].Add("status");
+obj = new SQLTable(protoArray["23"]);
+
+protoArray["22"]["m_table"] = obj;
+protoArray["22"]["m_sql"] = "dbo.hk_invoice_mst";
+protoArray["22"]["m_alias"] = "";
+protoArray["22"]["m_srcTableName"] = "dbo.hk_invoice_mst";
+protoArray["24"] = SettingsMap.GetArray();
+protoArray["24"]["m_sql"] = "";
+protoArray["24"]["m_uniontype"] = "SQLL_UNKNOWN";
+obj = new SQLNonParsed(new XVar("m_sql", ""));
+
+protoArray["24"]["m_column"] = obj;
+protoArray["24"]["m_contained"] = SettingsMap.GetArray();
+protoArray["24"]["m_strCase"] = "";
+protoArray["24"]["m_havingmode"] = false;
+protoArray["24"]["m_inBrackets"] = false;
+protoArray["24"]["m_useAlias"] = false;
+obj = new SQLLogicalExpr(protoArray["24"]);
+
+protoArray["22"]["m_joinon"] = obj;
+obj = new SQLFromListItem(protoArray["22"]);
+
+protoArray["0"]["m_fromlist"].Add(obj);
+protoArray["0"]["m_groupby"] = SettingsMap.GetArray();
+protoArray["0"]["m_orderby"] = SettingsMap.GetArray();
+protoArray["0"]["m_srcTableName"] = "dbo.hk_invoice_mst";
+obj = new SQLQuery(protoArray["0"]);
+
+queryData_Array["hk_invoice_mst"] = obj;
+
+				
+		
+			tdataArray["hk_invoice_mst"][".sqlquery"] = queryData_Array["hk_invoice_mst"];
+			tdataArray["hk_invoice_mst"][".hasEvents"] = false;
+		}
+	}
+
+}

@@ -1,0 +1,2 @@
+
+Runner.pages.PageSettings.addPageEvent('dbo.Clients_provisioning',Runner.pages.constants.PAGE_ADD,"afterPageReady",function(pageObj,proxy,pageid,inlineRow,inlineObject,row){var ctrl=Runner.getControl(pageid,'shortcode');ctrl.addStyle('text-transform: uppercase;');});

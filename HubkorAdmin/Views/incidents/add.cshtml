@@ -1,0 +1,524 @@
+﻿@using runnerDotNet;
+@{
+ XTempl Model = this.Model;
+ if(ViewBag != null && ViewBag.xt != null)
+ {
+  Model = ViewBag.xt;
+  if(Model != null)
+  {
+   Model.currentViewContext = ViewContext;
+  }
+ }
+ string webRootPath = "";
+}
+
+<!doctype html>@(new HtmlString(MVCFunctions.GetBuferContentAndClearBufer()))
+<HTML @(Model.displayVar("html_attrs"))>
+	<head>
+				<META http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<META name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@(Model.displayVar("pagetitle"))</title>
+	<META http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<BASE href="@(Model.displayVar("projectPath"))" />
+		<LINK REL="stylesheet" href="styles/default.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	@foreach (string _rtlCSS in Model.GetSection("rtlCSS", this)){
+	<LINK REL="stylesheet" href="styles/defaultRTL.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	}
+	@foreach (string _styleCSSFiles in Model.GetSection("styleCSSFiles", this)){
+	<LINK REL="stylesheet" href="@(Model.displayVar("stylepath"))" type="text/css" />
+	}
+			
+	</head>
+
+	<BODY class="@(Model.displayVar("stylename")) function-add">
+	@foreach (string _body in Model.GetSection("body", this)){
+		{Html.RenderSharedView("header");}
+		<style>@MvcHtmlString.Create(@"")@(Model.displayVar("containerCss"))@MvcHtmlString.Create(@"")</style>
+		@(Model.displayVar("locking"))
+		<div class="r-small-page" 
+			data-body-align="center"
+			data-body-width="standard"
+		>
+							@foreach (string _top_block in Model.GetSection("top_block", this)){
+<DIV class="r-form" data-location="top" id="form_top_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_top")) data-pageid="@(Model.displayVar("pageid"))" data-v-width="4" data-v-margin="1">		
+	 
+		<div class="row">
+			 
+				<DIV data-cellId="top_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_top_c1")) class=" r-ori-vert			col-md-12
+	">
+	 
+		<H2 data-itemtype="add_header" data-itemid="add_header" @(Model.displayVar("item_add_header")) data-pageid="@(Model.displayVar("pageid"))">@(Model.displayVar("pagetitlelabel dbo_incidents add"))</h2>
+	</div>					</div>
+	</div>		
+}
+									@foreach (string _above_grid_block in Model.GetSection("above-grid_block", this)){
+<DIV class="r-form" data-location="above-grid" id="form_above-grid_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_above-grid")) data-pageid="@(Model.displayVar("pageid"))" data-v-width="4" data-v-margin="1">		
+	 
+		<div class="row">
+			 
+				<DIV data-cellId="above-grid_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_above-grid_c1")) class=" r-ori-vert			col-md-12
+	">
+	 
+		@foreach (string _message_block in Model.GetSection("message_block", this)){
+<DIV data-itemtype="add_message" data-itemid="add_message" @(Model.displayVar("item_add_message")) data-pageid="@(Model.displayVar("pageid"))" class="alert @(Model.displayVar("message_class"))" role="alert">
+<h5>@(Model.displayVar("message"))</h5>
+<div>
+@foreach (string _message_back_button in Model.GetSection("message_back_button", this)){
+		
+	<BUTTON class="btn btn-sm btn-default" @(Model.displayVar("backbutton_attrs"))>Back to list</button>
+	}
+@foreach (string _view_page_button in Model.GetSection("view_page_button", this)){
+	<BUTTON class="btn btn-sm btn-default" @(Model.displayVar("view_page_button_attrs"))>View</button>
+}
+@foreach (string _edit_page_button in Model.GetSection("edit_page_button", this)){
+	<BUTTON class="btn btn-sm btn-default" @(Model.displayVar("edit_page_button_attrs"))>Edit</button>
+}
+</div>
+</div>
+}	</div>					</div>
+	</div>		
+}
+									@foreach (string _grid_block in Model.GetSection("grid_block", this)){
+
+
+
+
+ 
+	 
+												<TABLE data-body-align="center" data-location="grid" id="form_grid_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_grid")) data-pageid="@(Model.displayVar("pageid"))" class="r-edit-form" cellpadding="0" cellspacing="0" @(Model.displayVar("grid_hiddenattr")) data-form-width="1" data-v-width="4">
+	<tbody>
+										<TR @(Model.displayVar("row_grid_0"))>
+										
+
+@foreach (string _cellblock_grid_c3 in Model.GetSection("cellblock_grid_c3", this)){
+<TD @(Model.displayVar("cell_grid_c3")) class=" r-ori-vert" data-fullwidth data-cellId="grid_c3" data-pageid="@(Model.displayVar("pageid"))" data-v-cell="4">
+	<div edit-form-cell class="clearfix">
+				
+@foreach (string _clientid_fieldblock in Model.GetSection("clientid_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_clientid"))  r-vertical-field" data-signal-error-for="clientid@(Model.displayVar("id"))" @(Model.displayVar("required_attr_clientid")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" @(Model.displayVar("item_integrated_edit_field4")) data-pageid="@(Model.displayVar("pageid"))" data-field="clientid" data-fieldname="clientid">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_clientid"))">
+		@foreach (string _clientid_label in Model.GetSection("clientid_label", this)){@(Model.displayVar("label dbo_incidents clientid"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("clientid_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="clientid" {$tooltipAttr dbo_incidents clientid }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents clientid"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _category_fieldblock in Model.GetSection("category_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_category"))  r-vertical-field" data-signal-error-for="category@(Model.displayVar("id"))" @(Model.displayVar("required_attr_category")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field18" @(Model.displayVar("item_integrated_edit_field18")) data-pageid="@(Model.displayVar("pageid"))" data-field="category" data-fieldname="category">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_category"))">
+		@foreach (string _category_label in Model.GetSection("category_label", this)){@(Model.displayVar("label dbo_incidents category"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("category_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="category" {$tooltipAttr dbo_incidents category }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents category"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _apps_fieldblock in Model.GetSection("apps_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_apps"))  r-vertical-field" data-signal-error-for="apps@(Model.displayVar("id"))" @(Model.displayVar("required_attr_apps")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field5" @(Model.displayVar("item_integrated_edit_field5")) data-pageid="@(Model.displayVar("pageid"))" data-field="apps" data-fieldname="apps">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_apps"))">
+		@foreach (string _apps_label in Model.GetSection("apps_label", this)){@(Model.displayVar("label dbo_incidents apps"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("apps_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="apps" {$tooltipAttr dbo_incidents apps }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents apps"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _summary_fieldblock in Model.GetSection("summary_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_summary"))  r-vertical-field" data-signal-error-for="summary@(Model.displayVar("id"))" @(Model.displayVar("required_attr_summary")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" @(Model.displayVar("item_integrated_edit_field2")) data-pageid="@(Model.displayVar("pageid"))" data-field="summary" data-fieldname="summary">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_summary"))">
+		@foreach (string _summary_label in Model.GetSection("summary_label", this)){@(Model.displayVar("label dbo_incidents summary"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("summary_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="summary" {$tooltipAttr dbo_incidents summary }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents summary"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _description_fieldblock in Model.GetSection("description_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_description"))  r-vertical-field" data-signal-error-for="description@(Model.displayVar("id"))" @(Model.displayVar("required_attr_description")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" @(Model.displayVar("item_integrated_edit_field3")) data-pageid="@(Model.displayVar("pageid"))" data-field="description" data-fieldname="description">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_description"))">
+		@foreach (string _description_label in Model.GetSection("description_label", this)){@(Model.displayVar("label dbo_incidents description"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("description_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="description" {$tooltipAttr dbo_incidents description }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents description"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _severity_fieldblock in Model.GetSection("severity_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_severity"))  r-vertical-field" data-signal-error-for="severity@(Model.displayVar("id"))" @(Model.displayVar("required_attr_severity")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field10" @(Model.displayVar("item_integrated_edit_field10")) data-pageid="@(Model.displayVar("pageid"))" data-field="severity" data-fieldname="severity">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_severity"))">
+		@foreach (string _severity_label in Model.GetSection("severity_label", this)){@(Model.displayVar("label dbo_incidents severity"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("severity_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="severity" {$tooltipAttr dbo_incidents severity }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents severity"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _phone_fieldblock in Model.GetSection("phone_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_phone"))  r-vertical-field" data-signal-error-for="phone@(Model.displayVar("id"))" @(Model.displayVar("required_attr_phone")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field12" @(Model.displayVar("item_integrated_edit_field12")) data-pageid="@(Model.displayVar("pageid"))" data-field="phone" data-fieldname="phone">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_phone"))">
+		@foreach (string _phone_label in Model.GetSection("phone_label", this)){@(Model.displayVar("label dbo_incidents phone"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("phone_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="phone" {$tooltipAttr dbo_incidents phone }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents phone"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _contact_fieldblock in Model.GetSection("contact_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_contact"))  r-vertical-field" data-signal-error-for="contact@(Model.displayVar("id"))" @(Model.displayVar("required_attr_contact")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field13" @(Model.displayVar("item_integrated_edit_field13")) data-pageid="@(Model.displayVar("pageid"))" data-field="contact" data-fieldname="contact">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_contact"))">
+		@foreach (string _contact_label in Model.GetSection("contact_label", this)){@(Model.displayVar("label dbo_incidents contact"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("contact_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="contact" {$tooltipAttr dbo_incidents contact }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents contact"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _contact_pref_fieldblock in Model.GetSection("contact_pref_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_contact_pref"))  r-vertical-field" data-signal-error-for="contact_pref@(Model.displayVar("id"))" @(Model.displayVar("required_attr_contact_pref")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field14" @(Model.displayVar("item_integrated_edit_field14")) data-pageid="@(Model.displayVar("pageid"))" data-field="contact_pref" data-fieldname="contact_pref">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_contact_pref"))">
+		@foreach (string _contact_pref_label in Model.GetSection("contact_pref_label", this)){@(Model.displayVar("label dbo_incidents contact_pref"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("contact_pref_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="contact_pref" {$tooltipAttr dbo_incidents contact_pref }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents contact_pref"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _status_fieldblock in Model.GetSection("status_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_status"))  r-vertical-field" data-signal-error-for="status@(Model.displayVar("id"))" @(Model.displayVar("required_attr_status")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field8" @(Model.displayVar("item_integrated_edit_field8")) data-pageid="@(Model.displayVar("pageid"))" data-field="status" data-fieldname="status">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_status"))">
+		@foreach (string _status_label in Model.GetSection("status_label", this)){@(Model.displayVar("label dbo_incidents status"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("status_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="status" {$tooltipAttr dbo_incidents status }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents status"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _documents_fieldblock in Model.GetSection("documents_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_documents"))  r-vertical-field" data-signal-error-for="documents@(Model.displayVar("id"))" @(Model.displayVar("required_attr_documents")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field15" @(Model.displayVar("item_integrated_edit_field15")) data-pageid="@(Model.displayVar("pageid"))" data-field="documents" data-fieldname="documents">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_documents"))">
+		@foreach (string _documents_label in Model.GetSection("documents_label", this)){@(Model.displayVar("label dbo_incidents documents"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("documents_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="documents" {$tooltipAttr dbo_incidents documents }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents documents"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _createdby_fieldblock in Model.GetSection("createdby_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_createdby"))  r-vertical-field" data-signal-error-for="createdby@(Model.displayVar("id"))" @(Model.displayVar("required_attr_createdby")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field11" @(Model.displayVar("item_integrated_edit_field11")) data-pageid="@(Model.displayVar("pageid"))" data-field="createdby" data-fieldname="createdby">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_createdby"))">
+		@foreach (string _createdby_label in Model.GetSection("createdby_label", this)){@(Model.displayVar("label dbo_incidents createdby"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("createdby_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="createdby" {$tooltipAttr dbo_incidents createdby }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents createdby"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _createdate_fieldblock in Model.GetSection("createdate_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_createdate"))  r-vertical-field" data-signal-error-for="createdate@(Model.displayVar("id"))" @(Model.displayVar("required_attr_createdate")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field6" @(Model.displayVar("item_integrated_edit_field6")) data-pageid="@(Model.displayVar("pageid"))" data-field="createdate" data-fieldname="createdate">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_createdate"))">
+		@foreach (string _createdate_label in Model.GetSection("createdate_label", this)){@(Model.displayVar("label dbo_incidents createdate"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("createdate_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="createdate" {$tooltipAttr dbo_incidents createdate }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents createdate"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _duedate_fieldblock in Model.GetSection("duedate_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_duedate"))  r-vertical-field" data-signal-error-for="duedate@(Model.displayVar("id"))" @(Model.displayVar("required_attr_duedate")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field9" @(Model.displayVar("item_integrated_edit_field9")) data-pageid="@(Model.displayVar("pageid"))" data-field="duedate" data-fieldname="duedate">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_duedate"))">
+		@foreach (string _duedate_label in Model.GetSection("duedate_label", this)){@(Model.displayVar("label dbo_incidents duedate"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("duedate_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="duedate" {$tooltipAttr dbo_incidents duedate }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents duedate"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _completed_fieldblock in Model.GetSection("completed_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_completed"))  r-vertical-field" data-signal-error-for="completed@(Model.displayVar("id"))" @(Model.displayVar("required_attr_completed")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field7" @(Model.displayVar("item_integrated_edit_field7")) data-pageid="@(Model.displayVar("pageid"))" data-field="completed" data-fieldname="completed">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_completed"))">
+		@foreach (string _completed_label in Model.GetSection("completed_label", this)){@(Model.displayVar("label dbo_incidents completed"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("completed_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="completed" {$tooltipAttr dbo_incidents completed }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents completed"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _est_hrs_fieldblock in Model.GetSection("est_hrs_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_est_hrs"))  r-vertical-field" data-signal-error-for="est_hrs@(Model.displayVar("id"))" @(Model.displayVar("required_attr_est_hrs")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" @(Model.displayVar("item_integrated_edit_field")) data-pageid="@(Model.displayVar("pageid"))" data-field="est_hrs" data-fieldname="est_hrs">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_est_hrs"))">
+		@foreach (string _est_hrs_label in Model.GetSection("est_hrs_label", this)){@(Model.displayVar("label dbo_incidents est_hrs"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("est_hrs_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="est_hrs" {$tooltipAttr dbo_incidents est_hrs }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents est_hrs"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _act_hrs_fieldblock in Model.GetSection("act_hrs_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_act_hrs"))  r-vertical-field" data-signal-error-for="act_hrs@(Model.displayVar("id"))" @(Model.displayVar("required_attr_act_hrs")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" @(Model.displayVar("item_integrated_edit_field1")) data-pageid="@(Model.displayVar("pageid"))" data-field="act_hrs" data-fieldname="act_hrs">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_act_hrs"))">
+		@foreach (string _act_hrs_label in Model.GetSection("act_hrs_label", this)){@(Model.displayVar("label dbo_incidents act_hrs"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("act_hrs_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="act_hrs" {$tooltipAttr dbo_incidents act_hrs }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents act_hrs"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _assignedto_fieldblock in Model.GetSection("assignedto_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_assignedto"))  r-vertical-field" data-signal-error-for="assignedto@(Model.displayVar("id"))" @(Model.displayVar("required_attr_assignedto")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field16" @(Model.displayVar("item_integrated_edit_field16")) data-pageid="@(Model.displayVar("pageid"))" data-field="assignedto" data-fieldname="assignedto">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_assignedto"))">
+		@foreach (string _assignedto_label in Model.GetSection("assignedto_label", this)){@(Model.displayVar("label dbo_incidents assignedto"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("assignedto_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="assignedto" {$tooltipAttr dbo_incidents assignedto }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents assignedto"))		</div>
+	</div>
+</div>
+
+
+}
+											
+@foreach (string _tech_notes_fieldblock in Model.GetSection("tech_notes_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_tech_notes"))  r-vertical-field" data-signal-error-for="tech_notes@(Model.displayVar("id"))" @(Model.displayVar("required_attr_tech_notes")) data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field17" @(Model.displayVar("item_integrated_edit_field17")) data-pageid="@(Model.displayVar("pageid"))" data-field="tech_notes" data-fieldname="tech_notes">
+
+	<LABEL class="r-edit-label control-label" for="@(Model.displayVar("labelfor_tech_notes"))">
+		@foreach (string _tech_notes_label in Model.GetSection("tech_notes_label", this)){@(Model.displayVar("label dbo_incidents tech_notes"))}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		@(Model.displayVar("tech_notes_editcontrol"))	</div>
+	<DIV class="r-edit-tooltip" data-helpfor="tech_notes" {$tooltipAttr dbo_incidents tech_notes }>
+		<div class="text-muted" >
+		@(Model.displayVar("tooltip dbo_incidents tech_notes"))		</div>
+	</div>
+</div>
+
+
+}
+	
+								</td>
+			}
+								</tr>
+			</tbody></table>
+}
+									@foreach (string _below_grid_block in Model.GetSection("below-grid_block", this)){
+<DIV class="r-form" data-location="below-grid" id="form_below-grid_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_below-grid")) data-pageid="@(Model.displayVar("pageid"))" data-v-width="4" data-v-margin="1">		
+	 
+		<div class="row">
+			 
+				<DIV data-cellId="below-grid_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_below-grid_c1")) class="			col-md-12
+	">
+	 
+		<SPAN data-itemtype="add_save" data-itemid="add_save" @(Model.displayVar("item_add_save")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-primary   
+	" @(Model.displayVar("savebutton_attrs"))>
+							Save			</a>
+</span>
+	 
+		<SPAN data-itemtype="add_reset" data-itemid="add_reset" @(Model.displayVar("item_add_reset")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-default   
+	" id="resetButton@(Model.displayVar("id"))">
+							Reset			</a>
+</span>
+	 
+		@foreach (string _back_button in Model.GetSection("back_button", this)){
+<SPAN data-itemtype="add_back_list" data-itemid="add_back_list" @(Model.displayVar("item_add_back_list")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-default   
+	" id="backButton@(Model.displayVar("id"))">
+							Back to list			</a>
+</span>
+}
+	 
+		@foreach (string _cancel_button in Model.GetSection("cancel_button", this)){
+<SPAN data-itemtype="add_cancel" data-itemid="add_cancel" @(Model.displayVar("item_add_cancel")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-default   
+	" id="cancelButton@(Model.displayVar("id"))">
+							Cancel			</a>
+</span>
+}
+	</div>					</div>
+	</div>		
+}
+			</div>
+		{Html.RenderSharedView("footer");}
+	}
+	</body>
+</html>

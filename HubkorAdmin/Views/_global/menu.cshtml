@@ -1,0 +1,936 @@
+﻿@using runnerDotNet;
+@{
+ XTempl Model = this.Model;
+ if(ViewBag != null && ViewBag.xt != null)
+ {
+  Model = ViewBag.xt;
+  if(Model != null)
+  {
+   Model.currentViewContext = ViewContext;
+  }
+ }
+ string webRootPath = "";
+}
+
+<!doctype html>@(new HtmlString(MVCFunctions.GetBuferContentAndClearBufer()))
+<HTML @(Model.displayVar("html_attrs"))>
+	<head>
+				<META http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<META name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@(Model.displayVar("pagetitle"))</title>
+	<META http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<BASE href="@(Model.displayVar("projectPath"))" />
+		<LINK REL="stylesheet" href="styles/default.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	@foreach (string _rtlCSS in Model.GetSection("rtlCSS", this)){
+	<LINK REL="stylesheet" href="styles/defaultRTL.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	}
+	@foreach (string _styleCSSFiles in Model.GetSection("styleCSSFiles", this)){
+	<LINK REL="stylesheet" href="@(Model.displayVar("stylepath"))" type="text/css" />
+	}
+			
+	</head>
+	<BODY class="@(Model.displayVar("stylename")) function-menu">
+	@foreach (string _body in Model.GetSection("body", this)){
+		{Html.RenderSharedView("header");}
+		<style>@MvcHtmlString.Create(@"")@(Model.displayVar("containerCss"))@MvcHtmlString.Create(@"")</style>
+		<div class="r-topbar-page">
+			<div data-menu-width="full" 
+				data-fixed 
+				class="r-topheader" 
+				data-resize-name="topbar"
+				data-body-align="left"
+			>
+								@foreach (string _supertop_block in Model.GetSection("supertop_block", this)){
+<NAV class="navbar navbar-default" data-location="supertop" id="form_supertop_@(Model.displayVar("pageid"))" data-makeup="topbar" @(Model.displayVar("form_supertop")) data-pageid="@(Model.displayVar("pageid"))">
+			 
+							 
+				<SPAN data-cellId="supertop_c1" data-pageid="@(Model.displayVar("pageid"))" class="r-align-left navbar-header" data-itemid="logo" @(Model.displayVar("item_logo"))>
+				@foreach (string _logo_block in Model.GetSection("logo_block", this)){
+	<A data-itemtype="logo" data-itemid="logo" @(Model.displayVar("item_logo")) data-pageid="@(Model.displayVar("pageid"))" class="navbar-brand" href="@(Model.displayVar("home_link"))" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("logo_hiddenattr"))>
+		@(Model.displayVar("logo"))
+	</A>
+}
+				<button data-pageid="1" type="button" class="navbar-toggle collapsed" data-runner-toggle="collapse" data-target="[data-mobile-controlled]">	
+					<span class="sr-only">Toggle navigation</span>	
+					<span class="icon-bar"></span>					
+				</button>				
+			</span>
+		 
+				<SPAN data-cellId="supertop_c1" data-pageid="@(Model.displayVar("pageid"))" class="r-align-left navbar-collapse" data-itemtype="menu" data-itemid="menu" @(Model.displayVar("item_menu")) data-pageid="@(Model.displayVar("pageid"))">
+				@foreach (string _menuitems_main in Model.GetSection("menuitems_main", this)){
+<UL data-itemtype="menu" data-itemid="menu" @(Model.displayVar("item_menu")) data-pageid="@(Model.displayVar("pageid"))" class="r-menu nav navbar-nav" data-menulevel="1">
+
+@foreach (string _item_children1 in Model.GetSection("item_children1", this)){
+<LI class="
+	@{foreach (string _item_haschildren2 in Model.GetSection("item_haschildren2", this)){@MvcHtmlString.Create(@" dropdown ")}} 
+	@(Model.displayVar("item_current"))">
+<A @(Model.displayVar("item_attrs")) title="@(Model.displayVar("item_tooltip"))" data-menu-link data-menu-h data-menu-top>
+	@(Model.displayVar("item_separator"))
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		@(Model.displayVar("item_icon")) @(Model.displayVar("item_title"))
+		</span>
+		@foreach (string _item_haschildren2 in Model.GetSection("item_haschildren2", this)){
+		foreach (string _item_expand_icon in Model.GetSection("item_expand_icon", this)){
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-bottom"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		}
+		}
+	</span>
+	</a>
+@foreach (string _item_showchildren2 in Model.GetSection("item_showchildren2", this)){
+<UL class="
+			dropdown-menu
+			@(Model.displayVar("submenu_class"))" id="submenu@(Model.displayVar("item_id"))" data-menulevel="2">
+	@foreach (string _item_children2 in Model.GetSection("item_children2", this)){
+		foreach (string _item_menulink2 in Model.GetSection("item_menulink2", this)){
+		<LI class="
+						@{foreach (string _item_haschildren2 in Model.GetSection("item_haschildren2", this)){@MvcHtmlString.Create(@" dropdown ")}}
+						@(Model.displayVar("item_current"))">
+			<A @(Model.displayVar("item_attrs")) title="@(Model.displayVar("item_tooltip"))" data-menu-link data-menu-h>
+	@(Model.displayVar("item_separator"))
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		@(Model.displayVar("item_icon")) @(Model.displayVar("item_title"))
+		</span>
+		@foreach (string _item_haschildren2_1 in Model.GetSection("item_haschildren2", this)){
+		foreach (string _item_expand_icon_1 in Model.GetSection("item_expand_icon", this)){
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		}
+		}
+	</span>
+	</a>
+			@foreach (string _item_showchildren3 in Model.GetSection("item_showchildren3", this)){
+<UL class="
+			dropdown-menu
+			@(Model.displayVar("submenu_class"))" id="submenu@(Model.displayVar("item_id"))" data-menulevel="3">
+	@foreach (string _item_children3 in Model.GetSection("item_children3", this)){
+		foreach (string _item_menulink3 in Model.GetSection("item_menulink3", this)){
+		<LI class="
+						@{foreach (string _item_haschildren3 in Model.GetSection("item_haschildren3", this)){@MvcHtmlString.Create(@" dropdown ")}}
+						@(Model.displayVar("item_current"))">
+			<A @(Model.displayVar("item_attrs")) title="@(Model.displayVar("item_tooltip"))" data-menu-link data-menu-h>
+	@(Model.displayVar("item_separator"))
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		@(Model.displayVar("item_icon")) @(Model.displayVar("item_title"))
+		</span>
+		@foreach (string _item_haschildren3 in Model.GetSection("item_haschildren3", this)){
+		foreach (string _item_expand_icon_2 in Model.GetSection("item_expand_icon", this)){
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		}
+		}
+	</span>
+	</a>
+			@foreach (string _item_showchildren4 in Model.GetSection("item_showchildren4", this)){
+<UL class="
+			dropdown-menu
+			@(Model.displayVar("submenu_class"))" id="submenu@(Model.displayVar("item_id"))" data-menulevel="4">
+	@foreach (string _item_children4 in Model.GetSection("item_children4", this)){
+		foreach (string _item_menulink4 in Model.GetSection("item_menulink4", this)){
+		<LI class="
+						@{foreach (string _item_haschildren4 in Model.GetSection("item_haschildren4", this)){@MvcHtmlString.Create(@" dropdown ")}}
+						@(Model.displayVar("item_current"))">
+			<A @(Model.displayVar("item_attrs")) title="@(Model.displayVar("item_tooltip"))" data-menu-link data-menu-h>
+	@(Model.displayVar("item_separator"))
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		@(Model.displayVar("item_icon")) @(Model.displayVar("item_title"))
+		</span>
+		@foreach (string _item_haschildren4 in Model.GetSection("item_haschildren4", this)){
+		foreach (string _item_expand_icon_3 in Model.GetSection("item_expand_icon", this)){
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		}
+		}
+	</span>
+	</a>
+			@foreach (string _item_showchildren5 in Model.GetSection("item_showchildren5", this)){
+<UL class="
+			dropdown-menu
+			@(Model.displayVar("submenu_class"))" id="submenu@(Model.displayVar("item_id"))" data-menulevel="5">
+	@foreach (string _item_children5 in Model.GetSection("item_children5", this)){
+		foreach (string _item_menulink5 in Model.GetSection("item_menulink5", this)){
+		<LI class="
+						@{foreach (string _item_haschildren5 in Model.GetSection("item_haschildren5", this)){@MvcHtmlString.Create(@" dropdown ")}}
+						@(Model.displayVar("item_current"))">
+			<A @(Model.displayVar("item_attrs")) title="@(Model.displayVar("item_tooltip"))" data-menu-link data-menu-h>
+	@(Model.displayVar("item_separator"))
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		@(Model.displayVar("item_icon")) @(Model.displayVar("item_title"))
+		</span>
+		@foreach (string _item_haschildren5 in Model.GetSection("item_haschildren5", this)){
+		foreach (string _item_expand_icon_4 in Model.GetSection("item_expand_icon", this)){
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		}
+		}
+	</span>
+	</a>
+					</li>
+		}
+	}
+</ul>
+}
+		</li>
+		}
+	}
+</ul>
+}
+		</li>
+		}
+	}
+</ul>
+}
+		</li>
+		}
+	}
+</ul>
+}
+</li>
+}
+</ul>
+}
+			</span>
+							 
+							 
+				<SPAN class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="@(Model.displayVar("pageid"))" data-itemid="loginform_login" @(Model.displayVar("item_loginform_login")) data-topcell-item-type="loginform_login">
+				@foreach (string _guestloginbutton in Model.GetSection("guestloginbutton", this)){
+<SPAN data-itemtype="loginform_login" data-itemid="loginform_login" @(Model.displayVar("item_loginform_login")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-primary   
+	" href="#" @(Model.displayVar("guestloginlink_attrs"))>
+							Login			</a>
+</span>
+}
+			</span>
+		 
+				<SPAN class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="@(Model.displayVar("pageid"))" data-itemid="username_button" @(Model.displayVar("item_username_button")) data-topcell-item-type="username_button">
+				@foreach (string _loggedas_message in Model.GetSection("loggedas_message", this)){
+<SPAN data-itemtype="username_button" data-itemid="username_button" @(Model.displayVar("item_username_button")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<span class="dropdown ">
+		<button type="button" title="" class="btn btn-default   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">		
+			@foreach (string _userbutton_icon in Model.GetSection("userbutton_icon", this)){							<span class="glyphicon glyphicon-user"></span>
+						}@(Model.displayVar("userbutton_image"))			@(Model.displayVar("username"))			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+							@foreach (string _userinfo_link in Model.GetSection("userinfo_link", this)){
+	<LI data-itemtype="userinfo_link" data-itemid="userinfo_link" @(Model.displayVar("item_userinfo_link")) data-pageid="@(Model.displayVar("pageid"))" data-small>
+				<A href="userinfo" title>
+				
+		User Profile		
+		</a>
+	</li>
+}
+							@foreach (string _logoutbutton in Model.GetSection("logoutbutton", this)){
+	<LI data-itemtype="logout_link" data-itemid="logout_link" @(Model.displayVar("item_logout_link")) data-pageid="@(Model.displayVar("pageid"))" data-small>
+				<A href="#" @(Model.displayVar("logoutlink_attrs")) title>
+				
+		Log out		
+		</a>
+	</li>
+}
+							@foreach (string _adminarea_link in Model.GetSection("adminarea_link", this)){
+	<LI data-itemtype="adminarea_link" data-itemid="adminarea_link" @(Model.displayVar("item_adminarea_link")) data-pageid="@(Model.displayVar("pageid"))" data-small>
+				<A href="admin_rights/list" title>
+				
+		Admin Area		
+		</a>
+	</li>
+}
+							@foreach (string _changepwd_link in Model.GetSection("changepwd_link", this)){
+	<LI data-itemtype="changepassword_link" data-itemid="changepassword_link" @(Model.displayVar("item_changepassword_link")) data-pageid="@(Model.displayVar("pageid"))" data-small>
+				<A href="changepwd" @(Model.displayVar("changepwdlink_attrs")) id="changePasswordButton@(Model.displayVar("id"))" title>
+				
+		Change password		
+		</a>
+	</li>
+}
+					</ul>
+	</span>
+</span>
+}
+			</span>
+								</nav>
+}
+					@(Model.displayVar("locking"))
+			</div>	
+			<div data-body-align="left"  data-body-width="standard" class="r-body" data-resize-top="topbar" >
+				<div class="r-top">
+										</div>
+				<div class="r-content">
+										<div class="r-data-block" data-body-width="standard" >
+						
+											<div class="r-above">
+					@foreach (string _above_grid_block in Model.GetSection("above-grid_block", this)){
+<DIV class="r-form" data-location="above-grid" id="form_above-grid_@(Model.displayVar("pageid"))" data-makeup="topbar" @(Model.displayVar("form_above-grid")) data-pageid="@(Model.displayVar("pageid"))">		
+	 
+				<div class="row">
+			 
+				<DIV data-cellId="above-grid_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_above-grid_c1")) class=" r-ori-vert			col-md-12
+	
+">
+		@foreach (string _firstAboveGridCell in Model.GetSection("firstAboveGridCell", this)){
+				}	
+	</div>					</div>
+			</div>		
+}
+	</div>
+<div class="r-grid">
+	@foreach (string _grid_tabs in Model.GetSection("grid_tabs", this)){
+  <ul class="nav nav-tabs bsgrid_tabs">
+	@(Model.displayVar("grid_tabs_content"))
+  </ul>
+}
+					@foreach (string _grid_block in Model.GetSection("grid_block", this)){
+<TABLE class="r-fluid r-form" data-location="grid" id="form_grid_@(Model.displayVar("pageid"))" data-makeup="topbar" @(Model.displayVar("form_grid")) data-pageid="@(Model.displayVar("pageid"))">
+						<tbody>
+			
+								<TR @(Model.displayVar("row_grid_0"))>
+									<TD data-cellId="grid_c2" data-pageid="@(Model.displayVar("pageid"))">
+<div class="r-welcome-align">
+ 
+@foreach (string _userinfo_link_1 in Model.GetSection("userinfo_link", this)){
+<SPAN data-itemtype="userinfo_link" data-itemid="userinfo_link1" @(Model.displayVar("item_userinfo_link1")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-default  btn-lg 
+	" href="userinfo">
+							User Profile			</a>
+</span>
+}
+ 
+@foreach (string _changepwd_link_1 in Model.GetSection("changepwd_link", this)){
+<SPAN data-itemtype="changepassword_link" data-itemid="changepassword_link1" @(Model.displayVar("item_changepassword_link1")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-default  btn-lg 
+	" href="changepwd" @(Model.displayVar("changepwdlink_attrs")) id="changePasswordButton@(Model.displayVar("id"))">
+							Change password			</a>
+</span>
+}
+</div>
+</td>
+							</tr>
+											<TR @(Model.displayVar("row_grid_1"))>
+									<TD data-cellId="grid_c1" data-pageid="@(Model.displayVar("pageid"))">
+<div class="r-welcome-align">
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item6" @(Model.displayVar("item_welcome_item6")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="clients/list"> 
+							<span class="glyphicon glyphicon-briefcase"></span>Clients Profile					</a>
+	</div>
+
+	</div>
+
+ 
+		
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item1" @(Model.displayVar("item_welcome_item1")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="client_apps/list"> 
+							<span class="glyphicon glyphicon-camera"></span>Client Applications					</a>
+	</div>
+
+			
+	<div class="bs-welcome-content">
+			</div>
+	</div>
+
+</div>
+</td>
+							</tr>
+											<TR @(Model.displayVar("row_grid_2"))>
+									<TD data-cellId="grid_c" data-pageid="@(Model.displayVar("pageid"))">
+<div class="r-welcome-align">
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item8" @(Model.displayVar("item_welcome_item8")) data-pageid="@(Model.displayVar("pageid"))" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="incoming/list"> 
+							Incoming					</a>
+	</div>
+
+	</div>
+
+ 
+		
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item2" @(Model.displayVar("item_welcome_item2")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="auditlog_mst/list"> 
+							<span class="glyphicon glyphicon-shopping-cart"></span>Outgoing					</a>
+	</div>
+
+			
+	<div class="bs-welcome-content">
+			</div>
+	</div>
+
+</div>
+</td>
+							</tr>
+											<TR @(Model.displayVar("row_grid_3"))>
+									<TD data-cellId="grid_c3" data-pageid="@(Model.displayVar("pageid"))">
+<div class="r-welcome-align">
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item15" @(Model.displayVar("item_welcome_item15")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="documents/list"> 
+							Documents					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item32" @(Model.displayVar("item_welcome_item32")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="incidents/list"> 
+							Incidents					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item4" @(Model.displayVar("item_welcome_item4")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="mg_customer_mst/list"> 
+							Mg Customer Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item5" @(Model.displayVar("item_welcome_item5")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="hk_job/list"> 
+							Hk Job					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item7" @(Model.displayVar("item_welcome_item7")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="sc_invoice_line_mst/list"> 
+							Sc Invoice Line Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item9" @(Model.displayVar("item_welcome_item9")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="sc_invoice_mst/list"> 
+							Sc Invoice Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item10" @(Model.displayVar("item_welcome_item10")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="sc_expensereport_line_mst/list"> 
+							Sc Expensereport Line Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item11" @(Model.displayVar("item_welcome_item11")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="sc_expensereport_mst/list"> 
+							Sc Expensereport Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item12" @(Model.displayVar("item_welcome_item12")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="sc_aptran_mst/list"> 
+							Sc Aptran Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item13" @(Model.displayVar("item_welcome_item13")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="sc_aptrandist_mst/list"> 
+							Sc Aptrandist Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item14" @(Model.displayVar("item_welcome_item14")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="sc_sro_mst/list"> 
+							Sc Sro Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item16" @(Model.displayVar("item_welcome_item16")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="hk_invoice_mst/list"> 
+							Hk Invoice Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item17" @(Model.displayVar("item_welcome_item17")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="hk_invitem_mst/list"> 
+							Hk Invitem Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item18" @(Model.displayVar("item_welcome_item18")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="hk_client_inv_items/list"> 
+							Hk Client Inv Items					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item19" @(Model.displayVar("item_welcome_item19")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="hk_inv_items/list"> 
+							Hk Inv Items					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item20" @(Model.displayVar("item_welcome_item20")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_invoicedetails_mst/list"> 
+							Tp Invoicedetails Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item" @(Model.displayVar("item_welcome_item")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_po/list"> 
+							PO					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item23" @(Model.displayVar("item_welcome_item23")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_poitem/list"> 
+							Po Lines					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item24" @(Model.displayVar("item_welcome_item24")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_po_rcpt/list"> 
+							PO Receipts					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item25" @(Model.displayVar("item_welcome_item25")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_invoicedetails/list"> 
+							Tipalti Invoices					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item21" @(Model.displayVar("item_welcome_item21")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_invoicedetails_report/report"> 
+							Tp Invoicedetails Report					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item22" @(Model.displayVar("item_welcome_item22")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_vendor/list"> 
+							Vendors					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item3" @(Model.displayVar("item_welcome_item3")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_invoicedetails_dist_mst/list"> 
+							Tp Invoicedetails Dist Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item26" @(Model.displayVar("item_welcome_item26")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_po_audit/list"> 
+							Tp Po Audit					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item27" @(Model.displayVar("item_welcome_item27")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_po_mst/list"> 
+							Tp Po Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item28" @(Model.displayVar("item_welcome_item28")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_po_rcpt_mst/list"> 
+							Tp Po Rcpt Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item29" @(Model.displayVar("item_welcome_item29")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_aptrandist_mst/list"> 
+							Tp Aptrandist Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item30" @(Model.displayVar("item_welcome_item30")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="fieldaudit/list"> 
+							Fieldaudit					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item31" @(Model.displayVar("item_welcome_item31")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_vendor_mst/list"> 
+							Tp Vendor Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item33" @(Model.displayVar("item_welcome_item33")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_invoicedetails_status_mst/list"> 
+							Tp Invoicedetails Status Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item34" @(Model.displayVar("item_welcome_item34")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="mg_orderline_count/list"> 
+							Mg Orderline Count					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item35" @(Model.displayVar("item_welcome_item35")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="mg_order_count/list"> 
+							Mg Order Count					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item36" @(Model.displayVar("item_welcome_item36")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="mg_order_count_report/report"> 
+							Mg Order Count Report					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item37" @(Model.displayVar("item_welcome_item37")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="mg_orderline_count_report/report"> 
+							Mg Orderline Count Report					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item38" @(Model.displayVar("item_welcome_item38")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="csi_chart_mst/list"> 
+							Csi Chart Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item39" @(Model.displayVar("item_welcome_item39")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="csi_unitcd1_mst/list"> 
+							Csi Unitcd1 Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item40" @(Model.displayVar("item_welcome_item40")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="csi_unitcd2_mst/list"> 
+							Csi Unitcd2 Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item41" @(Model.displayVar("item_welcome_item41")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="csi_unitcd3_mst/list"> 
+							Csi Unitcd3 Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item42" @(Model.displayVar("item_welcome_item42")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="csi_unitcd4_mst/list"> 
+							Csi Unitcd4 Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item43" @(Model.displayVar("item_welcome_item43")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="csi_terms_mst/list"> 
+							Csi Terms Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item44" @(Model.displayVar("item_welcome_item44")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="csi_u_m_mst/list"> 
+							Csi U M Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item45" @(Model.displayVar("item_welcome_item45")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="csi_lc_rcpt_mst/list"> 
+							Csi Lc Rcpt Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item46" @(Model.displayVar("item_welcome_item46")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_aptran_clear_mst/list"> 
+							Tp Aptran Clear Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item47" @(Model.displayVar("item_welcome_item47")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="sourcemanagement/list"> 
+							Source Management					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item48" @(Model.displayVar("item_welcome_item48")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="apps1/list"> 
+							Apps1					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item49" @(Model.displayVar("item_welcome_item49")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_vendor_not_match_tosyteline/list"> 
+							Tp Vendor Not Match Tosyteline					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item50" @(Model.displayVar("item_welcome_item50")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="sh_fulfillment_orders_mst/list"> 
+							Sh Fulfillment Orders Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item51" @(Model.displayVar("item_welcome_item51")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="sh_get_order_lines_mst/list"> 
+							Sh Get Order Lines Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item52" @(Model.displayVar("item_welcome_item52")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="sh_get_orders_mst/list"> 
+							Sh Get Orders Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item53" @(Model.displayVar("item_welcome_item53")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="sh_products_mst/list"> 
+							Sh Products Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item54" @(Model.displayVar("item_welcome_item54")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="sh_stores_mst/list"> 
+							Sh Stores Mst					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item55" @(Model.displayVar("item_welcome_item55")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="clients_provisioning/list"> 
+							Clients Provisioning					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item56" @(Model.displayVar("item_welcome_item56")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="tp_invoice_temp/list"> 
+							Tp Invoice Temp					</a>
+	</div>
+
+	</div>
+
+ 
+
+<DIV class="bs-welcome-item" data-itemtype="welcome_item" data-itemid="welcome_item58" @(Model.displayVar("item_welcome_item58")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_menu" data-comment-len="0">
+	<div class="bs-welcome-header">
+		<A id="itemlink" href="indcode/list"> 
+							Indcode					</a>
+	</div>
+
+	</div>
+
+</div>
+</td>
+							</tr>
+					
+					</tbody>
+				</table>
+}
+	</div>
+<div class="r-below">
+			</div>
+
+
+
+
+											
+					</div>
+				</div>
+			</div>
+		</div>
+		{Html.RenderSharedView("footer");}
+	}
+	</body>
+</html>

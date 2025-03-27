@@ -1,0 +1,144 @@
+﻿@using runnerDotNet;
+@{
+ XTempl Model = this.Model;
+ if(ViewBag != null && ViewBag.xt != null)
+ {
+  Model = ViewBag.xt;
+  if(Model != null)
+  {
+   Model.currentViewContext = ViewContext;
+  }
+ }
+ string webRootPath = "";
+}
+
+<!doctype html>@(new HtmlString(MVCFunctions.GetBuferContentAndClearBufer()))
+<HTML @(Model.displayVar("html_attrs"))>
+	<head>
+				<META http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<META name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@(Model.displayVar("pagetitle"))</title>
+	<META http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<BASE href="@(Model.displayVar("projectPath"))" />
+		<LINK REL="stylesheet" href="styles/default.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	@foreach (string _rtlCSS in Model.GetSection("rtlCSS", this)){
+	<LINK REL="stylesheet" href="styles/defaultRTL.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	}
+	@foreach (string _styleCSSFiles in Model.GetSection("styleCSSFiles", this)){
+	<LINK REL="stylesheet" href="@(Model.displayVar("stylepath"))" type="text/css" />
+	}
+			
+	</head>
+
+	<BODY class="@(Model.displayVar("stylename")) function-rprint">
+	@foreach (string _body in Model.GetSection("body", this)){
+		{Html.RenderSharedView("header");}
+		<style>@MvcHtmlString.Create(@"")@(Model.displayVar("containerCss"))@MvcHtmlString.Create(@"")</style>
+		@(Model.displayVar("locking"))
+		<div class="r-small-page" 
+			data-body-align="left"
+			data-body-width="standard"
+		>
+							@foreach (string _top_block in Model.GetSection("top_block", this)){
+<DIV class="r-form" data-location="top" id="form_top_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_top")) data-pageid="@(Model.displayVar("pageid"))">		
+	 
+				<div class="row">
+			 
+				<DIV data-cellId="top_c2" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_top_c2")) class=" r-ori-vert			col-md-12
+	
+">
+		 
+		<H2 data-itemtype="print_header" data-itemid="print_header" @(Model.displayVar("item_print_header")) data-pageid="@(Model.displayVar("pageid"))">@(Model.displayVar("pagetitlelabel dbo_mg_orderline_count_Report rprint"))</h2>
+	 
+		@foreach (string _printtabheader in Model.GetSection("printtabheader", this)){
+<SPAN data-itemtype="print_subheader" data-itemid="print_subheader" @(Model.displayVar("item_print_subheader")) data-pageid="@(Model.displayVar("pageid"))">
+@(Model.displayVar("printtabheader_text"))
+</span>
+}
+		</div>					</div>
+			</div>		
+}
+									@foreach (string _above_grid_block in Model.GetSection("above-grid_block", this)){
+<DIV class="r-form" data-location="above-grid" id="form_above-grid_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_above-grid")) data-pageid="@(Model.displayVar("pageid"))">		
+	 
+				<div class="row">
+			 
+				<DIV data-cellId="above-grid_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_above-grid_c1")) class=" r-ori-vert			col-md-12
+	
+">
+		@foreach (string _firstAboveGridCell in Model.GetSection("firstAboveGridCell", this)){
+		 
+		<SPAN data-itemtype="print_pages" data-itemid="print_pages" @(Model.displayVar("item_print_pages")) data-pageid="@(Model.displayVar("pageid"))" data-small>
+	@(Model.displayVar("print_pages_labelprint_pages"))
+</span>			}	
+	</div>					</div>
+			</div>		
+}
+									@foreach (string _grid_block in Model.GetSection("grid_block", this)){
+<style>@MvcHtmlString.Create(@"
+	td.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary {
+		background-color: #ffffbb;
+	}
+	td.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary {background-color: #ffe0b0;
+	}")</style>
+<DIV id="grid_block@(Model.displayVar("id"))" class="rnr-report-gridblock">
+							<table class="r-cross-print" cellpadding="0" cellspacing="0" align="center" border=0>
+	<thead>
+		<tr>
+			<th class="data-label">@(Model.displayVar("report_cross_type")) <span class="data-field"> @(Model.displayVar("report_cross_field"))</span></th>
+			<TH class="field-label" colspan="@(Model.displayVar("group_x_count"))">@(Model.displayVar("group_x_label"))</th>
+			@foreach (string _cross_totals in Model.GetSection("cross_totals", this)){
+			<td class="">&nbsp;</td>
+			}
+		</tr>
+		<tr>
+			<th class="field-label">@(Model.displayVar("group_y_label"))</th>
+			@foreach (string _group_header in Model.GetSection("group_header", this)){
+				<th class="x-label">@(Model.displayVar("gr_value"))</th>
+			}
+			@foreach (string _cross_totals_1 in Model.GetSection("cross_totals", this)){
+			<td class="x-summary-label">@(Model.displayVar("totals"))</td>
+			}
+		</tr>
+	</thead>
+	<tbody>
+	@foreach (string _grid_row in Model.GetSection("grid_row", this)){
+		<tr>
+			<td class="y-label">@(Model.displayVar("group_y"))</td>
+			@foreach (string _row_record in Model.GetSection("row_record", this)){
+				<TD class="data" id=@(Model.displayVar("id_data"))>@(Model.displayVar("row_value"))</td>
+			}
+			@foreach (string _cross_totals_2 in Model.GetSection("cross_totals", this)){
+			<TD class="summary" id=@(Model.displayVar("id_row_summary"))>@(Model.displayVar("row_summary"))</td>
+			}
+		</tr>
+	}
+		@foreach (string _cross_totals_3 in Model.GetSection("cross_totals", this)){
+		<tr>
+			<td class="y-summary-label">@(Model.displayVar("totals"))</td>
+			@foreach (string _col_summary in Model.GetSection("col_summary", this)){
+				<TD class="summary" id=@(Model.displayVar("id_col_summary"))>@(Model.displayVar("col_summary"))</td>
+			}
+			<td class="summary" id="id_total_summary">@(Model.displayVar("total_summary"))</td>
+		</tr>
+		}
+	</tbody>
+	</table>
+	<DIV id="location" src=@(Model.displayVar("reportName")) style="display: none;"></div>
+			</div>
+}									@foreach (string _below_grid_block in Model.GetSection("below-grid_block", this)){
+<DIV class="r-form" data-location="below-grid" id="form_below-grid_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_below-grid")) data-pageid="@(Model.displayVar("pageid"))">		
+	 
+				<div class="row">
+			 
+				<DIV data-cellId="below-grid_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_below-grid_c1")) class=" r-ori-vert			col-md-12
+	
+">
+			</div>					</div>
+			</div>		
+}
+			</div>
+		{Html.RenderSharedView("footer");}
+	}
+	</body>
+</html>

@@ -1,0 +1,907 @@
+﻿@using runnerDotNet;
+@{
+ XTempl Model = this.Model;
+ if(ViewBag != null && ViewBag.xt != null)
+ {
+  Model = ViewBag.xt;
+  if(Model != null)
+  {
+   Model.currentViewContext = ViewContext;
+  }
+ }
+ string webRootPath = "";
+}
+
+<!doctype html>@(new HtmlString(MVCFunctions.GetBuferContentAndClearBufer()))
+<HTML @(Model.displayVar("html_attrs"))>
+	<head>
+				<META http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<META name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@(Model.displayVar("pagetitle"))</title>
+	<META http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<BASE href="@(Model.displayVar("projectPath"))" />
+		<LINK REL="stylesheet" href="styles/default.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	@foreach (string _rtlCSS in Model.GetSection("rtlCSS", this)){
+	<LINK REL="stylesheet" href="styles/defaultRTL.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	}
+	@foreach (string _styleCSSFiles in Model.GetSection("styleCSSFiles", this)){
+	<LINK REL="stylesheet" href="@(Model.displayVar("stylepath"))" type="text/css" />
+	}
+			
+	</head>
+
+	<BODY class="@(Model.displayVar("stylename")) function-search">
+	@foreach (string _body in Model.GetSection("body", this)){
+		{Html.RenderSharedView("header");}
+		<style>@MvcHtmlString.Create(@"")@(Model.displayVar("containerCss"))@MvcHtmlString.Create(@"")</style>
+		@(Model.displayVar("locking"))
+		<div class="r-small-page" 
+			data-body-align="center"
+			data-body-width="standard"
+		>
+							@foreach (string _top_block in Model.GetSection("top_block", this)){
+<DIV class="r-form" data-location="top" id="form_top_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_top")) data-pageid="@(Model.displayVar("pageid"))" data-v-width="6" data-v-margin="1">		
+	 
+		<div class="row">
+			 
+				<DIV data-cellId="top_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_top_c1")) class=" r-ori-vert			col-md-12
+	">
+	 
+		<H2 data-itemtype="search_header" data-itemid="search_header" @(Model.displayVar("item_search_header")) data-pageid="@(Model.displayVar("pageid"))">@(Model.displayVar("pagetitlelabel dbo_sc_aptrandist_mst search"))</h2>
+	</div>					</div>
+	</div>		
+}
+									@foreach (string _above_grid_block in Model.GetSection("above-grid_block", this)){
+<DIV class="r-form" data-location="above-grid" id="form_above-grid_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_above-grid")) data-pageid="@(Model.displayVar("pageid"))" data-v-width="6" data-v-margin="1">		
+	 
+		<div class="row">
+			 
+				<DIV data-cellId="above-grid_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_above-grid_c1")) class=" r-ori-vert			col-md-12
+	">
+	</div>					</div>
+	</div>		
+}
+									@foreach (string _grid_block in Model.GetSection("grid_block", this)){
+
+
+
+
+ 
+	 
+												<TABLE data-body-align="center" data-location="grid" id="form_grid_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_grid")) data-pageid="@(Model.displayVar("pageid"))" class="r-edit-form" cellpadding="0" cellspacing="0" @(Model.displayVar("grid_hiddenattr")) data-form-width="1" data-v-width="6">
+	<tbody>
+										<TR @(Model.displayVar("row_grid_0"))>
+										
+
+@foreach (string _cellblock_grid_c3 in Model.GetSection("cellblock_grid_c3", this)){
+<TD @(Model.displayVar("cell_grid_c3")) class=" r-ori-vert" data-fullwidth data-cellId="grid_c3" data-pageid="@(Model.displayVar("pageid"))" data-v-cell="6">
+	<div edit-form-cell class="clearfix">
+				
+@foreach (string _seq_num_fieldblock in Model.GetSection("seq_num_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_seq_num"))  r-horizontal-field form-horizontal" data-signal-error-for="seq_num@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field" @(Model.displayVar("item_integrated_search_field")) data-pageid="@(Model.displayVar("pageid"))" data-field="seq_num" data-fieldname="seq_num">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_seq_num"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst seq_num"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_seq_num"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("seq_num_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("seq_num_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _invoice_id_fieldblock in Model.GetSection("invoice_id_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_invoice_id"))  r-horizontal-field form-horizontal" data-signal-error-for="invoice_id@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field1" @(Model.displayVar("item_integrated_search_field1")) data-pageid="@(Model.displayVar("pageid"))" data-field="invoice_id" data-fieldname="invoice_id">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_invoice_id"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst invoice_id"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_invoice_id"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("invoice_id_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("invoice_id_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _item_fieldblock in Model.GetSection("item_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_item"))  r-horizontal-field form-horizontal" data-signal-error-for="item@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field2" @(Model.displayVar("item_integrated_search_field2")) data-pageid="@(Model.displayVar("pageid"))" data-field="item" data-fieldname="item">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_item"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst item"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_item"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("item_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("item_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _description_fieldblock in Model.GetSection("description_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_description"))  r-horizontal-field form-horizontal" data-signal-error-for="description@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field3" @(Model.displayVar("item_integrated_search_field3")) data-pageid="@(Model.displayVar("pageid"))" data-field="description" data-fieldname="description">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_description"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst description"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_description"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("description_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("description_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _po_num_fieldblock in Model.GetSection("po_num_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_po_num"))  r-horizontal-field form-horizontal" data-signal-error-for="po_num@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field4" @(Model.displayVar("item_integrated_search_field4")) data-pageid="@(Model.displayVar("pageid"))" data-field="po_num" data-fieldname="po_num">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_po_num"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst po_num"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_po_num"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("po_num_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("po_num_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _po_line_fieldblock in Model.GetSection("po_line_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_po_line"))  r-horizontal-field form-horizontal" data-signal-error-for="po_line@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field5" @(Model.displayVar("item_integrated_search_field5")) data-pageid="@(Model.displayVar("pageid"))" data-field="po_line" data-fieldname="po_line">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_po_line"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst po_line"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_po_line"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("po_line_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("po_line_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _po_release_fieldblock in Model.GetSection("po_release_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_po_release"))  r-horizontal-field form-horizontal" data-signal-error-for="po_release@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field6" @(Model.displayVar("item_integrated_search_field6")) data-pageid="@(Model.displayVar("pageid"))" data-field="po_release" data-fieldname="po_release">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_po_release"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst po_release"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_po_release"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("po_release_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("po_release_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _unit_price_fieldblock in Model.GetSection("unit_price_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_unit_price"))  r-horizontal-field form-horizontal" data-signal-error-for="unit_price@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field7" @(Model.displayVar("item_integrated_search_field7")) data-pageid="@(Model.displayVar("pageid"))" data-field="unit_price" data-fieldname="unit_price">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_unit_price"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst unit_price"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_unit_price"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("unit_price_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("unit_price_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _qty_fieldblock in Model.GetSection("qty_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_qty"))  r-horizontal-field form-horizontal" data-signal-error-for="qty@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field8" @(Model.displayVar("item_integrated_search_field8")) data-pageid="@(Model.displayVar("pageid"))" data-field="qty" data-fieldname="qty">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_qty"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst qty"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_qty"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("qty_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("qty_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _amt_fieldblock in Model.GetSection("amt_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_amt"))  r-horizontal-field form-horizontal" data-signal-error-for="amt@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field9" @(Model.displayVar("item_integrated_search_field9")) data-pageid="@(Model.displayVar("pageid"))" data-field="amt" data-fieldname="amt">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_amt"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst amt"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_amt"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("amt_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("amt_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _tax_amt_fieldblock in Model.GetSection("tax_amt_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_tax_amt"))  r-horizontal-field form-horizontal" data-signal-error-for="tax_amt@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field10" @(Model.displayVar("item_integrated_search_field10")) data-pageid="@(Model.displayVar("pageid"))" data-field="tax_amt" data-fieldname="tax_amt">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_tax_amt"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst tax_amt"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_tax_amt"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("tax_amt_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("tax_amt_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _acct_fieldblock in Model.GetSection("acct_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_acct"))  r-horizontal-field form-horizontal" data-signal-error-for="acct@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field11" @(Model.displayVar("item_integrated_search_field11")) data-pageid="@(Model.displayVar("pageid"))" data-field="acct" data-fieldname="acct">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_acct"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst acct"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_acct"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("acct_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("acct_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _unit1_fieldblock in Model.GetSection("unit1_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_unit1"))  r-horizontal-field form-horizontal" data-signal-error-for="unit1@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field12" @(Model.displayVar("item_integrated_search_field12")) data-pageid="@(Model.displayVar("pageid"))" data-field="unit1" data-fieldname="unit1">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_unit1"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst unit1"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_unit1"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("unit1_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("unit1_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _unit2_fieldblock in Model.GetSection("unit2_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_unit2"))  r-horizontal-field form-horizontal" data-signal-error-for="unit2@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field13" @(Model.displayVar("item_integrated_search_field13")) data-pageid="@(Model.displayVar("pageid"))" data-field="unit2" data-fieldname="unit2">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_unit2"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst unit2"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_unit2"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("unit2_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("unit2_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _unit3_fieldblock in Model.GetSection("unit3_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_unit3"))  r-horizontal-field form-horizontal" data-signal-error-for="unit3@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field14" @(Model.displayVar("item_integrated_search_field14")) data-pageid="@(Model.displayVar("pageid"))" data-field="unit3" data-fieldname="unit3">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_unit3"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst unit3"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_unit3"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("unit3_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("unit3_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _unit4_fieldblock in Model.GetSection("unit4_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_unit4"))  r-horizontal-field form-horizontal" data-signal-error-for="unit4@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field15" @(Model.displayVar("item_integrated_search_field15")) data-pageid="@(Model.displayVar("pageid"))" data-field="unit4" data-fieldname="unit4">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_unit4"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst unit4"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_unit4"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("unit4_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("unit4_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _grn_num_fieldblock in Model.GetSection("grn_num_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_grn_num"))  r-horizontal-field form-horizontal" data-signal-error-for="grn_num@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field16" @(Model.displayVar("item_integrated_search_field16")) data-pageid="@(Model.displayVar("pageid"))" data-field="grn_num" data-fieldname="grn_num">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_grn_num"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst grn_num"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_grn_num"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("grn_num_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("grn_num_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _grn_line_fieldblock in Model.GetSection("grn_line_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_grn_line"))  r-horizontal-field form-horizontal" data-signal-error-for="grn_line@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field17" @(Model.displayVar("item_integrated_search_field17")) data-pageid="@(Model.displayVar("pageid"))" data-field="grn_line" data-fieldname="grn_line">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_grn_line"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst grn_line"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_grn_line"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("grn_line_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("grn_line_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _rowpointer_fieldblock in Model.GetSection("rowpointer_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_rowpointer"))  r-horizontal-field form-horizontal" data-signal-error-for="rowpointer@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field18" @(Model.displayVar("item_integrated_search_field18")) data-pageid="@(Model.displayVar("pageid"))" data-field="rowpointer" data-fieldname="rowpointer">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_rowpointer"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst rowpointer"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_rowpointer"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("rowpointer_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("rowpointer_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _createdate_fieldblock in Model.GetSection("createdate_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_createdate"))  r-horizontal-field form-horizontal" data-signal-error-for="createdate@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field19" @(Model.displayVar("item_integrated_search_field19")) data-pageid="@(Model.displayVar("pageid"))" data-field="createdate" data-fieldname="createdate">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_createdate"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst createdate"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_createdate"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("createdate_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("createdate_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _err_msg_fieldblock in Model.GetSection("err_msg_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_err_msg"))  r-horizontal-field form-horizontal" data-signal-error-for="err_msg@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field20" @(Model.displayVar("item_integrated_search_field20")) data-pageid="@(Model.displayVar("pageid"))" data-field="err_msg" data-fieldname="err_msg">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_err_msg"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst err_msg"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_err_msg"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("err_msg_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("err_msg_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _terms_code_fieldblock in Model.GetSection("terms_code_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_terms_code"))  r-horizontal-field form-horizontal" data-signal-error-for="terms_code@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field21" @(Model.displayVar("item_integrated_search_field21")) data-pageid="@(Model.displayVar("pageid"))" data-field="terms_code" data-fieldname="terms_code">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_terms_code"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst terms_code"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_terms_code"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("terms_code_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("terms_code_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _u_m_fieldblock in Model.GetSection("u_m_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_u_m"))  r-horizontal-field form-horizontal" data-signal-error-for="u_m@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field22" @(Model.displayVar("item_integrated_search_field22")) data-pageid="@(Model.displayVar("pageid"))" data-field="u_m" data-fieldname="u_m">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_u_m"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst u_m"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_u_m"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("u_m_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("u_m_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _qtu_qty_received_fieldblock in Model.GetSection("qtu_qty_received_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_qtu_qty_received"))  r-horizontal-field form-horizontal" data-signal-error-for="qtu_qty_received@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field23" @(Model.displayVar("item_integrated_search_field23")) data-pageid="@(Model.displayVar("pageid"))" data-field="qtu_qty_received" data-fieldname="qtu_qty_received">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_qtu_qty_received"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst qtu_qty_received"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_qtu_qty_received"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("qtu_qty_received_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("qtu_qty_received_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _qtu_qty_voucher_fieldblock in Model.GetSection("qtu_qty_voucher_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_qtu_qty_voucher"))  r-horizontal-field form-horizontal" data-signal-error-for="qtu_qty_voucher@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field24" @(Model.displayVar("item_integrated_search_field24")) data-pageid="@(Model.displayVar("pageid"))" data-field="qtu_qty_voucher" data-fieldname="qtu_qty_voucher">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_qtu_qty_voucher"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst qtu_qty_voucher"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_qtu_qty_voucher"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("qtu_qty_voucher_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("qtu_qty_voucher_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _cpr_item_cost_conv_fieldblock in Model.GetSection("cpr_item_cost_conv_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_cpr_item_cost_conv"))  r-horizontal-field form-horizontal" data-signal-error-for="cpr_item_cost_conv@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field25" @(Model.displayVar("item_integrated_search_field25")) data-pageid="@(Model.displayVar("pageid"))" data-field="cpr_item_cost_conv" data-fieldname="cpr_item_cost_conv">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_cpr_item_cost_conv"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst cpr_item_cost_conv"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_cpr_item_cost_conv"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("cpr_item_cost_conv_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("cpr_item_cost_conv_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _cpr_plan_cost_conv_fieldblock in Model.GetSection("cpr_plan_cost_conv_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_cpr_plan_cost_conv"))  r-horizontal-field form-horizontal" data-signal-error-for="cpr_plan_cost_conv@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field26" @(Model.displayVar("item_integrated_search_field26")) data-pageid="@(Model.displayVar("pageid"))" data-field="cpr_plan_cost_conv" data-fieldname="cpr_plan_cost_conv">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_cpr_plan_cost_conv"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst cpr_plan_cost_conv"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_cpr_plan_cost_conv"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("cpr_plan_cost_conv_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("cpr_plan_cost_conv_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _site_ref_fieldblock in Model.GetSection("site_ref_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_site_ref"))  r-horizontal-field form-horizontal" data-signal-error-for="site_ref@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field27" @(Model.displayVar("item_integrated_search_field27")) data-pageid="@(Model.displayVar("pageid"))" data-field="site_ref" data-fieldname="site_ref">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_site_ref"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst site_ref"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_site_ref"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("site_ref_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("site_ref_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _clientid_fieldblock in Model.GetSection("clientid_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_clientid"))  r-horizontal-field form-horizontal" data-signal-error-for="clientid@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field28" @(Model.displayVar("item_integrated_search_field28")) data-pageid="@(Model.displayVar("pageid"))" data-field="clientid" data-fieldname="clientid">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_clientid"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst clientid"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_clientid"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("clientid_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("clientid_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _currency_fieldblock in Model.GetSection("currency_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_currency"))  r-horizontal-field form-horizontal" data-signal-error-for="currency@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field29" @(Model.displayVar("item_integrated_search_field29")) data-pageid="@(Model.displayVar("pageid"))" data-field="currency" data-fieldname="currency">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_currency"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst currency"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_currency"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("currency_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("currency_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _taxcode_Externalid_fieldblock in Model.GetSection("taxcode_Externalid_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_taxcode_Externalid"))  r-horizontal-field form-horizontal" data-signal-error-for="taxcode_Externalid@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field30" @(Model.displayVar("item_integrated_search_field30")) data-pageid="@(Model.displayVar("pageid"))" data-field="taxcode_Externalid" data-fieldname="taxcode_Externalid">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_taxcode_Externalid"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst taxcode_Externalid"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_taxcode_Externalid"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("taxcode_Externalid_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("taxcode_Externalid_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _GL_acc_name_fieldblock in Model.GetSection("GL_acc_name_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_GL_acc_name"))  r-horizontal-field form-horizontal" data-signal-error-for="GL_acc_name@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field31" @(Model.displayVar("item_integrated_search_field31")) data-pageid="@(Model.displayVar("pageid"))" data-field="GL_acc_name" data-fieldname="GL_acc_name">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_GL_acc_name"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst GL_acc_name"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_GL_acc_name"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("GL_acc_name_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("GL_acc_name_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _GL_acc_num_fieldblock in Model.GetSection("GL_acc_num_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_GL_acc_num"))  r-horizontal-field form-horizontal" data-signal-error-for="GL_acc_num@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field32" @(Model.displayVar("item_integrated_search_field32")) data-pageid="@(Model.displayVar("pageid"))" data-field="GL_acc_num" data-fieldname="GL_acc_num">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_GL_acc_num"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst GL_acc_num"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_GL_acc_num"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("GL_acc_num_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("GL_acc_num_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _trans_num_fieldblock in Model.GetSection("trans_num_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_trans_num"))  r-horizontal-field form-horizontal" data-signal-error-for="trans_num@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field33" @(Model.displayVar("item_integrated_search_field33")) data-pageid="@(Model.displayVar("pageid"))" data-field="trans_num" data-fieldname="trans_num">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_trans_num"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst trans_num"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_trans_num"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("trans_num_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("trans_num_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _Billable_fieldblock in Model.GetSection("Billable_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_Billable"))  r-horizontal-field form-horizontal" data-signal-error-for="Billable@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field34" @(Model.displayVar("item_integrated_search_field34")) data-pageid="@(Model.displayVar("pageid"))" data-field="Billable" data-fieldname="Billable">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_Billable"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst Billable"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_Billable"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("Billable_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("Billable_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _sro_num_fieldblock in Model.GetSection("sro_num_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_sro_num"))  r-horizontal-field form-horizontal" data-signal-error-for="sro_num@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field35" @(Model.displayVar("item_integrated_search_field35")) data-pageid="@(Model.displayVar("pageid"))" data-field="sro_num" data-fieldname="sro_num">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_sro_num"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst sro_num"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_sro_num"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("sro_num_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("sro_num_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _sro_line_fieldblock in Model.GetSection("sro_line_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_sro_line"))  r-horizontal-field form-horizontal" data-signal-error-for="sro_line@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field36" @(Model.displayVar("item_integrated_search_field36")) data-pageid="@(Model.displayVar("pageid"))" data-field="sro_line" data-fieldname="sro_line">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_sro_line"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst sro_line"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_sro_line"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("sro_line_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("sro_line_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _project_fieldblock in Model.GetSection("project_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_project"))  r-horizontal-field form-horizontal" data-signal-error-for="project@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field37" @(Model.displayVar("item_integrated_search_field37")) data-pageid="@(Model.displayVar("pageid"))" data-field="project" data-fieldname="project">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_project"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst project"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_project"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("project_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("project_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+											
+@foreach (string _task_fieldblock in Model.GetSection("task_fieldblock", this)){
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_task"))  r-horizontal-field form-horizontal" data-signal-error-for="task@(Model.displayVar("id"))" data-itemtype="integrated_search_field" data-itemid="integrated_search_field38" @(Model.displayVar("item_integrated_search_field38")) data-pageid="@(Model.displayVar("pageid"))" data-field="task" data-fieldname="task">
+
+
+	<LABEL class="r-search-label control-label" for="@(Model.displayVar("labelfor_task"))">
+		@(Model.displayVar("label dbo_sc_aptrandist_mst task"))	</label>
+	<div class="r-search-option">
+		@(Model.displayVar("searchtype_task"))
+	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("task_editcontrol"))	</div>
+	<div class="r-search-field">
+		@(Model.displayVar("task_editcontrol1"))
+	</div>
+	
+</div>
+
+}
+	
+								</td>
+			}
+								</tr>
+			</tbody></table>
+}
+									@foreach (string _below_grid_block in Model.GetSection("below-grid_block", this)){
+<DIV class="r-form" data-location="below-grid" id="form_below-grid_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_below-grid")) data-pageid="@(Model.displayVar("pageid"))" data-v-width="6" data-v-margin="1">		
+	 
+		<div class="row">
+			 
+				<DIV data-cellId="below-grid_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_below-grid_c1")) class="			col-md-12
+	">
+	 
+		<SPAN data-itemtype="search_search" data-itemid="search_search" @(Model.displayVar("item_search_search")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-primary   
+	" @(Model.displayVar("searchbutton_attrs")) data-page=undefined>
+							Search			</a>
+</span>
+	 
+		<SPAN data-itemtype="search_reset" data-itemid="search_reset" @(Model.displayVar("item_search_reset")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-default   
+	" @(Model.displayVar("resetbutton_attrs"))>
+							Reset			</a>
+</span>
+	 
+		@foreach (string _back_button in Model.GetSection("back_button", this)){
+<SPAN data-itemtype="search_back_list" data-itemid="search_back_list" @(Model.displayVar("item_search_back_list")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-default   
+	" @(Model.displayVar("backbutton_attrs"))>
+							Back to list			</a>
+</span>
+}
+	 
+		@foreach (string _cancel_button in Model.GetSection("cancel_button", this)){
+<SPAN data-itemtype="search_cancel" data-itemid="search_cancel" @(Model.displayVar("item_search_cancel")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-default   
+	" id="cancelButton@(Model.displayVar("id"))">
+							Cancel			</a>
+</span>
+}
+	</div>					</div>
+	</div>		
+}
+			</div>
+		{Html.RenderSharedView("footer");}
+	}
+	</body>
+</html>

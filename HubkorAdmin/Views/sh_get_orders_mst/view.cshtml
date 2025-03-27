@@ -1,0 +1,1923 @@
+﻿@using runnerDotNet;
+@{
+ XTempl Model = this.Model;
+ if(ViewBag != null && ViewBag.xt != null)
+ {
+  Model = ViewBag.xt;
+  if(Model != null)
+  {
+   Model.currentViewContext = ViewContext;
+  }
+ }
+ string webRootPath = "";
+}
+
+<!doctype html>@(new HtmlString(MVCFunctions.GetBuferContentAndClearBufer()))
+<HTML @(Model.displayVar("html_attrs"))>
+	<head>
+				<META http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<META name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@(Model.displayVar("pagetitle"))</title>
+	<META http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<BASE href="@(Model.displayVar("projectPath"))" />
+		<LINK REL="stylesheet" href="styles/default.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	@foreach (string _rtlCSS in Model.GetSection("rtlCSS", this)){
+	<LINK REL="stylesheet" href="styles/defaultRTL.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	}
+	@foreach (string _styleCSSFiles in Model.GetSection("styleCSSFiles", this)){
+	<LINK REL="stylesheet" href="@(Model.displayVar("stylepath"))" type="text/css" />
+	}
+			
+	</head>
+
+	<BODY class="@(Model.displayVar("stylename")) function-view">
+	@foreach (string _body in Model.GetSection("body", this)){
+		{Html.RenderSharedView("header");}
+		<style>@MvcHtmlString.Create(@"")@(Model.displayVar("containerCss"))@MvcHtmlString.Create(@"")</style>
+		@(Model.displayVar("locking"))
+		<div class="r-small-page" 
+			data-body-align="center"
+			data-body-width="standard"
+		>
+							@foreach (string _top_block in Model.GetSection("top_block", this)){
+<DIV class="r-form" data-location="top" id="form_top_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_top")) data-pageid="@(Model.displayVar("pageid"))" data-v-width="4" data-v-margin="1">		
+	 
+		<div class="row">
+			 
+				<DIV data-cellId="top_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_top_c1")) class=" r-ori-vert			col-md-12
+	">
+	 
+		<H2 data-itemtype="view_header" data-itemid="view_header" @(Model.displayVar("item_view_header")) data-pageid="@(Model.displayVar("pageid"))">@(Model.displayVar("pagetitlelabel dbo_sh_get_orders_mst view"))</h2>
+	</div>					</div>
+	</div>		
+}
+									@foreach (string _above_grid_block in Model.GetSection("above-grid_block", this)){
+<DIV class="r-form" data-location="above-grid" id="form_above-grid_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_above-grid")) data-pageid="@(Model.displayVar("pageid"))" data-v-width="4" data-v-margin="1">		
+	 
+		<div class="row">
+			 
+				<DIV data-cellId="above-grid_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_above-grid_c1")) class=" r-ori-vert			col-md-12
+	">
+	</div>					</div>
+	</div>		
+}
+									@foreach (string _grid_block in Model.GetSection("grid_block", this)){
+
+
+
+
+ 
+	 
+												<TABLE data-body-align="center" data-location="grid" id="form_grid_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_grid")) data-pageid="@(Model.displayVar("pageid"))" class="r-edit-form" cellpadding="0" cellspacing="0" @(Model.displayVar("grid_hiddenattr")) data-form-width="1" data-v-width="4">
+	<tbody>
+										<TR @(Model.displayVar("row_grid_0"))>
+										
+
+@foreach (string _cellblock_grid_c3 in Model.GetSection("cellblock_grid_c3", this)){
+<TD @(Model.displayVar("cell_grid_c3")) class=" r-ori-vert" data-fullwidth data-cellId="grid_c3" data-pageid="@(Model.displayVar("pageid"))" data-v-cell="4">
+	<div edit-form-cell class="clearfix">
+				
+@foreach (string _clientid_fieldblock in Model.GetSection("clientid_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_clientid"))  r-vertical-field" data-fieldname="clientid" data-signal-error-for="clientid@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" @(Model.displayVar("item_integrated_edit_field")) data-pageid="@(Model.displayVar("pageid"))" data-field="clientid" data-fieldname="clientid" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_clientid"))">
+		
+		@foreach (string _clientid_label in Model.GetSection("clientid_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst clientid"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("clientid_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _VariationNumber_fieldblock in Model.GetSection("VariationNumber_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_VariationNumber"))  r-vertical-field" data-fieldname="VariationNumber" data-signal-error-for="VariationNumber@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" @(Model.displayVar("item_integrated_edit_field1")) data-pageid="@(Model.displayVar("pageid"))" data-field="VariationNumber" data-fieldname="VariationNumber" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_VariationNumber"))">
+		
+		@foreach (string _VariationNumber_label in Model.GetSection("VariationNumber_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst VariationNumber"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("VariationNumber_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _order_id_fieldblock in Model.GetSection("order_id_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_order_id"))  r-vertical-field" data-fieldname="order_id" data-signal-error-for="order_id@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" @(Model.displayVar("item_integrated_edit_field2")) data-pageid="@(Model.displayVar("pageid"))" data-field="order_id" data-fieldname="order_id" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_order_id"))">
+		
+		@foreach (string _order_id_label in Model.GetSection("order_id_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst order_id"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("order_id_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _Name_fieldblock in Model.GetSection("Name_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_Name"))  r-vertical-field" data-fieldname="Name" data-signal-error-for="Name@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" @(Model.displayVar("item_integrated_edit_field3")) data-pageid="@(Model.displayVar("pageid"))" data-field="Name" data-fieldname="Name" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_Name"))">
+		
+		@foreach (string _Name_label in Model.GetSection("Name_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst Name"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("Name_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _CustomerDisplayName_fieldblock in Model.GetSection("CustomerDisplayName_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_CustomerDisplayName"))  r-vertical-field" data-fieldname="CustomerDisplayName" data-signal-error-for="CustomerDisplayName@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" @(Model.displayVar("item_integrated_edit_field4")) data-pageid="@(Model.displayVar("pageid"))" data-field="CustomerDisplayName" data-fieldname="CustomerDisplayName" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_CustomerDisplayName"))">
+		
+		@foreach (string _CustomerDisplayName_label in Model.GetSection("CustomerDisplayName_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst CustomerDisplayName"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("CustomerDisplayName_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _CreatedAt_fieldblock in Model.GetSection("CreatedAt_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_CreatedAt"))  r-vertical-field" data-fieldname="CreatedAt" data-signal-error-for="CreatedAt@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field5" @(Model.displayVar("item_integrated_edit_field5")) data-pageid="@(Model.displayVar("pageid"))" data-field="CreatedAt" data-fieldname="CreatedAt" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_CreatedAt"))">
+		
+		@foreach (string _CreatedAt_label in Model.GetSection("CreatedAt_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst CreatedAt"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("CreatedAt_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _ConfirmationNumber_fieldblock in Model.GetSection("ConfirmationNumber_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_ConfirmationNumber"))  r-vertical-field" data-fieldname="ConfirmationNumber" data-signal-error-for="ConfirmationNumber@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field6" @(Model.displayVar("item_integrated_edit_field6")) data-pageid="@(Model.displayVar("pageid"))" data-field="ConfirmationNumber" data-fieldname="ConfirmationNumber" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_ConfirmationNumber"))">
+		
+		@foreach (string _ConfirmationNumber_label in Model.GetSection("ConfirmationNumber_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst ConfirmationNumber"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("ConfirmationNumber_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _tp_id_fieldblock in Model.GetSection("tp_id_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_tp_id"))  r-vertical-field" data-fieldname="tp_id" data-signal-error-for="tp_id@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field7" @(Model.displayVar("item_integrated_edit_field7")) data-pageid="@(Model.displayVar("pageid"))" data-field="tp_id" data-fieldname="tp_id" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_tp_id"))">
+		
+		@foreach (string _tp_id_label in Model.GetSection("tp_id_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst tp_id"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("tp_id_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _tp_posted_fieldblock in Model.GetSection("tp_posted_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_tp_posted"))  r-vertical-field" data-fieldname="tp_posted" data-signal-error-for="tp_posted@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field8" @(Model.displayVar("item_integrated_edit_field8")) data-pageid="@(Model.displayVar("pageid"))" data-field="tp_posted" data-fieldname="tp_posted" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_tp_posted"))">
+		
+		@foreach (string _tp_posted_label in Model.GetSection("tp_posted_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst tp_posted"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("tp_posted_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _sc_id_fieldblock in Model.GetSection("sc_id_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_sc_id"))  r-vertical-field" data-fieldname="sc_id" data-signal-error-for="sc_id@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field9" @(Model.displayVar("item_integrated_edit_field9")) data-pageid="@(Model.displayVar("pageid"))" data-field="sc_id" data-fieldname="sc_id" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_sc_id"))">
+		
+		@foreach (string _sc_id_label in Model.GetSection("sc_id_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst sc_id"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("sc_id_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _sc_posted_fieldblock in Model.GetSection("sc_posted_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_sc_posted"))  r-vertical-field" data-fieldname="sc_posted" data-signal-error-for="sc_posted@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field10" @(Model.displayVar("item_integrated_edit_field10")) data-pageid="@(Model.displayVar("pageid"))" data-field="sc_posted" data-fieldname="sc_posted" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_sc_posted"))">
+		
+		@foreach (string _sc_posted_label in Model.GetSection("sc_posted_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst sc_posted"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("sc_posted_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _sf_id_fieldblock in Model.GetSection("sf_id_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_sf_id"))  r-vertical-field" data-fieldname="sf_id" data-signal-error-for="sf_id@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field11" @(Model.displayVar("item_integrated_edit_field11")) data-pageid="@(Model.displayVar("pageid"))" data-field="sf_id" data-fieldname="sf_id" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_sf_id"))">
+		
+		@foreach (string _sf_id_label in Model.GetSection("sf_id_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst sf_id"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("sf_id_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _sf_posted_fieldblock in Model.GetSection("sf_posted_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_sf_posted"))  r-vertical-field" data-fieldname="sf_posted" data-signal-error-for="sf_posted@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field12" @(Model.displayVar("item_integrated_edit_field12")) data-pageid="@(Model.displayVar("pageid"))" data-field="sf_posted" data-fieldname="sf_posted" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_sf_posted"))">
+		
+		@foreach (string _sf_posted_label in Model.GetSection("sf_posted_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst sf_posted"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("sf_posted_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _mg_id_fieldblock in Model.GetSection("mg_id_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_mg_id"))  r-vertical-field" data-fieldname="mg_id" data-signal-error-for="mg_id@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field13" @(Model.displayVar("item_integrated_edit_field13")) data-pageid="@(Model.displayVar("pageid"))" data-field="mg_id" data-fieldname="mg_id" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_mg_id"))">
+		
+		@foreach (string _mg_id_label in Model.GetSection("mg_id_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst mg_id"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("mg_id_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _mg_posted_fieldblock in Model.GetSection("mg_posted_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_mg_posted"))  r-vertical-field" data-fieldname="mg_posted" data-signal-error-for="mg_posted@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field14" @(Model.displayVar("item_integrated_edit_field14")) data-pageid="@(Model.displayVar("pageid"))" data-field="mg_posted" data-fieldname="mg_posted" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_mg_posted"))">
+		
+		@foreach (string _mg_posted_label in Model.GetSection("mg_posted_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst mg_posted"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("mg_posted_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _uf_uet1_fieldblock in Model.GetSection("uf_uet1_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_uf_uet1"))  r-vertical-field" data-fieldname="uf_uet1" data-signal-error-for="uf_uet1@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field15" @(Model.displayVar("item_integrated_edit_field15")) data-pageid="@(Model.displayVar("pageid"))" data-field="uf_uet1" data-fieldname="uf_uet1" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_uf_uet1"))">
+		
+		@foreach (string _uf_uet1_label in Model.GetSection("uf_uet1_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst uf_uet1"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("uf_uet1_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _uf_uet2_fieldblock in Model.GetSection("uf_uet2_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_uf_uet2"))  r-vertical-field" data-fieldname="uf_uet2" data-signal-error-for="uf_uet2@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field16" @(Model.displayVar("item_integrated_edit_field16")) data-pageid="@(Model.displayVar("pageid"))" data-field="uf_uet2" data-fieldname="uf_uet2" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_uf_uet2"))">
+		
+		@foreach (string _uf_uet2_label in Model.GetSection("uf_uet2_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst uf_uet2"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("uf_uet2_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _uf_uet3_fieldblock in Model.GetSection("uf_uet3_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_uf_uet3"))  r-vertical-field" data-fieldname="uf_uet3" data-signal-error-for="uf_uet3@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field17" @(Model.displayVar("item_integrated_edit_field17")) data-pageid="@(Model.displayVar("pageid"))" data-field="uf_uet3" data-fieldname="uf_uet3" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_uf_uet3"))">
+		
+		@foreach (string _uf_uet3_label in Model.GetSection("uf_uet3_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst uf_uet3"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("uf_uet3_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _uf_uet4_fieldblock in Model.GetSection("uf_uet4_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_uf_uet4"))  r-vertical-field" data-fieldname="uf_uet4" data-signal-error-for="uf_uet4@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field18" @(Model.displayVar("item_integrated_edit_field18")) data-pageid="@(Model.displayVar("pageid"))" data-field="uf_uet4" data-fieldname="uf_uet4" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_uf_uet4"))">
+		
+		@foreach (string _uf_uet4_label in Model.GetSection("uf_uet4_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst uf_uet4"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("uf_uet4_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _uf_uet5_fieldblock in Model.GetSection("uf_uet5_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_uf_uet5"))  r-vertical-field" data-fieldname="uf_uet5" data-signal-error-for="uf_uet5@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field19" @(Model.displayVar("item_integrated_edit_field19")) data-pageid="@(Model.displayVar("pageid"))" data-field="uf_uet5" data-fieldname="uf_uet5" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_uf_uet5"))">
+		
+		@foreach (string _uf_uet5_label in Model.GetSection("uf_uet5_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst uf_uet5"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("uf_uet5_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _uf_uet6_fieldblock in Model.GetSection("uf_uet6_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_uf_uet6"))  r-vertical-field" data-fieldname="uf_uet6" data-signal-error-for="uf_uet6@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field20" @(Model.displayVar("item_integrated_edit_field20")) data-pageid="@(Model.displayVar("pageid"))" data-field="uf_uet6" data-fieldname="uf_uet6" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_uf_uet6"))">
+		
+		@foreach (string _uf_uet6_label in Model.GetSection("uf_uet6_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst uf_uet6"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("uf_uet6_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _uf_uet7_fieldblock in Model.GetSection("uf_uet7_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_uf_uet7"))  r-vertical-field" data-fieldname="uf_uet7" data-signal-error-for="uf_uet7@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field21" @(Model.displayVar("item_integrated_edit_field21")) data-pageid="@(Model.displayVar("pageid"))" data-field="uf_uet7" data-fieldname="uf_uet7" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_uf_uet7"))">
+		
+		@foreach (string _uf_uet7_label in Model.GetSection("uf_uet7_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst uf_uet7"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("uf_uet7_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _uf_uet8_fieldblock in Model.GetSection("uf_uet8_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_uf_uet8"))  r-vertical-field" data-fieldname="uf_uet8" data-signal-error-for="uf_uet8@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field22" @(Model.displayVar("item_integrated_edit_field22")) data-pageid="@(Model.displayVar("pageid"))" data-field="uf_uet8" data-fieldname="uf_uet8" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_uf_uet8"))">
+		
+		@foreach (string _uf_uet8_label in Model.GetSection("uf_uet8_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst uf_uet8"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("uf_uet8_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _uf_uet9_fieldblock in Model.GetSection("uf_uet9_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_uf_uet9"))  r-vertical-field" data-fieldname="uf_uet9" data-signal-error-for="uf_uet9@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field23" @(Model.displayVar("item_integrated_edit_field23")) data-pageid="@(Model.displayVar("pageid"))" data-field="uf_uet9" data-fieldname="uf_uet9" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_uf_uet9"))">
+		
+		@foreach (string _uf_uet9_label in Model.GetSection("uf_uet9_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst uf_uet9"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("uf_uet9_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _uf_uet10_fieldblock in Model.GetSection("uf_uet10_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_uf_uet10"))  r-vertical-field" data-fieldname="uf_uet10" data-signal-error-for="uf_uet10@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field24" @(Model.displayVar("item_integrated_edit_field24")) data-pageid="@(Model.displayVar("pageid"))" data-field="uf_uet10" data-fieldname="uf_uet10" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_uf_uet10"))">
+		
+		@foreach (string _uf_uet10_label in Model.GetSection("uf_uet10_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst uf_uet10"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("uf_uet10_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _CustomerEmail_fieldblock in Model.GetSection("CustomerEmail_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_CustomerEmail"))  r-vertical-field" data-fieldname="CustomerEmail" data-signal-error-for="CustomerEmail@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field25" @(Model.displayVar("item_integrated_edit_field25")) data-pageid="@(Model.displayVar("pageid"))" data-field="CustomerEmail" data-fieldname="CustomerEmail" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_CustomerEmail"))">
+		
+		@foreach (string _CustomerEmail_label in Model.GetSection("CustomerEmail_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst CustomerEmail"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("CustomerEmail_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _CustomerFirstName_fieldblock in Model.GetSection("CustomerFirstName_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_CustomerFirstName"))  r-vertical-field" data-fieldname="CustomerFirstName" data-signal-error-for="CustomerFirstName@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field26" @(Model.displayVar("item_integrated_edit_field26")) data-pageid="@(Model.displayVar("pageid"))" data-field="CustomerFirstName" data-fieldname="CustomerFirstName" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_CustomerFirstName"))">
+		
+		@foreach (string _CustomerFirstName_label in Model.GetSection("CustomerFirstName_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst CustomerFirstName"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("CustomerFirstName_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _CustomerLastName_fieldblock in Model.GetSection("CustomerLastName_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_CustomerLastName"))  r-vertical-field" data-fieldname="CustomerLastName" data-signal-error-for="CustomerLastName@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field27" @(Model.displayVar("item_integrated_edit_field27")) data-pageid="@(Model.displayVar("pageid"))" data-field="CustomerLastName" data-fieldname="CustomerLastName" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_CustomerLastName"))">
+		
+		@foreach (string _CustomerLastName_label in Model.GetSection("CustomerLastName_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst CustomerLastName"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("CustomerLastName_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _CustomerState_fieldblock in Model.GetSection("CustomerState_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_CustomerState"))  r-vertical-field" data-fieldname="CustomerState" data-signal-error-for="CustomerState@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field28" @(Model.displayVar("item_integrated_edit_field28")) data-pageid="@(Model.displayVar("pageid"))" data-field="CustomerState" data-fieldname="CustomerState" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_CustomerState"))">
+		
+		@foreach (string _CustomerState_label in Model.GetSection("CustomerState_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst CustomerState"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("CustomerState_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _CustomerID_fieldblock in Model.GetSection("CustomerID_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_CustomerID"))  r-vertical-field" data-fieldname="CustomerID" data-signal-error-for="CustomerID@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field29" @(Model.displayVar("item_integrated_edit_field29")) data-pageid="@(Model.displayVar("pageid"))" data-field="CustomerID" data-fieldname="CustomerID" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_CustomerID"))">
+		
+		@foreach (string _CustomerID_label in Model.GetSection("CustomerID_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst CustomerID"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("CustomerID_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _UpdatedAt_fieldblock in Model.GetSection("UpdatedAt_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_UpdatedAt"))  r-vertical-field" data-fieldname="UpdatedAt" data-signal-error-for="UpdatedAt@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field30" @(Model.displayVar("item_integrated_edit_field30")) data-pageid="@(Model.displayVar("pageid"))" data-field="UpdatedAt" data-fieldname="UpdatedAt" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_UpdatedAt"))">
+		
+		@foreach (string _UpdatedAt_label in Model.GetSection("UpdatedAt_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst UpdatedAt"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("UpdatedAt_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _TotalDiscounts_fieldblock in Model.GetSection("TotalDiscounts_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_TotalDiscounts"))  r-vertical-field" data-fieldname="TotalDiscounts" data-signal-error-for="TotalDiscounts@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field31" @(Model.displayVar("item_integrated_edit_field31")) data-pageid="@(Model.displayVar("pageid"))" data-field="TotalDiscounts" data-fieldname="TotalDiscounts" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_TotalDiscounts"))">
+		
+		@foreach (string _TotalDiscounts_label in Model.GetSection("TotalDiscounts_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst TotalDiscounts"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("TotalDiscounts_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _TotalTax_fieldblock in Model.GetSection("TotalTax_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_TotalTax"))  r-vertical-field" data-fieldname="TotalTax" data-signal-error-for="TotalTax@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field32" @(Model.displayVar("item_integrated_edit_field32")) data-pageid="@(Model.displayVar("pageid"))" data-field="TotalTax" data-fieldname="TotalTax" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_TotalTax"))">
+		
+		@foreach (string _TotalTax_label in Model.GetSection("TotalTax_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst TotalTax"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("TotalTax_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _TotalPrice_fieldblock in Model.GetSection("TotalPrice_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_TotalPrice"))  r-vertical-field" data-fieldname="TotalPrice" data-signal-error-for="TotalPrice@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field33" @(Model.displayVar("item_integrated_edit_field33")) data-pageid="@(Model.displayVar("pageid"))" data-field="TotalPrice" data-fieldname="TotalPrice" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_TotalPrice"))">
+		
+		@foreach (string _TotalPrice_label in Model.GetSection("TotalPrice_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst TotalPrice"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("TotalPrice_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _BillingAddress1_fieldblock in Model.GetSection("BillingAddress1_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_BillingAddress1"))  r-vertical-field" data-fieldname="BillingAddress1" data-signal-error-for="BillingAddress1@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field34" @(Model.displayVar("item_integrated_edit_field34")) data-pageid="@(Model.displayVar("pageid"))" data-field="BillingAddress1" data-fieldname="BillingAddress1" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_BillingAddress1"))">
+		
+		@foreach (string _BillingAddress1_label in Model.GetSection("BillingAddress1_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst BillingAddress1"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("BillingAddress1_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _BillingCity_fieldblock in Model.GetSection("BillingCity_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_BillingCity"))  r-vertical-field" data-fieldname="BillingCity" data-signal-error-for="BillingCity@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field35" @(Model.displayVar("item_integrated_edit_field35")) data-pageid="@(Model.displayVar("pageid"))" data-field="BillingCity" data-fieldname="BillingCity" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_BillingCity"))">
+		
+		@foreach (string _BillingCity_label in Model.GetSection("BillingCity_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst BillingCity"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("BillingCity_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _BillingCountry_fieldblock in Model.GetSection("BillingCountry_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_BillingCountry"))  r-vertical-field" data-fieldname="BillingCountry" data-signal-error-for="BillingCountry@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field36" @(Model.displayVar("item_integrated_edit_field36")) data-pageid="@(Model.displayVar("pageid"))" data-field="BillingCountry" data-fieldname="BillingCountry" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_BillingCountry"))">
+		
+		@foreach (string _BillingCountry_label in Model.GetSection("BillingCountry_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst BillingCountry"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("BillingCountry_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _BillingProvince_fieldblock in Model.GetSection("BillingProvince_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_BillingProvince"))  r-vertical-field" data-fieldname="BillingProvince" data-signal-error-for="BillingProvince@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field37" @(Model.displayVar("item_integrated_edit_field37")) data-pageid="@(Model.displayVar("pageid"))" data-field="BillingProvince" data-fieldname="BillingProvince" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_BillingProvince"))">
+		
+		@foreach (string _BillingProvince_label in Model.GetSection("BillingProvince_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst BillingProvince"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("BillingProvince_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _BillingZip_fieldblock in Model.GetSection("BillingZip_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_BillingZip"))  r-vertical-field" data-fieldname="BillingZip" data-signal-error-for="BillingZip@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field38" @(Model.displayVar("item_integrated_edit_field38")) data-pageid="@(Model.displayVar("pageid"))" data-field="BillingZip" data-fieldname="BillingZip" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_BillingZip"))">
+		
+		@foreach (string _BillingZip_label in Model.GetSection("BillingZip_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst BillingZip"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("BillingZip_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _BillingFirstName_fieldblock in Model.GetSection("BillingFirstName_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_BillingFirstName"))  r-vertical-field" data-fieldname="BillingFirstName" data-signal-error-for="BillingFirstName@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field39" @(Model.displayVar("item_integrated_edit_field39")) data-pageid="@(Model.displayVar("pageid"))" data-field="BillingFirstName" data-fieldname="BillingFirstName" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_BillingFirstName"))">
+		
+		@foreach (string _BillingFirstName_label in Model.GetSection("BillingFirstName_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst BillingFirstName"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("BillingFirstName_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _BillingLastName_fieldblock in Model.GetSection("BillingLastName_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_BillingLastName"))  r-vertical-field" data-fieldname="BillingLastName" data-signal-error-for="BillingLastName@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field40" @(Model.displayVar("item_integrated_edit_field40")) data-pageid="@(Model.displayVar("pageid"))" data-field="BillingLastName" data-fieldname="BillingLastName" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_BillingLastName"))">
+		
+		@foreach (string _BillingLastName_label in Model.GetSection("BillingLastName_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst BillingLastName"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("BillingLastName_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _poNumber_fieldblock in Model.GetSection("poNumber_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_poNumber"))  r-vertical-field" data-fieldname="poNumber" data-signal-error-for="poNumber@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field41" @(Model.displayVar("item_integrated_edit_field41")) data-pageid="@(Model.displayVar("pageid"))" data-field="poNumber" data-fieldname="poNumber" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_poNumber"))">
+		
+		@foreach (string _poNumber_label in Model.GetSection("poNumber_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst poNumber"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("poNumber_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _BillingCountryCode_fieldblock in Model.GetSection("BillingCountryCode_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_BillingCountryCode"))  r-vertical-field" data-fieldname="BillingCountryCode" data-signal-error-for="BillingCountryCode@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field42" @(Model.displayVar("item_integrated_edit_field42")) data-pageid="@(Model.displayVar("pageid"))" data-field="BillingCountryCode" data-fieldname="BillingCountryCode" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_BillingCountryCode"))">
+		
+		@foreach (string _BillingCountryCode_label in Model.GetSection("BillingCountryCode_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst BillingCountryCode"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("BillingCountryCode_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _BillingName_fieldblock in Model.GetSection("BillingName_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_BillingName"))  r-vertical-field" data-fieldname="BillingName" data-signal-error-for="BillingName@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field43" @(Model.displayVar("item_integrated_edit_field43")) data-pageid="@(Model.displayVar("pageid"))" data-field="BillingName" data-fieldname="BillingName" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_BillingName"))">
+		
+		@foreach (string _BillingName_label in Model.GetSection("BillingName_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst BillingName"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("BillingName_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _billing_address_id_fieldblock in Model.GetSection("billing_address_id_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_billing_address_id"))  r-vertical-field" data-fieldname="billing_address_id" data-signal-error-for="billing_address_id@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field44" @(Model.displayVar("item_integrated_edit_field44")) data-pageid="@(Model.displayVar("pageid"))" data-field="billing_address_id" data-fieldname="billing_address_id" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_billing_address_id"))">
+		
+		@foreach (string _billing_address_id_label in Model.GetSection("billing_address_id_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst billing_address_id"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("billing_address_id_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _status_fieldblock in Model.GetSection("status_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_status"))  r-vertical-field" data-fieldname="status" data-signal-error-for="status@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field45" @(Model.displayVar("item_integrated_edit_field45")) data-pageid="@(Model.displayVar("pageid"))" data-field="status" data-fieldname="status" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_status"))">
+		
+		@foreach (string _status_label in Model.GetSection("status_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst status"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("status_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _site_ref_fieldblock in Model.GetSection("site_ref_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_site_ref"))  r-vertical-field" data-fieldname="site_ref" data-signal-error-for="site_ref@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field46" @(Model.displayVar("item_integrated_edit_field46")) data-pageid="@(Model.displayVar("pageid"))" data-field="site_ref" data-fieldname="site_ref" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_site_ref"))">
+		
+		@foreach (string _site_ref_label in Model.GetSection("site_ref_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst site_ref"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("site_ref_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _co_num_fieldblock in Model.GetSection("co_num_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_co_num"))  r-vertical-field" data-fieldname="co_num" data-signal-error-for="co_num@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field47" @(Model.displayVar("item_integrated_edit_field47")) data-pageid="@(Model.displayVar("pageid"))" data-field="co_num" data-fieldname="co_num" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_co_num"))">
+		
+		@foreach (string _co_num_label in Model.GetSection("co_num_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst co_num"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("co_num_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _posted_fieldblock in Model.GetSection("posted_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_posted"))  r-vertical-field" data-fieldname="posted" data-signal-error-for="posted@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field48" @(Model.displayVar("item_integrated_edit_field48")) data-pageid="@(Model.displayVar("pageid"))" data-field="posted" data-fieldname="posted" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_posted"))">
+		
+		@foreach (string _posted_label in Model.GetSection("posted_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst posted"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("posted_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _csi_posted_fieldblock in Model.GetSection("csi_posted_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_csi_posted"))  r-vertical-field" data-fieldname="csi_posted" data-signal-error-for="csi_posted@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field49" @(Model.displayVar("item_integrated_edit_field49")) data-pageid="@(Model.displayVar("pageid"))" data-field="csi_posted" data-fieldname="csi_posted" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_csi_posted"))">
+		
+		@foreach (string _csi_posted_label in Model.GetSection("csi_posted_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst csi_posted"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("csi_posted_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _BillingAddress2_fieldblock in Model.GetSection("BillingAddress2_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_BillingAddress2"))  r-vertical-field" data-fieldname="BillingAddress2" data-signal-error-for="BillingAddress2@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field50" @(Model.displayVar("item_integrated_edit_field50")) data-pageid="@(Model.displayVar("pageid"))" data-field="BillingAddress2" data-fieldname="BillingAddress2" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_BillingAddress2"))">
+		
+		@foreach (string _BillingAddress2_label in Model.GetSection("BillingAddress2_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst BillingAddress2"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("BillingAddress2_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _ShippingAddress1_fieldblock in Model.GetSection("ShippingAddress1_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_ShippingAddress1"))  r-vertical-field" data-fieldname="ShippingAddress1" data-signal-error-for="ShippingAddress1@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field51" @(Model.displayVar("item_integrated_edit_field51")) data-pageid="@(Model.displayVar("pageid"))" data-field="ShippingAddress1" data-fieldname="ShippingAddress1" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_ShippingAddress1"))">
+		
+		@foreach (string _ShippingAddress1_label in Model.GetSection("ShippingAddress1_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst ShippingAddress1"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("ShippingAddress1_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _post_date_fieldblock in Model.GetSection("post_date_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_post_date"))  r-vertical-field" data-fieldname="post_date" data-signal-error-for="post_date@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field52" @(Model.displayVar("item_integrated_edit_field52")) data-pageid="@(Model.displayVar("pageid"))" data-field="post_date" data-fieldname="post_date" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_post_date"))">
+		
+		@foreach (string _post_date_label in Model.GetSection("post_date_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst post_date"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("post_date_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _cust_num_fieldblock in Model.GetSection("cust_num_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_cust_num"))  r-vertical-field" data-fieldname="cust_num" data-signal-error-for="cust_num@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field53" @(Model.displayVar("item_integrated_edit_field53")) data-pageid="@(Model.displayVar("pageid"))" data-field="cust_num" data-fieldname="cust_num" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_cust_num"))">
+		
+		@foreach (string _cust_num_label in Model.GetSection("cust_num_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst cust_num"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("cust_num_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _cust_seq_fieldblock in Model.GetSection("cust_seq_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_cust_seq"))  r-vertical-field" data-fieldname="cust_seq" data-signal-error-for="cust_seq@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field54" @(Model.displayVar("item_integrated_edit_field54")) data-pageid="@(Model.displayVar("pageid"))" data-field="cust_seq" data-fieldname="cust_seq" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_cust_seq"))">
+		
+		@foreach (string _cust_seq_label in Model.GetSection("cust_seq_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst cust_seq"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("cust_seq_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _bill_phoneno_fieldblock in Model.GetSection("bill_phoneno_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_bill_phoneno"))  r-vertical-field" data-fieldname="bill_phoneno" data-signal-error-for="bill_phoneno@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field55" @(Model.displayVar("item_integrated_edit_field55")) data-pageid="@(Model.displayVar("pageid"))" data-field="bill_phoneno" data-fieldname="bill_phoneno" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_bill_phoneno"))">
+		
+		@foreach (string _bill_phoneno_label in Model.GetSection("bill_phoneno_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst bill_phoneno"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("bill_phoneno_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _ship_phoneno_fieldblock in Model.GetSection("ship_phoneno_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_ship_phoneno"))  r-vertical-field" data-fieldname="ship_phoneno" data-signal-error-for="ship_phoneno@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field56" @(Model.displayVar("item_integrated_edit_field56")) data-pageid="@(Model.displayVar("pageid"))" data-field="ship_phoneno" data-fieldname="ship_phoneno" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_ship_phoneno"))">
+		
+		@foreach (string _ship_phoneno_label in Model.GetSection("ship_phoneno_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst ship_phoneno"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("ship_phoneno_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _method_fieldblock in Model.GetSection("method_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_method"))  r-vertical-field" data-fieldname="method" data-signal-error-for="method@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field57" @(Model.displayVar("item_integrated_edit_field57")) data-pageid="@(Model.displayVar("pageid"))" data-field="method" data-fieldname="method" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_method"))">
+		
+		@foreach (string _method_label in Model.GetSection("method_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst method"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("method_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _end_type_fieldblock in Model.GetSection("end_type_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_end_type"))  r-vertical-field" data-fieldname="end_type" data-signal-error-for="end_type@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field58" @(Model.displayVar("item_integrated_edit_field58")) data-pageid="@(Model.displayVar("pageid"))" data-field="end_type" data-fieldname="end_type" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_end_type"))">
+		
+		@foreach (string _end_type_label in Model.GetSection("end_type_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst end_type"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("end_type_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _prepaid_fieldblock in Model.GetSection("prepaid_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_prepaid"))  r-vertical-field" data-fieldname="prepaid" data-signal-error-for="prepaid@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field59" @(Model.displayVar("item_integrated_edit_field59")) data-pageid="@(Model.displayVar("pageid"))" data-field="prepaid" data-fieldname="prepaid" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_prepaid"))">
+		
+		@foreach (string _prepaid_label in Model.GetSection("prepaid_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst prepaid"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("prepaid_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _total_weight_fieldblock in Model.GetSection("total_weight_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_total_weight"))  r-vertical-field" data-fieldname="total_weight" data-signal-error-for="total_weight@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field60" @(Model.displayVar("item_integrated_edit_field60")) data-pageid="@(Model.displayVar("pageid"))" data-field="total_weight" data-fieldname="total_weight" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_total_weight"))">
+		
+		@foreach (string _total_weight_label in Model.GetSection("total_weight_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst total_weight"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("total_weight_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _current_Subtotal_Price_fieldblock in Model.GetSection("current_Subtotal_Price_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_current_Subtotal_Price"))  r-vertical-field" data-fieldname="current_Subtotal_Price" data-signal-error-for="current_Subtotal_Price@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field61" @(Model.displayVar("item_integrated_edit_field61")) data-pageid="@(Model.displayVar("pageid"))" data-field="current_Subtotal_Price" data-fieldname="current_Subtotal_Price" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_current_Subtotal_Price"))">
+		
+		@foreach (string _current_Subtotal_Price_label in Model.GetSection("current_Subtotal_Price_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst current_Subtotal_Price"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("current_Subtotal_Price_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _subtotal_Price_fieldblock in Model.GetSection("subtotal_Price_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_subtotal_Price"))  r-vertical-field" data-fieldname="subtotal_Price" data-signal-error-for="subtotal_Price@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field62" @(Model.displayVar("item_integrated_edit_field62")) data-pageid="@(Model.displayVar("pageid"))" data-field="subtotal_Price" data-fieldname="subtotal_Price" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_subtotal_Price"))">
+		
+		@foreach (string _subtotal_Price_label in Model.GetSection("subtotal_Price_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst subtotal_Price"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("subtotal_Price_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _whse_fieldblock in Model.GetSection("whse_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_whse"))  r-vertical-field" data-fieldname="whse" data-signal-error-for="whse@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field63" @(Model.displayVar("item_integrated_edit_field63")) data-pageid="@(Model.displayVar("pageid"))" data-field="whse" data-fieldname="whse" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_whse"))">
+		
+		@foreach (string _whse_label in Model.GetSection("whse_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst whse"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("whse_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _terms_code_fieldblock in Model.GetSection("terms_code_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_terms_code"))  r-vertical-field" data-fieldname="terms_code" data-signal-error-for="terms_code@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field64" @(Model.displayVar("item_integrated_edit_field64")) data-pageid="@(Model.displayVar("pageid"))" data-field="terms_code" data-fieldname="terms_code" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_terms_code"))">
+		
+		@foreach (string _terms_code_label in Model.GetSection("terms_code_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst terms_code"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("terms_code_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _ship_code_fieldblock in Model.GetSection("ship_code_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_ship_code"))  r-vertical-field" data-fieldname="ship_code" data-signal-error-for="ship_code@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field65" @(Model.displayVar("item_integrated_edit_field65")) data-pageid="@(Model.displayVar("pageid"))" data-field="ship_code" data-fieldname="ship_code" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_ship_code"))">
+		
+		@foreach (string _ship_code_label in Model.GetSection("ship_code_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst ship_code"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("ship_code_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _bank_code_fieldblock in Model.GetSection("bank_code_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_bank_code"))  r-vertical-field" data-fieldname="bank_code" data-signal-error-for="bank_code@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field66" @(Model.displayVar("item_integrated_edit_field66")) data-pageid="@(Model.displayVar("pageid"))" data-field="bank_code" data-fieldname="bank_code" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_bank_code"))">
+		
+		@foreach (string _bank_code_label in Model.GetSection("bank_code_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst bank_code"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("bank_code_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _invcategory_fieldblock in Model.GetSection("invcategory_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_invcategory"))  r-vertical-field" data-fieldname="invcategory" data-signal-error-for="invcategory@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field67" @(Model.displayVar("item_integrated_edit_field67")) data-pageid="@(Model.displayVar("pageid"))" data-field="invcategory" data-fieldname="invcategory" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_invcategory"))">
+		
+		@foreach (string _invcategory_label in Model.GetSection("invcategory_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst invcategory"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("invcategory_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _shop_currency_code_fieldblock in Model.GetSection("shop_currency_code_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_shop_currency_code"))  r-vertical-field" data-fieldname="shop_currency_code" data-signal-error-for="shop_currency_code@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field68" @(Model.displayVar("item_integrated_edit_field68")) data-pageid="@(Model.displayVar("pageid"))" data-field="shop_currency_code" data-fieldname="shop_currency_code" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_shop_currency_code"))">
+		
+		@foreach (string _shop_currency_code_label in Model.GetSection("shop_currency_code_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst shop_currency_code"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("shop_currency_code_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _Total_line_item_price_fieldblock in Model.GetSection("Total_line_item_price_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_Total_line_item_price"))  r-vertical-field" data-fieldname="Total_line_item_price" data-signal-error-for="Total_line_item_price@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field69" @(Model.displayVar("item_integrated_edit_field69")) data-pageid="@(Model.displayVar("pageid"))" data-field="Total_line_item_price" data-fieldname="Total_line_item_price" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_Total_line_item_price"))">
+		
+		@foreach (string _Total_line_item_price_label in Model.GetSection("Total_line_item_price_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst Total_line_item_price"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("Total_line_item_price_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _tax_code1_fieldblock in Model.GetSection("tax_code1_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_tax_code1"))  r-vertical-field" data-fieldname="tax_code1" data-signal-error-for="tax_code1@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field70" @(Model.displayVar("item_integrated_edit_field70")) data-pageid="@(Model.displayVar("pageid"))" data-field="tax_code1" data-fieldname="tax_code1" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_tax_code1"))">
+		
+		@foreach (string _tax_code1_label in Model.GetSection("tax_code1_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst tax_code1"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("tax_code1_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _frt_tax_code1_fieldblock in Model.GetSection("frt_tax_code1_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_frt_tax_code1"))  r-vertical-field" data-fieldname="frt_tax_code1" data-signal-error-for="frt_tax_code1@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field71" @(Model.displayVar("item_integrated_edit_field71")) data-pageid="@(Model.displayVar("pageid"))" data-field="frt_tax_code1" data-fieldname="frt_tax_code1" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_frt_tax_code1"))">
+		
+		@foreach (string _frt_tax_code1_label in Model.GetSection("frt_tax_code1_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst frt_tax_code1"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("frt_tax_code1_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _msc_tax_code1_fieldblock in Model.GetSection("msc_tax_code1_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_msc_tax_code1"))  r-vertical-field" data-fieldname="msc_tax_code1" data-signal-error-for="msc_tax_code1@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field72" @(Model.displayVar("item_integrated_edit_field72")) data-pageid="@(Model.displayVar("pageid"))" data-field="msc_tax_code1" data-fieldname="msc_tax_code1" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_msc_tax_code1"))">
+		
+		@foreach (string _msc_tax_code1_label in Model.GetSection("msc_tax_code1_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst msc_tax_code1"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("msc_tax_code1_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _disc_amount_fieldblock in Model.GetSection("disc_amount_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_disc_amount"))  r-vertical-field" data-fieldname="disc_amount" data-signal-error-for="disc_amount@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field73" @(Model.displayVar("item_integrated_edit_field73")) data-pageid="@(Model.displayVar("pageid"))" data-field="disc_amount" data-fieldname="disc_amount" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_disc_amount"))">
+		
+		@foreach (string _disc_amount_label in Model.GetSection("disc_amount_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst disc_amount"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("disc_amount_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _cust_po_fieldblock in Model.GetSection("cust_po_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_cust_po"))  r-vertical-field" data-fieldname="cust_po" data-signal-error-for="cust_po@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field74" @(Model.displayVar("item_integrated_edit_field74")) data-pageid="@(Model.displayVar("pageid"))" data-field="cust_po" data-fieldname="cust_po" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_cust_po"))">
+		
+		@foreach (string _cust_po_label in Model.GetSection("cust_po_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst cust_po"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("cust_po_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _store_id_fieldblock in Model.GetSection("store_id_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_store_id"))  r-vertical-field" data-fieldname="store_id" data-signal-error-for="store_id@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field75" @(Model.displayVar("item_integrated_edit_field75")) data-pageid="@(Model.displayVar("pageid"))" data-field="store_id" data-fieldname="store_id" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_store_id"))">
+		
+		@foreach (string _store_id_label in Model.GetSection("store_id_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst store_id"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("store_id_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _locale_fieldblock in Model.GetSection("locale_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_locale"))  r-vertical-field" data-fieldname="locale" data-signal-error-for="locale@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field76" @(Model.displayVar("item_integrated_edit_field76")) data-pageid="@(Model.displayVar("pageid"))" data-field="locale" data-fieldname="locale" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_locale"))">
+		
+		@foreach (string _locale_label in Model.GetSection("locale_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst locale"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("locale_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _customer_is_guest_fieldblock in Model.GetSection("customer_is_guest_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_customer_is_guest"))  r-vertical-field" data-fieldname="customer_is_guest" data-signal-error-for="customer_is_guest@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field77" @(Model.displayVar("item_integrated_edit_field77")) data-pageid="@(Model.displayVar("pageid"))" data-field="customer_is_guest" data-fieldname="customer_is_guest" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_customer_is_guest"))">
+		
+		@foreach (string _customer_is_guest_label in Model.GetSection("customer_is_guest_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst customer_is_guest"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("customer_is_guest_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _Bill_Ship_address_fieldblock in Model.GetSection("Bill_Ship_address_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_Bill_Ship_address"))  r-vertical-field" data-fieldname="Bill_Ship_address" data-signal-error-for="Bill_Ship_address@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field78" @(Model.displayVar("item_integrated_edit_field78")) data-pageid="@(Model.displayVar("pageid"))" data-field="Bill_Ship_address" data-fieldname="Bill_Ship_address" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_Bill_Ship_address"))">
+		
+		@foreach (string _Bill_Ship_address_label in Model.GetSection("Bill_Ship_address_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst Bill_Ship_address"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("Bill_Ship_address_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _ShippingAddress2_fieldblock in Model.GetSection("ShippingAddress2_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_ShippingAddress2"))  r-vertical-field" data-fieldname="ShippingAddress2" data-signal-error-for="ShippingAddress2@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field79" @(Model.displayVar("item_integrated_edit_field79")) data-pageid="@(Model.displayVar("pageid"))" data-field="ShippingAddress2" data-fieldname="ShippingAddress2" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_ShippingAddress2"))">
+		
+		@foreach (string _ShippingAddress2_label in Model.GetSection("ShippingAddress2_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst ShippingAddress2"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("ShippingAddress2_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _ShippingCity_fieldblock in Model.GetSection("ShippingCity_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_ShippingCity"))  r-vertical-field" data-fieldname="ShippingCity" data-signal-error-for="ShippingCity@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field80" @(Model.displayVar("item_integrated_edit_field80")) data-pageid="@(Model.displayVar("pageid"))" data-field="ShippingCity" data-fieldname="ShippingCity" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_ShippingCity"))">
+		
+		@foreach (string _ShippingCity_label in Model.GetSection("ShippingCity_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst ShippingCity"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("ShippingCity_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _ShippingCountry_fieldblock in Model.GetSection("ShippingCountry_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_ShippingCountry"))  r-vertical-field" data-fieldname="ShippingCountry" data-signal-error-for="ShippingCountry@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field81" @(Model.displayVar("item_integrated_edit_field81")) data-pageid="@(Model.displayVar("pageid"))" data-field="ShippingCountry" data-fieldname="ShippingCountry" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_ShippingCountry"))">
+		
+		@foreach (string _ShippingCountry_label in Model.GetSection("ShippingCountry_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst ShippingCountry"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("ShippingCountry_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _ShippingProvince_fieldblock in Model.GetSection("ShippingProvince_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_ShippingProvince"))  r-vertical-field" data-fieldname="ShippingProvince" data-signal-error-for="ShippingProvince@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field82" @(Model.displayVar("item_integrated_edit_field82")) data-pageid="@(Model.displayVar("pageid"))" data-field="ShippingProvince" data-fieldname="ShippingProvince" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_ShippingProvince"))">
+		
+		@foreach (string _ShippingProvince_label in Model.GetSection("ShippingProvince_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst ShippingProvince"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("ShippingProvince_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _ShippingZip_fieldblock in Model.GetSection("ShippingZip_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_ShippingZip"))  r-vertical-field" data-fieldname="ShippingZip" data-signal-error-for="ShippingZip@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field83" @(Model.displayVar("item_integrated_edit_field83")) data-pageid="@(Model.displayVar("pageid"))" data-field="ShippingZip" data-fieldname="ShippingZip" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_ShippingZip"))">
+		
+		@foreach (string _ShippingZip_label in Model.GetSection("ShippingZip_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst ShippingZip"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("ShippingZip_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _Tags_fieldblock in Model.GetSection("Tags_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_Tags"))  r-vertical-field" data-fieldname="Tags" data-signal-error-for="Tags@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field84" @(Model.displayVar("item_integrated_edit_field84")) data-pageid="@(Model.displayVar("pageid"))" data-field="Tags" data-fieldname="Tags" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_Tags"))">
+		
+		@foreach (string _Tags_label in Model.GetSection("Tags_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst Tags"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("Tags_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _ShippingName_fieldblock in Model.GetSection("ShippingName_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_ShippingName"))  r-vertical-field" data-fieldname="ShippingName" data-signal-error-for="ShippingName@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field85" @(Model.displayVar("item_integrated_edit_field85")) data-pageid="@(Model.displayVar("pageid"))" data-field="ShippingName" data-fieldname="ShippingName" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_ShippingName"))">
+		
+		@foreach (string _ShippingName_label in Model.GetSection("ShippingName_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst ShippingName"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("ShippingName_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _shop_name_fieldblock in Model.GetSection("shop_name_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_shop_name"))  r-vertical-field" data-fieldname="shop_name" data-signal-error-for="shop_name@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field86" @(Model.displayVar("item_integrated_edit_field86")) data-pageid="@(Model.displayVar("pageid"))" data-field="shop_name" data-fieldname="shop_name" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_shop_name"))">
+		
+		@foreach (string _shop_name_label in Model.GetSection("shop_name_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst shop_name"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("shop_name_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _store_name_fieldblock in Model.GetSection("store_name_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_store_name"))  r-vertical-field" data-fieldname="store_name" data-signal-error-for="store_name@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field87" @(Model.displayVar("item_integrated_edit_field87")) data-pageid="@(Model.displayVar("pageid"))" data-field="store_name" data-fieldname="store_name" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_store_name"))">
+		
+		@foreach (string _store_name_label in Model.GetSection("store_name_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst store_name"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("store_name_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _jresult_fieldblock in Model.GetSection("jresult_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_jresult"))  r-vertical-field" data-fieldname="jresult" data-signal-error-for="jresult@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field88" @(Model.displayVar("item_integrated_edit_field88")) data-pageid="@(Model.displayVar("pageid"))" data-field="jresult" data-fieldname="jresult" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_jresult"))">
+		
+		@foreach (string _jresult_label in Model.GetSection("jresult_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst jresult"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("jresult_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _rowpointer_fieldblock in Model.GetSection("rowpointer_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_rowpointer"))  r-vertical-field" data-fieldname="rowpointer" data-signal-error-for="rowpointer@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field89" @(Model.displayVar("item_integrated_edit_field89")) data-pageid="@(Model.displayVar("pageid"))" data-field="rowpointer" data-fieldname="rowpointer" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_rowpointer"))">
+		
+		@foreach (string _rowpointer_label in Model.GetSection("rowpointer_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst rowpointer"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("rowpointer_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _Shipment_amount_fieldblock in Model.GetSection("Shipment_amount_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_Shipment_amount"))  r-vertical-field" data-fieldname="Shipment_amount" data-signal-error-for="Shipment_amount@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field90" @(Model.displayVar("item_integrated_edit_field90")) data-pageid="@(Model.displayVar("pageid"))" data-field="Shipment_amount" data-fieldname="Shipment_amount" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_Shipment_amount"))">
+		
+		@foreach (string _Shipment_amount_label in Model.GetSection("Shipment_amount_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst Shipment_amount"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("Shipment_amount_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _state_code_fieldblock in Model.GetSection("state_code_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_state_code"))  r-vertical-field" data-fieldname="state_code" data-signal-error-for="state_code@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field91" @(Model.displayVar("item_integrated_edit_field91")) data-pageid="@(Model.displayVar("pageid"))" data-field="state_code" data-fieldname="state_code" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_state_code"))">
+		
+		@foreach (string _state_code_label in Model.GetSection("state_code_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst state_code"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("state_code_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _Billing_Province_code_fieldblock in Model.GetSection("Billing_Province_code_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_Billing_Province_code"))  r-vertical-field" data-fieldname="Billing_Province_code" data-signal-error-for="Billing_Province_code@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field92" @(Model.displayVar("item_integrated_edit_field92")) data-pageid="@(Model.displayVar("pageid"))" data-field="Billing_Province_code" data-fieldname="Billing_Province_code" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_Billing_Province_code"))">
+		
+		@foreach (string _Billing_Province_code_label in Model.GetSection("Billing_Province_code_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst Billing_Province_code"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("Billing_Province_code_value"))	</div>
+
+		
+</div>
+
+
+}
+											
+@foreach (string _Shipping_Province_code_fieldblock in Model.GetSection("Shipping_Province_code_fieldblock", this)){
+
+
+<DIV class="r-integrated-field form-group clearfix @(Model.displayVar("fielddispclass_Shipping_Province_code"))  r-vertical-field" data-fieldname="Shipping_Province_code" data-signal-error-for="Shipping_Province_code@(Model.displayVar("id"))" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field93" @(Model.displayVar("item_integrated_edit_field93")) data-pageid="@(Model.displayVar("pageid"))" data-field="Shipping_Province_code" data-fieldname="Shipping_Province_code" data-compact>
+
+	
+	<LABEL class="col-md-offset-3 col-md-6" for="@(Model.displayVar("labelfor_Shipping_Province_code"))">
+		
+		@foreach (string _Shipping_Province_code_label in Model.GetSection("Shipping_Province_code_label", this)){@(Model.displayVar("label dbo_sh_get_orders_mst Shipping_Province_code"))}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		@(Model.displayVar("Shipping_Province_code_value"))	</div>
+
+		
+</div>
+
+
+}
+	
+								</td>
+			}
+								</tr>
+			</tbody></table>
+}
+									@foreach (string _below_grid_block in Model.GetSection("below-grid_block", this)){
+<DIV class="r-form" data-location="below-grid" id="form_below-grid_@(Model.displayVar("pageid"))" data-makeup="small" @(Model.displayVar("form_below-grid")) data-pageid="@(Model.displayVar("pageid"))" data-v-width="4" data-v-margin="1">		
+	 
+		<div class="row">
+			 
+				<DIV data-cellId="below-grid_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_below-grid_c1")) class="			col-md-6
+	">
+	 
+		@foreach (string _back_button in Model.GetSection("back_button", this)){
+<SPAN data-itemtype="view_back_list" data-itemid="view_back_list" @(Model.displayVar("item_view_back_list")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-default   
+	" @(Model.displayVar("backbutton_attrs"))>
+							Back to list			</a>
+</span>
+}
+	 
+		@foreach (string _close_button in Model.GetSection("close_button", this)){
+<SPAN data-itemtype="view_close" data-itemid="view_close" @(Model.displayVar("item_view_close")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-default   
+	" href="#" @(Model.displayVar("closebutton_attrs"))>
+							Close window			</a>
+</span>
+}
+	</div>			 
+				<DIV data-cellId="below-grid_c2" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_below-grid_c2")) class="r-align-right r-ori-vert			col-md-6
+	">
+	 
+		<SPAN data-itemtype="hamburger" data-itemid="hamburger" @(Model.displayVar("item_hamburger")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<span class="dropdown dropup">
+		<button type="button" title="" class="btn btn-default   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">		
+										<span class="glyphicon glyphicon-menu-hamburger"></span>
+												<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+							@foreach (string _edit_page_button in Model.GetSection("edit_page_button", this)){
+	<LI data-itemtype="view_edit" data-itemid="view_edit" @(Model.displayVar("item_view_edit")) data-pageid="@(Model.displayVar("pageid"))" data-small>
+				<A href="sh_get_orders_mst/edit?@(Model.displayVar("editlink"))" @(Model.displayVar("edit_page_button_attrs")) title>
+				
+		Edit		
+		</a>
+	</li>
+}
+					</ul>
+	</span>
+</span>
+	</div>					</div>
+	</div>		
+}
+			</div>
+		{Html.RenderSharedView("footer");}
+	}
+	</body>
+</html>

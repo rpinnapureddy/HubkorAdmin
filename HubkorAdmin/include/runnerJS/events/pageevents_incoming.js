@@ -1,0 +1,2 @@
+
+Runner.pages.PageSettings.addPageEvent('dbo.incoming',Runner.pages.constants.PAGE_LIST,"afterPageReady",function(pageObj,proxy,pageid,inlineRow,inlineObject,row){function showJson(element){var jsonData=element.getAttribute("data-json");try{var parsedData=JSON.parse(jsonData);alert(JSON.stringify(parsedData,null,2));}catch(error){alert("Invalid JSON data.");}};});

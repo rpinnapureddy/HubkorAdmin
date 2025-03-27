@@ -1,0 +1,92 @@
+﻿@using runnerDotNet;
+@{
+ XTempl Model = this.Model;
+ if(ViewBag != null && ViewBag.xt != null)
+ {
+  Model = ViewBag.xt;
+  if(Model != null)
+  {
+   Model.currentViewContext = ViewContext;
+  }
+ }
+ string webRootPath = "";
+}
+
+<!doctype html>@(new HtmlString(MVCFunctions.GetBuferContentAndClearBufer()))
+<HTML @(Model.displayVar("html_attrs"))>
+	<head>
+				<META http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<META name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@(Model.displayVar("pagetitle"))</title>
+	<META http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<BASE href="@(Model.displayVar("projectPath"))" />
+		<LINK REL="stylesheet" href="styles/default.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	@foreach (string _rtlCSS in Model.GetSection("rtlCSS", this)){
+	<LINK REL="stylesheet" href="styles/defaultRTL.css?@(Model.displayVar("wizardBuildKey"))" type="text/css" />
+	}
+	@foreach (string _styleCSSFiles in Model.GetSection("styleCSSFiles", this)){
+	<LINK REL="stylesheet" href="@(Model.displayVar("stylepath"))" type="text/css" />
+	}
+			
+	</head>
+
+	<BODY class="@(Model.displayVar("stylename")) function-session_expired">
+	@foreach (string _body in Model.GetSection("body", this)){
+		{Html.RenderSharedView("header");}
+		<style>@MvcHtmlString.Create(@"")@(Model.displayVar("containerCss"))@MvcHtmlString.Create(@"")</style>
+			<div class="r-panel-page">
+										<div class="bs-pagepanel panel panel-primary">
+					<div class="panel-heading">
+												</div>
+					<div class="panel-body">
+										@foreach (string _above_grid_block in Model.GetSection("above-grid_block", this)){
+<DIV class="r-form" data-location="above-grid" id="form_above-grid_@(Model.displayVar("pageid"))" data-makeup="panel" @(Model.displayVar("form_above-grid")) data-pageid="@(Model.displayVar("pageid"))">		
+	 
+				<div class="row">
+			 
+				<DIV data-cellId="above-grid_c1" data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("cell_above-grid_c1")) class="r-align-center r-ori-vert			col-md-12
+	
+">
+		@foreach (string _firstAboveGridCell in Model.GetSection("firstAboveGridCell", this)){
+		 
+		<SPAN data-itemtype="session_expired_message" data-itemid="session_expired_message" @(Model.displayVar("item_session_expired_message")) data-pageid="@(Model.displayVar("pageid"))" data-page="_global_session_expired" data-small>
+Do you want to continue your session?</span>
+	 
+		<SPAN data-itemtype="session_expired_comment" data-itemid="session_expired_comment" @(Model.displayVar("item_session_expired_comment")) data-pageid="@(Model.displayVar("pageid"))"> 
+	For security reasons, your session will time out in %seconds% seconds unless you continue</span>
+			}	
+	</div>					</div>
+			</div>		
+}
+											@foreach (string _grid_block in Model.GetSection("grid_block", this)){
+<TABLE class="r-edit-form r-panel-form" cellpadding="0" cellspacing="0" data-location="grid" id="form_grid_@(Model.displayVar("pageid"))" data-makeup="panel" @(Model.displayVar("form_grid")) data-pageid="@(Model.displayVar("pageid"))" @(Model.displayVar("grid_hiddenattr")) data-form-width>
+<tbody>
+ 
+	<tr>
+	 
+				<TD class="r-align-center						" data-cellId="grid_c1" data-pageid="@(Model.displayVar("pageid"))">
+			<div edit-form-cell class="clearfix">
+								<SPAN data-itemtype="expired_stay" data-itemid="expired_stay" @(Model.displayVar("item_expired_stay")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-primary   
+	" id="stayLogged@(Model.displayVar("id"))">
+							Continue session			</a>
+</span>
+								<SPAN data-itemtype="expired_logout" data-itemid="expired_logout" @(Model.displayVar("item_expired_logout")) data-pageid="@(Model.displayVar("pageid"))" data-small data-button-item>
+	<A type="button" title class="btn btn-default   
+	" id="logout@(Model.displayVar("id"))">
+							Log out			</a>
+</span>
+					</div>
+		</td>
+			</tr>
+</tbody>
+</table>
+}
+														</div>
+				</div>
+						
+			</div>
+		{Html.RenderSharedView("footer");}
+	}
+	</body>
+</html>
