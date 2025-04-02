@@ -537,7 +537,7 @@ namespace runnerDotNet
 			menuNodes.InitAndSetArrayItem(menuNode, null);
 			menuNode = XVar.Clone(XVar.Array());
 			menuNode.InitAndSetArrayItem("179", "id");
-			menuNode.InitAndSetArrayItem("Misc-Code", "name");
+			menuNode.InitAndSetArrayItem("Mis-Code", "name");
 			menuNode.InitAndSetArrayItem("mypage.htm", "href");
 			menuNode.InitAndSetArrayItem("Leaf", "type");
 			menuNode.InitAndSetArrayItem("dbo.indcode", "table");
@@ -553,7 +553,7 @@ namespace runnerDotNet
 			menuNode.InitAndSetArrayItem("0", "iconType");
 			menuNode.InitAndSetArrayItem("1", "iconShow");
 			menuNode.InitAndSetArrayItem("", "color");
-			menuNode.InitAndSetArrayItem("Misc-Code", "title");
+			menuNode.InitAndSetArrayItem("Mis-Code", "title");
 			menuNodes.InitAndSetArrayItem(menuNode, null);
 			menuNode = XVar.Clone(XVar.Array());
 			menuNode.InitAndSetArrayItem("94", "id");

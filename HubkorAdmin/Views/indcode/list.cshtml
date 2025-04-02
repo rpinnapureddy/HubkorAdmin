@@ -259,19 +259,6 @@
 								<span class="rnr-searchcontrol">@(Model.displayVar("searchcontrol1_description"))</span>
 						</div>
 		}
-																@foreach (string _searchCtrlBlock_rowpointer in Model.GetSection("searchCtrlBlock_rowpointer", this)){
-
-
-		<DIV class="form-group srchPanelRow @(Model.displayVar("filterRow_class_rowpointer"))" @(Model.displayVar("filterRow_attrs_rowpointer"))>
-			<label>@(Model.displayVar("label dbo_indcode rowpointer"))</label>
-
-							@(Model.displayVar("delCtrlButt"))
-			
-								<span class="rnr-searchtype">@(Model.displayVar("searchtype_rowpointer"))</span>
-								<span class="rnr-searchcontrol">@(Model.displayVar("searchcontrol_rowpointer"))</span>
-								<span class="rnr-searchcontrol">@(Model.displayVar("searchcontrol1_rowpointer"))</span>
-						</div>
-		}
 																@foreach (string _searchCtrlBlock_indcode in Model.GetSection("searchCtrlBlock_indcode", this)){
 
 
@@ -636,10 +623,7 @@ foreach (string _message_block in Model.GetSection("message_block", this)){
 			[data-pageid=""")@(Model.displayVar("pageid"))@MvcHtmlString.Create(@"""][data-itemtype=""grid_field""][data-field=""description""]:before {
 		content: """)@(Model.displayVar("label dbo_indcode description"))@MvcHtmlString.Create(@""";
 	}
-			[data-pageid=""")@(Model.displayVar("pageid"))@MvcHtmlString.Create(@"""][data-itemtype=""grid_field""][data-field=""rowpointer""]:before {
-		content: """)@(Model.displayVar("label dbo_indcode rowpointer"))@MvcHtmlString.Create(@""";
-	}
-	}")</style>
+		}")</style>
 <TABLE data-location="grid" id="form_grid_@(Model.displayVar("pageid"))" data-makeup="leftbar" @(Model.displayVar("form_grid")) data-pageid="@(Model.displayVar("pageid"))" class=" table table-striped table-bordered r-horizontal-grid  r-flexgrid rnr-b-grid rnr-gridtable" cellpadding="0" data-body-height="1">
 						<thead>
 			@foreach (string _grid_header in Model.GetSection("grid_header", this)){
@@ -676,7 +660,7 @@ foreach (string _message_block in Model.GetSection("message_block", this)){
 	 
 		@foreach (string _indcode_fieldheadercolumn in Model.GetSection("indcode_fieldheadercolumn", this)){
 	foreach (string _indcode_fieldheader in Model.GetSection("indcode_fieldheader", this)){
-<SPAN data-itemtype="grid_field_label" data-itemid="simple_grid_field3" @(Model.displayVar("item_simple_grid_field3")) data-pageid="@(Model.displayVar("pageid"))" data-record-id="@(Model.displayVar("recId"))" data-field="indcode" data-fieldname="indcode" @(Model.displayVar("indcode_orderlinkattrs"))>
+<SPAN data-itemtype="grid_field_label" data-itemid="simple_grid_field2" @(Model.displayVar("item_simple_grid_field2")) data-pageid="@(Model.displayVar("pageid"))" data-record-id="@(Model.displayVar("recId"))" data-field="indcode" data-fieldname="indcode" @(Model.displayVar("indcode_orderlinkattrs"))>
 	<span class="text-label">
 		<span>@(Model.displayVar("label dbo_indcode indcode"))</span>
 					@(Model.displayVar("arrow_icon_indcode"))
@@ -695,29 +679,10 @@ foreach (string _message_block in Model.GetSection("message_block", this)){
 	 
 		@foreach (string _description_fieldheadercolumn in Model.GetSection("description_fieldheadercolumn", this)){
 	foreach (string _description_fieldheader in Model.GetSection("description_fieldheader", this)){
-<SPAN data-itemtype="grid_field_label" data-itemid="simple_grid_field4" @(Model.displayVar("item_simple_grid_field4")) data-pageid="@(Model.displayVar("pageid"))" data-record-id="@(Model.displayVar("recId"))" data-field="description" data-fieldname="description" @(Model.displayVar("description_orderlinkattrs"))>
+<SPAN data-itemtype="grid_field_label" data-itemid="simple_grid_field3" @(Model.displayVar("item_simple_grid_field3")) data-pageid="@(Model.displayVar("pageid"))" data-record-id="@(Model.displayVar("recId"))" data-field="description" data-fieldname="description" @(Model.displayVar("description_orderlinkattrs"))>
 	<span class="text-label">
 		<span>@(Model.displayVar("label dbo_indcode description"))</span>
 					@(Model.displayVar("arrow_icon_description"))
-			</span>
-	</span>
-	}
-}
-
-	
-	</th>
-	}
-									@foreach (string _cellblock_grid_headcell_field2 in Model.GetSection("cellblock_grid_headcell_field2", this)){
-	<TH @(Model.displayVar("cell_grid_headcell_field2")) @(Model.displayVar("recordattrs")) class="
-		 r-ori-vert		 @(Model.displayVar("rowpointer_class"))	" data-field="rowpointer" data-cellId="grid_headcell_field2" data-pageid="@(Model.displayVar("pageid"))" data-record-id="@(Model.displayVar("recId"))">
-
-	 
-		@foreach (string _rowpointer_fieldheadercolumn in Model.GetSection("rowpointer_fieldheadercolumn", this)){
-	foreach (string _rowpointer_fieldheader in Model.GetSection("rowpointer_fieldheader", this)){
-<SPAN data-itemtype="grid_field_label" data-itemid="simple_grid_field5" @(Model.displayVar("item_simple_grid_field5")) data-pageid="@(Model.displayVar("pageid"))" data-record-id="@(Model.displayVar("recId"))" data-field="rowpointer" data-fieldname="rowpointer" @(Model.displayVar("rowpointer_orderlinkattrs"))>
-	<span class="text-label">
-		<span>@(Model.displayVar("label dbo_indcode rowpointer"))</span>
-					@(Model.displayVar("arrow_icon_rowpointer"))
 			</span>
 	</span>
 	}
@@ -799,18 +764,6 @@ foreach (string _message_block in Model.GetSection("message_block", this)){
 }	
 	</td>
 	}
-									@foreach (string _cellblock_grid_cell_field2 in Model.GetSection("cellblock_grid_cell_field2", this)){
-	<TD @(Model.displayVar("cell_grid_cell_field2")) @(Model.displayVar("recordattrs")) class="
-		 r-ori-vert		 @(Model.displayVar("rowpointer_class"))	" data-field="rowpointer" data-cellId="grid_cell_field2" data-pageid="@(Model.displayVar("pageid"))" data-record-id="@(Model.displayVar("recId"))">
-
-	 
-		@foreach (string _rowpointer_fieldcolumn in Model.GetSection("rowpointer_fieldcolumn", this)){
-<SPAN data-itemtype="grid_field" data-itemid="simple_grid_field2" @(Model.displayVar("item_simple_grid_field2")) data-pageid="@(Model.displayVar("pageid"))" data-record-id="@(Model.displayVar("recId"))" data-field="rowpointer" data-fieldname="rowpointer" data-default-width>
-@(Model.displayVar("rowpointer_value"))
-</span>
-}	
-	</td>
-	}
 							</tr>
 										
 											}
@@ -846,13 +799,6 @@ foreach (string _message_block in Model.GetSection("message_block", this)){
 									@foreach (string _cellblock_grid_footcell_field1 in Model.GetSection("cellblock_grid_footcell_field1", this)){
 	<TD @(Model.displayVar("cell_grid_footcell_field1")) @(Model.displayVar("recordattrs")) class="
 		 r-ori-vert		 @(Model.displayVar("description_class"))	" data-cellId="grid_footcell_field1" data-pageid="@(Model.displayVar("pageid"))" data-record-id="@(Model.displayVar("recId"))" data-page="indcode_list">
-
-	
-	</td>
-	}
-									@foreach (string _cellblock_grid_footcell_field2 in Model.GetSection("cellblock_grid_footcell_field2", this)){
-	<TD @(Model.displayVar("cell_grid_footcell_field2")) @(Model.displayVar("recordattrs")) class="
-		 r-ori-vert		 @(Model.displayVar("rowpointer_class"))	" data-cellId="grid_footcell_field2" data-pageid="@(Model.displayVar("pageid"))" data-record-id="@(Model.displayVar("recId"))" data-page="indcode_list">
 
 	
 	</td>
